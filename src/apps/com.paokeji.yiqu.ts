@@ -10,6 +10,8 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      activityIds:
+        'com.aster.comic.app.ad.view.mediation.MediationSplashAdActivity',
       rules: [
         {
           key: 0,
@@ -19,7 +21,6 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          actionCdKey: 0,
           matches:
             '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳过"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
         },
