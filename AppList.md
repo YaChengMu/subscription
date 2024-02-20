@@ -15,7 +15,7 @@
 | ClrvAI                 | [com.panaceasoft.pswallpaper](/docs/com.panaceasoft.pswallpaper.md)                                                                                               | 1      |
 | ECOVACS HOME           | [com.eco.global.app](/docs/com.eco.global.app.md)                                                                                                                 | 1      |
 | EMobile7               | [com.weaver.emobile7](/docs/com.weaver.emobile7.md)                                                                                                               | 1      |
-| Edge                   | [com.microsoft.emmx](/docs/com.microsoft.emmx.md)                                                                                                                 | 1      |
+| Edge                   | [com.microsoft.emmx](/docs/com.microsoft.emmx.md)                                                                                                                 | 2      |
 | Gmail                  | [com.google.android.gm](/docs/com.google.android.gm.md)                                                                                                           | 1      |
 | Gspace                 | [com.gspace.android](/docs/com.gspace.android.md)                                                                                                                 | 2      |
 | HMS Core               | [com.huawei.hwid](/docs/com.huawei.hwid.md)                                                                                                                       | 1      |
@@ -154,7 +154,7 @@
 | 菜鸟                   | [com.cainiao.wireless](/docs/com.cainiao.wireless.md)                                                                                                             | 7      |
 | 彩云天气               | [com.nowcasting.activity](/docs/com.nowcasting.activity.md)                                                                                                       | 3      |
 | 超级课程表             | [com.xtuone.android.syllabus](/docs/com.xtuone.android.syllabus.md)                                                                                               | 4      |
-| 车来了                 | [com.ygkj.chelaile.standard](/docs/com.ygkj.chelaile.standard.md)                                                                                                 | 1      |
+| 车来了                 | [com.ygkj.chelaile.standard](/docs/com.ygkj.chelaile.standard.md)                                                                                                 | 2      |
 | 车旺大卡               | [com.vehicles.activities](/docs/com.vehicles.activities.md)                                                                                                       | 1      |
 | 春木漫画               | [com.galaxy.qbyd](/docs/com.galaxy.qbyd.md)                                                                                                                       | 1      |
 | 春雨医生               | [me.chunyu.ChunyuDoctor](/docs/me.chunyu.ChunyuDoctor.md)                                                                                                         | 1      |
@@ -341,7 +341,7 @@
 | 萌妹                   | [com.jc.avatar.mm](/docs/com.jc.avatar.mm.md)                                                                                                                     | 1      |
 | 喵次元                 | [com.sjm.zhuanzhuan.mcy](/docs/com.sjm.zhuanzhuan.mcy.md)                                                                                                         | 1      |
 | 喵喵折                 | [com.henzanapp.miaomiaozhe](/docs/com.henzanapp.miaomiaozhe.md)                                                                                                   | 1      |
-| 喵趣漫画               | [com.paokeji.yiqu](/docs/com.paokeji.yiqu.md)                                                                                                                     | 3      |
+| 喵趣漫画               | [com.paokeji.yiqu](/docs/com.paokeji.yiqu.md)                                                                                                                     | 2      |
 | 咪咕快游               | [cn.emagsoftware.gamehall](/docs/cn.emagsoftware.gamehall.md)                                                                                                     | 1      |
 | 咪咕视频               | [com.cmcc.cmvideo](/docs/com.cmcc.cmvideo.md)                                                                                                                     | 5      |
 | 咪咕音乐               | [cmccwm.mobilemusic](/docs/cmccwm.mobilemusic.md)                                                                                                                 | 1      |
@@ -664,6 +664,7 @@
 | 转转                   | [com.wuba.zhuanzhuan](/docs/com.wuba.zhuanzhuan.md)                                                                                                               | 1      |
 | 追剧达人               | [com.sjm.luobo](/docs/com.sjm.luobo.md)                                                                                                                           | 1      |
 | 追漫大全               | [com.mj.mjyd](/docs/com.mj.mjyd.md)                                                                                                                               | 1      |
+| 卓聚                   | [com.learn.team.congrong](/docs/com.learn.team.congrong.md)                                                                                                       | 1      |
 | 主题壁纸               | [com.android.thememanager](/docs/com.android.thememanager.md)                                                                                                     | 2      |
 | 淄博出行               | [com.pandabus.android.zb](/docs/com.pandabus.android.zb.md)                                                                                                       | 1      |
 | 自动点击器             | [com.zidongdianji](/docs/com.zidongdianji.md)                                                                                                                     | 1      |

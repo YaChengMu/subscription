@@ -4,15 +4,15 @@ import apps from './rawApps';
 import type { RawSubscription } from './types';
 
 const subsConfig: RawSubscription = {
-  id: 666,
+  id: 303,
   version: 0,
-  name: 'AIsouler的GKD订阅',
-  author: 'AIsouler',
-  supportUri: 'https://github.com/AIsouler/GKD_subscription',
+  name: 'YaChengMu的GKD订阅',
+  author: 'YaChengMu',
+  supportUri: 'https://github.com/YaChengMu/subscription',
   updateUrl:
-    'https://raw.gitmirror.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5',
+    'https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5',
   checkUpdateUrl:
-    'https://raw.gitmirror.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.version.json',
+    'https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.version.json',
   globalGroups,
   categories,
   apps,

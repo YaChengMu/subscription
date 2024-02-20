@@ -27,7 +27,8 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '通知/链接蓝牙附件设备 权限申请',
+      name: '通知提示-通知/链接蓝牙附件设备',
+      desc: '自动点击关闭',
       quickFind: true,
       activityIds: 'com.enflick.android.TextNow.activities.MainActivity',
       rules:
