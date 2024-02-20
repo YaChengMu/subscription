@@ -59,20 +59,17 @@ export default defineAppConfig({
           name: '字节SDK-3',
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: '[text="反馈"] <<n View + View[childCount=1]',
-          snapshotUrls: ['https://i.gkd.li/import/13830798'],
+          matches: 'View[width<100] > Image[width<40]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13830798',
+            'https://i.gkd.li/import/13810150',
+            'https://i.gkd.li/import/13809737',
+            'https://i.gkd.li/import/13809578',
+          ],
         },
         {
           key: 4,
           name: '字节SDK-4',
-          activityIds:
-            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: '[text="反馈"] <<n View - View[childCount=1]',
-          snapshotUrls: ['https://i.gkd.li/import/13810150'],
-        },
-        {
-          key: 5,
-          name: '字节SDK-5',
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
           matches:
@@ -80,27 +77,15 @@ export default defineAppConfig({
           snapshotUrls: ['https://i.gkd.li/import/13829749'],
         },
         {
-          key: 6,
-          name: '字节SDK-6',
-          actionDelay: 350, //防误触
-          activityIds:
-            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-          matches: ['[text="反馈"] -n @View[index<=1] > Image[text.length=0]'],
-          snapshotUrls: [
-            'https://i.gkd.li/import/13809737',
-            'https://i.gkd.li/import/13809578',
-          ],
-        },
-        {
-          key: 7,
-          name: '字节SDK-7',
+          key: 5,
+          name: '字节SDK-5',
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T',
           matches: ['[text*="跳过"] <n *[clickable=true]'],
           snapshotUrls: ['https://i.gkd.li/import/13809629'],
         },
         {
-          key: 8,
+          key: 6,
           name: '快手SDK-1',
           matches: [
             '[vid="ksad_video_container"] < * >n ViewGroup[index=1] >n @ViewGroup[clickable=true] > ImageView',
@@ -108,13 +93,13 @@ export default defineAppConfig({
           snapshotUrls: ['https://i.gkd.li/import/13829312'],
         },
         {
-          key: 9,
+          key: 7,
           name: '快手SDK-2',
           matches: ['[vid="ksad_auto_close_btn"]'],
           snapshotUrls: ['https://i.gkd.li/import/13837855'],
         },
         {
-          key: 10,
+          key: 8,
           name: '快手SDK-3',
           activityIds: [
             'com.aster.comic.app.view.MainActivity',
