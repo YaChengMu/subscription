@@ -17,6 +17,12 @@ export default defineAppConfig({
             'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
           snapshotUrls: 'https://i.gkd.li/import/14339122',
         },
+        {
+          key: 1,
+          actionCdKey: 0,
+          matches:
+            '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳过"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
+        },
       ],
     },
     {
