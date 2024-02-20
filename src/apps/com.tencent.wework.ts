@@ -14,10 +14,12 @@ export default defineAppConfig({
           key: 0,
           quickFind: true,
           name: '点击别人发的红包',
-          activityIds:
+          activityIds: [
+            'com.tencent.wework.msg.controller.MessageListActivity',
             'com.tencent.wework.msg.controller.ExternalContactMessageListActivity',
+          ],
           matches:
-            'RelativeLayout[childCount=2] > ImageView + * @RelativeLayout[childCount=4] > LinearLayout[index=1] > LinearLayout[childCount=1] > [text="恭喜发财，大吉大利"]',
+            'RelativeLayout >2 ImageView + RelativeLayout >4 @TextView[text="红包"][id!=null] < RelativeLayout - LinearLayout > LinearLayout[childCount=1]',
           exampleUrls:
             'https://m.gkd.li/57941037/64bdd899-9a30-4816-bafc-a9e2a0d09ec6',
           snapshotUrls: [

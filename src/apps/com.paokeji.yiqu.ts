@@ -116,11 +116,17 @@ export default defineAppConfig({
         {
           key: 10,
           name: '快手SDK-3',
-          activityIds: 'com.aster.comic.app.view.MainActivity',
+          activityIds: [
+            'com.aster.comic.app.view.MainActivity',
+            'com.huawei.permissioncontroller.hwcust.appjump.AppJumpActivity',
+          ],
           matches: [
             'FrameLayout[id="com.paokeji.yiqu:id/ksad_tk_view"] >4 ViewGroup[childCount=0] - ViewGroup >2 ViewGroup[childCount=1] >2 ImageView',
           ],
-          snapshotUrls: ['https://i.gkd.li/import/13984949'],
+          snapshotUrls: [
+            'https://i.gkd.li/import/13984949',
+            'https://i.gkd.li/import/14340200',
+          ],
         },
       ],
     },
