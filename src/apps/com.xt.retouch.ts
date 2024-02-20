@@ -6,8 +6,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 5,
-      name: '好评反馈',
-      activityIds: 'com.xt.retouch.uilauncher.MainActivity',
+      name: '评价提示-好评反馈',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[id="com.xt.retouch:id/market_feedback_dialog_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13062637',
     },

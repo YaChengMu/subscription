@@ -7,10 +7,10 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '更新弹窗',
-      resetMatch: 'app',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
-      activityIds: ['com.byd.aeri.splash.module_splash.activity.TabManager'],
+      resetMatch: 'app',
       rules: [
         {
           quickFind: true,

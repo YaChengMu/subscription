@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -30,11 +30,10 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '全屏广告-公告弹窗', //分类存疑
-      resetMatch: 'app',
-      actionMaximum: 1,
+      name: '通知提示-公告弹窗', //分类存疑
       matchTime: 10000,
-      activityIds: 'com.xsj.app.MainActivity',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[desc="我知道了"]',
       snapshotUrls: 'https://i.gkd.li/import/13875711',
     },

@@ -6,8 +6,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
-      activityIds: 'com.sf.activity.MainActivity',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           key: 0,
@@ -24,7 +26,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '专属月报弹窗',
+      name: '功能类-专属月报弹窗',
       activityIds: 'com.sf.activity.MainActivity',
       rules: ['[id="MonthReportDialogCloseBtn"] > ImageView'],
       snapshotUrls: 'https://i.gkd.li/import/12642441',

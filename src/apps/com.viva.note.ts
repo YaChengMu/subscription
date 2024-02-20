@@ -6,12 +6,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '应用内通知',
-      activityIds: [
-        'com.baidu.mobads.sdk.api.MobRewardVideoActivity',
-        'com.maoyun.guoguo.MainActivity',
-      ],
-
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches:
@@ -25,7 +23,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '应用内弹窗',
+      name: '全屏广告-弹窗广告',
       activityIds: [
         'com.sigmob.sdk.base.common.TransparentAdActivity',
         'com.baidu.mobads.sdk.api.MobRewardVideoActivity',

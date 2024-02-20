@@ -6,8 +6,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
-      activityIds: 'weaver.fw.com.MainActivity',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches:

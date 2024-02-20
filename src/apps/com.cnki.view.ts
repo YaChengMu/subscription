@@ -7,11 +7,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
-      activityIds: [
-        'com.cnki.view.core.navigator.main.HomeActivity',
-        'com.cnki.view.core.tramp.main.SplashActivity',
-      ],
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[id="com.cnki.view:id/update_undo"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12755689', // activityId: 'com.cnki.view.core.navigator.main.HomeActivity'

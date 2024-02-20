@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '广告弹窗',
+      name: '全屏广告-广告弹窗',
       quickFind: true,
       activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
       rules:
@@ -17,8 +17,10 @@ export default defineAppConfig({
     {
       key: 10,
       quickFind: true,
-      name: '请求通知权限弹窗',
-      activityIds: 'cn.TuHu.Activity.tuhutab.TuHuTabActivity',
+      name: '通知提示-请求通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[id="cn.TuHu.android:id/imgClose"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13228796', //推送提醒消息弹窗

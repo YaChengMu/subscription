@@ -32,14 +32,20 @@ export default defineAppConfig({
           matches: '[id$="tt_splash_skip_btn"]',
           snapshotUrls: 'https://i.gkd.li/import/12999739',
         },
+        {
+          key: 2,
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
+          snapshotUrls: 'https://i.gkd.li/import/14046124',
+        },
       ],
     },
     {
       key: 1,
       name: '更新提示',
-      activityIds: [
-        'com.netease.mobimail.module.flutter.CustomFlutterActivity',
-      ],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
         '[id="com.netease.mail:id/tv_ignore_this_version"][text="暂不更新"]',
       snapshotUrls: 'https://i.gkd.li/import/12664070',
@@ -66,7 +72,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '全屏广告-查看成就',
+      name: '未分类-获得成就弹窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

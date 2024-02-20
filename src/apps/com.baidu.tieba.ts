@@ -15,7 +15,7 @@ export default defineAppConfig({
         {
           key: 0,
           quickFind: true,
-          name: '【跳过+倒计时】型',
+          name: '"跳过+倒计时"型',
           matches: 'TextView[text^="跳过"][text.length<=10]',
           snapshotUrls: [
             'https://i.gkd.li/import/12775906',
@@ -26,14 +26,14 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '【圆圈跳过】型-来自穿山甲SDK',
+          name: '"圆圈跳过"型-来自穿山甲SDK',
           matches: '[id="com.byted.pangle:id/tt_splash_skip_btn"]',
           snapshotUrls: 'https://i.gkd.li/import/13322227',
         },
         {
           key: 2,
           quickFind: true,
-          name: '【x+关闭】型',
+          name: '"x+关闭"型',
           matches:
             'TextView[text="广告"] - @LinearLayout[clickable=true] > [text="关闭"]',
           snapshotUrls: 'https://i.gkd.li/import/13168386',
@@ -42,27 +42,24 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '申请消息提醒弹窗',
+      name: '通知提示-申请消息提醒弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
           key: 0,
-          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
           matches:
             '@ImageView[clickable=true] -2 LinearLayout > [text^="打开通知"]',
           snapshotUrls: 'https://i.gkd.li/import/13536170',
         },
         {
           key: 1,
-          activityIds:
-            'com.baidu.tieba.immessagecenter.mention.reply.ReplyMeActivity',
           matches: 'TextView[text="开启消息推送"] +2 TextView[text="不开启"]',
           snapshotUrls: 'https://i.gkd.li/import/13675694',
         },
         {
           key: 2,
-          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches: '[text="开启通知"] - [text="暂不开启"]',
           snapshotUrls: 'https://i.gkd.li/import/13804455',
         },
@@ -71,8 +68,8 @@ export default defineAppConfig({
     {
       enable: false,
       key: 2,
-      name: '信息流广告',
-      desc: '推荐帖子列表,评论区列表:像正常内容的广告,关闭时弹窗选原因',
+      name: '分段广告-信息流广告',
+      desc: '推荐帖子列表,评论区列表,关闭时弹窗选原因',
       activityIds: [
         'com.baidu.tieba.pb.pb.main.PbActivity',
         'com.baidu.tieba.frs.FrsActivity',
@@ -82,7 +79,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击广告【x】',
+          name: '点击广告"x"',
           matches: [
             'RelativeLayout > TextView[text$="广告"][clickable=true]',
             'LinearLayout[clickable=true][childCount=1] > @FrameLayout[clickable=true][childCount=1][desc=null] > ImageView',
@@ -95,14 +92,14 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12840951',
             'https://i.gkd.li/import/12775916',
             'https://i.gkd.li/import/12775892', // 指定点击目标为具备 clickable=true 属性的 @FrameLayout，防止在这个快照误触点击收藏
-            'https://i.gkd.li/import/13328300', // 指定点击目标为具备 desc=null 属性的 @FrameLayout，防止在这个快照误触点击【更多】
+            'https://i.gkd.li/import/13328300', // 指定点击目标为具备 desc=null 属性的 @FrameLayout，防止在这个快照误触点击"更多"
             'https://i.gkd.li/import/13402610', // 指定LinearLayout[clickable=true] 、 activityIds: 'com.baidu.tieba.forum.ForumActivity',
             'https://i.gkd.li/import/13459289',
           ],
         },
         {
           preKeys: 0,
-          name: '关闭原因-【不感兴趣】',
+          name: '关闭原因-"不感兴趣"',
           matches:
             '@View[text=null] - TextView[text="选择不喜欢理由"][index=0]',
           snapshotUrls: 'https://i.gkd.li/import/12775914',
@@ -111,7 +108,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '首页-推荐-列表顶部卡片式广告',
+      name: '局部广告-首页、推荐列表顶部卡片式广告',
       activityIds: [
         'com.baidu.tieba.tblauncher.MainTabActivity',
         'com.baidu.tieba.frs.FrsActivity',
@@ -129,18 +126,17 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '升级弹窗',
+      name: '更新提示',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: 'com.baidu.tieba.UpdateDialog',
       rules: '[text="稍后再说"]',
       snapshotUrls: 'https://i.gkd.li/import/12496934',
     },
     {
       enable: false,
       key: 8,
-      name: '帖子底部内容推荐卡片',
+      name: '分段广告-帖子底部内容推荐卡片',
       desc: '关闭时弹窗选原因',
       activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
       rules: [
@@ -161,8 +157,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '广告弹窗',
-
+      name: '全屏广告-广告弹窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'activity',
@@ -198,7 +193,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '悬浮小广告',
+      name: '局部广告-悬浮小广告',
       matchDelay: 500,
       matchTime: 10000,
       actionMaximum: 1,
@@ -206,7 +201,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '首页右侧悬浮广告',
+          name: '首页右侧悬浮广告-1',
           activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
           matches:
             '@ImageView[clickable=true] - TextView[text="广告"] < RelativeLayout + ImageView',
@@ -217,6 +212,14 @@ export default defineAppConfig({
         },
         {
           key: 1,
+          name: '首页右侧悬浮广告-2',
+          activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
+          matches:
+            'RelativeLayout >2 RelativeLayout[childCount=1] > ImageView[childCount=0][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/14291964',
+        },
+        {
+          key: 2,
           name: '评论区左侧悬浮广告',
           quickFind: true,
           activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
@@ -224,7 +227,7 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13296280',
         },
         {
-          key: 2,
+          key: 3,
           activityIds: [
             'com.baidu.tieba.pb.pb.main.PbActivity',
             'com.baidu.tieba.tblauncher.MainTabActivity',
@@ -241,7 +244,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '吧内-悬浮卡通-进吧逛逛',
+      name: '局部广告-帖子内"进吧逛逛"弹窗',
       actionMaximum: 1,
       resetMatch: 'activity',
       rules:

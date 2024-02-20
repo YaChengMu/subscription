@@ -16,7 +16,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '限时福利弹窗',
+      name: '全屏广告-限时福利弹窗',
       rules: [
         {
           key: 0,
@@ -53,7 +53,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '消息页面-热门活动卡片',
+      name: '局部广告-消息页面热门活动卡片',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: 'View[desc.length>0] +2n FrameLayout > TextView[text="퀺"]',
       snapshotUrls: [
@@ -63,7 +63,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '悬浮广告',
+      name: '局部广告-悬浮广告',
       rules: [
         {
           key: 0,
@@ -78,15 +78,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '开启系统通知提示',
+      name: '通知提示',
       desc: '自动点击关闭',
+      matchTime: 10000,
       actionMaximum: 1,
-      activityIds: [
-        'com.taobao.tao.welcome.Welcome',
-        'com.taobao.android.order.bundle.TBOrderDetailActivity',
-        'com.taobao.android.tbabilitykit.pop.StdPopContainerActivity',
-        'com.taobao.tao.TBMainActivity',
-      ],
+      resetMatch: 'app',
       rules: '[text^="开启系统通知"] + Image[clickable=true]',
       snapshotUrls: [
         'https://i.gkd.li/import/13197594', //com.taobao.tao.welcome.Welcome
@@ -99,7 +95,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 9,
-      name: '各级页面-添加到首页弹窗',
+      name: '功能类-各级页面添加到首页弹窗',
       desc: '自动点击退出',
       quickFind: true,
       activityIds: [
@@ -114,7 +110,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '视频页面-活动弹窗',
+      name: '全屏广告-视频页面活动弹窗',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules:
         'View[id=null] > [text="立即参加"] + TextView[id=null][clickable=true]',
@@ -123,22 +119,18 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '视频页面-签到弹窗',
+      name: '全屏广告-视频页面签到弹窗',
       activityIds: 'com.taobao.tao.welcome.Welcome',
       rules: '@View[clickable=true] - View > View > TextView[text="立即签到"]',
       snapshotUrls: 'https://i.gkd.li/import/12642798',
     },
     {
       key: 12,
-      name: '版本更新',
+      name: '更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.taobao.android.detail.wrapper.activity.DetailActivity',
-        'com.taobao.android.order.bundle.TBOrderListActivity',
-      ],
       rules: '[id="com.taobao.taobao:id/update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13336760',
@@ -148,7 +140,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 13,
-      name: '小额免密支付弹窗',
+      name: '功能类-小额免密支付弹窗',
       desc: '点击关闭',
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
@@ -158,7 +150,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 14,
-      name: '将小组件添加到手机桌面',
+      name: '功能类-将小组件添加到手机桌面',
       desc: '点击取消',
       activityIds: 'com.alibaba.triver.container.TriverMainActivity',
       rules: [
@@ -172,7 +164,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 15,
-      name: '开启悬浮窗权限',
+      name: '权限提示-开启悬浮窗权限',
       desc: '点击“否”',
       activityIds:
         'com.taobao.android.detail2.core.framework.floatwindow.permission.PermissionActivity',
@@ -216,6 +208,35 @@ export default defineAppConfig({
           matches:
             '[id="com.taobao.taobao:id/flybird_userinfo"] + * [text="暂不升级，继续付款"]',
           snapshotUrls: 'https://i.gkd.li/import/13898735',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '全屏广告-抢天降补贴弹窗',
+      desc: '点击X',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.taobao.tao.welcome.Welcome',
+          matches: '@[desc="关闭按钮"] - [vid="poplayer_native_state_id"]',
+          snapshotUrls: 'https://i.gkd.li/import/14060521',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '功能类-"「0元下单」权益"弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[text="关闭"] < @FrameLayout[clickable=true] <3 FrameLayout[childCount=3] < * + FrameLayout[childCount=3] [text*="0元下单"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/a35c954d-5162-463c-aee3-b72b9c2d6625',
+          snapshotUrls: 'https://i.gkd.li/import/14155537',
         },
       ],
     },

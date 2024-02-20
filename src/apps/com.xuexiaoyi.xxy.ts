@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '首页-底部广告',
+      name: '局部广告-首页-底部广告',
       activityIds: [
         'com.xuexiaoyi.entrance.main.MainActivity',
         'com.xuexiaoyi.platform.base.arch.RouterFragmentActivity',
@@ -69,12 +69,14 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 10,
-      name: '升级弹窗',
-      desc: '自动点击以后再说。',
-      activityIds: 'com.xuexiaoyi.entrance.main.MainActivity',
       enable: false,
+      key: 10,
+      name: '更新提示',
+      desc: '自动点击以后再说。',
       quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[text="立即体验"] + [text="以后再说"]',
       snapshotUrls: 'https://i.gkd.li/import/13203105',
     },

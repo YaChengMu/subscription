@@ -6,18 +6,19 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           key: 0,
-          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             '[text*="新版本"] - ImageView < LinearLayout < LinearLayout + ImageButton[clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/12642017',
         },
         {
           key: 1,
-          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches: '@Image + Image +n [text="立即升级"]',
           snapshotUrls: 'https://i.gkd.li/import/13195645',
         },
@@ -25,7 +26,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '首页优惠弹窗',
+      name: '全屏广告-首页优惠弹窗',
       rules: [
         {
           key: 0,
@@ -55,7 +56,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '活动弹窗',
+      name: '全屏广告-活动弹窗',
       rules: [
         {
           key: 0,
@@ -80,11 +81,19 @@ export default defineAppConfig({
           matches: '@[text="关闭弹窗"][clickable=true] + [text$="下单成功"]',
           snapshotUrls: 'https://i.gkd.li/import/13308175',
         },
+        {
+          key: 3,
+          name: '抽免单活动3',
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '[text="多多免单"] >5 View[childCount=2] > Image[index=0][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/import/14310581',
+        },
       ],
     },
     {
       key: 4,
-      name: '红包弹窗',
+      name: '全屏广告-红包弹窗',
       rules: [
         {
           key: 0,
@@ -108,6 +117,13 @@ export default defineAppConfig({
             '[text="百亿补贴"] > View > View > @View[clickable=true] +n [text^="立即领取"]',
           snapshotUrls: 'https://i.gkd.li/import/13669963',
         },
+        {
+          key: 3,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '[id="com.xunmeng.pinduoduo:id/pdd"] View[childCount=3][clickable=false] > Image[index=0]',
+          snapshotUrls: 'https://i.gkd.li/import/13944160',
+        },
       ],
     },
     {
@@ -122,7 +138,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '多多视频悬浮窗广告',
+      name: '局部广告-多多视频悬浮窗广告',
       activityIds: ['com.xunmeng.pinduoduo.ui.activity.HomeActivity'],
       rules: [
         '@TextView[id=null][clickable=true] + Image[id=null][text="webp"]',
@@ -133,7 +149,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 7,
-      name: '多多视频每日签到弹窗',
+      name: '全屏广告-多多视频每日签到弹窗',
       activityIds: ['com.xunmeng.pinduoduo.ui.activity.HomeActivity'],
       rules: [
         '@ImageView[id=null] < ViewGroup < ViewGroup +(2) ViewGroup >(n) [text^="每日签到"]',
@@ -147,7 +163,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '商品详情页视频讲解窗口',
+      name: '局部广告-商品详情页视频讲解窗口',
       activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
       rules: '[id="com.xunmeng.pinduoduo:id/iv_float_window_close"] > TextView',
       snapshotUrls: 'https://i.gkd.li/import/13178326',
@@ -155,11 +171,10 @@ export default defineAppConfig({
     {
       enable: false,
       key: 9,
-      name: '多多视频每日自动签到',
+      name: '分段广告-多多视频每日自动签到',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
-
       activityIds: ['com.xunmeng.pinduoduo.ui.activity.HomeActivity'],
       rules: [
         {
@@ -185,7 +200,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '多多视频-划到广告自动跳过',
+      name: '全屏广告-多多视频划到广告自动跳过',
       desc: '点击返回自动刷新，从而跳过广告',
       quickFind: true,
       activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
@@ -228,6 +243,85 @@ export default defineAppConfig({
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
           matches: '[id="com.xunmeng.pinduoduo:id/pdd"] >7 [text="关闭弹窗"]',
           snapshotUrls: 'https://i.gkd.li/import/13927594',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '全屏广告-金币翻倍特权弹窗',
+      desc: '点击X',
+      rules: [
+        {
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '[id="com.xunmeng.pinduoduo:id/pdd"] ViewGroup[childCount=4] > ImageView[clickable=true][desc=null]',
+          snapshotUrls: 'https://i.gkd.li/import/13944165',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '全屏广告-红包助手打款弹窗',
+      rules: [
+        {
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '[id="com.xunmeng.pinduoduo:id/pdd"][childCount=1] >4 ImageView[id=null]',
+          snapshotUrls: 'https://i.gkd.li/import/13972251',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '全屏广告-多多视频-上滑看视频得现金弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches: '[text="上滑看视频得现金"] - [text="webp"]',
+          snapshotUrls: 'https://i.gkd.li/import/13809053',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '青少年模式',
+      desc: '点击我知道了',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      quickFind: true,
+      rules: [
+        {
+          matches:
+            '[text="青少年模式"] < FrameLayout +5 ViewGroup [text="我知道了"]',
+          snapshotUrls: 'https://i.gkd.li/import/13809053',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '通知提示-请求开启消息通知弹窗',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules:
+        'ViewGroup[vid="pdd"] >n ViewGroup[childCount=3] > @ImageView[clickable=true]',
+      snapshotUrls: 'https://i.gkd.li/import/14109435',
+    },
+    {
+      key: 18,
+      name: '全屏广告-看视频得现金弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '[vid="pdd"] > FrameLayout > ViewGroup > ViewGroup > ViewGroup > ViewGroup[childCount=3] > ViewGroup[index=0] > ImageView[clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/532b339f-066c-4b35-9ca7-cb3821dcea5f',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14305741',
+            'https://i.gkd.li/import/14317199',
+          ],
         },
       ],
     },

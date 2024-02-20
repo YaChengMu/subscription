@@ -7,11 +7,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '自动安装应用',
+      name: '功能类-自动安装应用',
       rules: [
         {
           key: 0,
-          name: '点击【继续安装】',
+          name: '点击"继续安装"',
           activityIds:
             'com.oplus.appdetail.model.guide.ui.InstallGuideActivity',
           matches:
@@ -26,14 +26,14 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '点击【完成】',
+          name: '点击"完成"',
           activityIds: 'com.oplus.appdetail.model.finish.InstallFinishActivity',
           matches: '[id="com.oplus.appdetail:id/launch_button"][text="完成"]',
           snapshotUrls: 'https://i.gkd.li/import/13038664',
         },
         {
           key: 2,
-          name: '点击【完成】',
+          name: '点击"完成"',
           activityIds: 'com.oplus.appdetail.model.finish.InstallFinishActivity',
           matches: '[id="com.oplus.appdetail:id/done_button"][text="完成"]',
           snapshotUrls: 'https://i.gkd.li/import/13054849',

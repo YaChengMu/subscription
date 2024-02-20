@@ -6,17 +6,11 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '通知权限弹窗',
+      name: '通知提示-通知权限弹窗',
       quickFind: true,
       actionMaximum: 1,
       matchTime: 30000,
       resetMatch: 'app',
-
-      activityIds: [
-        'com.xingin.xhs.index.v2.IndexActivityV2',
-        'com.xingin.xhs.notification.NotificationAuthorizationTranslucentActivity',
-        'com.xingin.matrix.notedetail.r10.comment.r10.NoteCommentActivity',
-      ],
       rules: [
         {
           matches: '@ImageView <2 FrameLayout >2 [text^="打开通知"]',
@@ -35,10 +29,10 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
       actionMaximum: 1,
-      matchTime: 30000,
+      matchTime: 10000,
       resetMatch: 'app',
       rules: [
         {
@@ -58,17 +52,17 @@ export default defineAppConfig({
     {
       enable: false,
       key: 3,
-      name: '信息流广告',
-      desc: '长按【赞助】/【广告】标识的卡片-点【不感兴趣】',
+      name: '分段广告-信息流广告',
+      desc: '长按"赞助"/"广告"标识的卡片-点"不感兴趣"',
       quickFind: true,
       activityIds: 'com.xingin.xhs.index.v2.IndexActivityV2',
       rules: [
         {
           key: 0,
           action: 'longClick',
-          name: '长按【赞助】/【广告】卡片',
+          name: '长按"赞助"/"广告"卡片',
           matches:
-            '@FrameLayout[clickable=true] > LinearLayout TextView[text="赞助"||text="广告"]',
+            '@FrameLayout[clickable=true] > LinearLayout TextView[text="赞助"||text="广告"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13455503',
             'https://i.gkd.li/import/13470690',
@@ -76,7 +70,7 @@ export default defineAppConfig({
         },
         {
           preKeys: 0,
-          name: '点【不感兴趣】',
+          name: '点"不感兴趣"',
           matches:
             'RecyclerView > @LinearLayout > TextView[text="不喜欢该内容"]',
           snapshotUrls: 'https://i.gkd.li/import/13455500',

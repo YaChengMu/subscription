@@ -27,8 +27,10 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '首页通知',
-      activityIds: ['com.ksf.yyx.MainActivity'],
+      name: '通知提示-首页公告通知',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: '[desc="了解更多"] - [desc="我知道了"]',
@@ -38,8 +40,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '插屏广告',
-
+      name: '全屏广告-插屏广告',
       activityIds: [
         'com.ksf.yyx.MainActivity',
         'com.sigmob.sdk.base.common.TransparentAdActivity',

@@ -6,15 +6,17 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '软件更新',
-      activityIds: 'com.luckin.client.main.FirstActivity',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
         '@ImageView[id="com.lucky.luckyclient:id/dismiss_btn"] - LinearLayout > ImageView[id="com.lucky.luckyclient:id/update_btn"]',
       snapshotUrls: 'https://i.gkd.li/import/12846499',
     },
     {
       key: 2,
-      name: '超值换购',
+      name: '全屏广告-超值换购弹窗',
       desc: '关闭超值换购弹窗',
       enable: false,
       activityIds: 'com.lucky.luckyclient.preview2.OrderPreviewActivity2',
@@ -24,7 +26,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '优惠卷领取提示',
+      name: '全屏广告-优惠卷领取提示',
       desc: '按下返回键关闭优惠卷领取提示',
       enable: false,
       activityIds: 'com.luckin.client.main.FirstActivity',

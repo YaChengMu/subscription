@@ -18,7 +18,7 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '评论区顶部公告横幅',
+      name: '局部广告-评论区顶部公告横幅',
       quickFind: true,
       excludeActivityIds: [
         'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3', // 直播间
@@ -33,7 +33,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '青少年模式弹窗',
+      name: '青少年模式',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -43,7 +43,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '动态推荐广告卡片',
+      name: '局部广告-动态推荐广告卡片',
       desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
       quickFind: true,
       matchDelay: 5000,
@@ -65,7 +65,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 4,
-      name: '视频底部与评论区中间卡片式广告',
+      name: '分段广告-视频底部与评论区中间卡片式广告',
       desc: '需点击二次弹窗 屏蔽原因',
       quickFind: true,
       activityIds: [
@@ -102,15 +102,10 @@ export default defineAppConfig({
     // key = 5已弃用
     {
       key: 6,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
       actionMaximum: 1,
       matchDelay: 5000,
-      activityIds: [
-        'com.bilibili.app.preferences.BiliPreferencesActivity',
-        'tv.danmaku.bili.ui.splash.ad.page.HotSplashActivity',
-        'tv.danmaku.bili.MainActivityV2',
-      ],
       rules: [
         {
           key: 1,
@@ -126,7 +121,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '视频悬浮广告',
+      name: '局部广告-视频悬浮广告',
       desc: '领取大会员月卡,B站免流星卡',
       quickFind: true,
       matchTime: 10000,
@@ -147,7 +142,7 @@ export default defineAppConfig({
     },
     {
       key: 8,
-      name: '直播间卡片广告',
+      name: '局部广告-直播间卡片广告',
       desc: '直播间底部售卖卡片-点击右上角x',
       quickFind: true,
       matchTime: 10000,
@@ -159,15 +154,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 9,
-      name: '请求通知权限弹窗',
+      name: '通知提示-请求通知权限弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'tv.danmaku.bili.MainActivityV2',
-        'com.bilibili.video.story.StoryTransparentActivity',
-      ],
       rules: '[text$="通知"] +2 * > [id="tv.danmaku.bili:id/close"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13229159',
@@ -177,33 +168,69 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '首页-推荐视频卡片广告', // 流程与 key=4 视频底部广告 基本一致
-      quickFind: true,
+      name: '分段广告-首页推荐视频卡片广告', // 流程与 key=4 视频底部广告 基本一致
       activityIds: 'tv.danmaku.bili.MainActivityV2',
       rules: [
         {
           key: 0,
           name: '点击广告卡片右下角菜单按钮',
+          actionMaximum: 1,
+          actionCd: 500,
           matches:
-            '[id="tv.danmaku.bili:id/ad_tint_frame"] [id="tv.danmaku.bili:id/more"]',
-          snapshotUrls: 'https://i.gkd.li/import/13256570',
+            'RelativeLayout[desc^="广告"] > ViewGroup[childCount=3] > FrameLayout[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/14083540',
         },
         {
-          preKeys: 0,
+          key: 3,
+          name: '点击巨幅广告卡片右下角菜单按钮',
+          actionMaximum: 1,
+          actionCd: 500,
+          matches:
+            'ViewGroup[desc^="广告"] >2 ViewGroup[childCount=3] > FrameLayout[index=2]',
+          snapshotUrls: 'https://i.gkd.li/import/14059876',
+        },
+        {
+          preKeys: [0],
           key: 1,
+          quickFind: true,
           name: '点击[不感兴趣]',
-          matches: '@RelativeLayout > [text$="不感兴趣"]',
+          matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
+            'https://i.gkd.li/import/13742257',
             'https://i.gkd.li/import/13256605',
-            'https://i.gkd.li/import/13625309',
+            'https://i.gkd.li/import/14155801',
             'https://i.gkd.li/import/13742257',
           ],
+        },
+        {
+          preKeys: [0, 3],
+          key: 4,
+          name: '点击[相似内容过多]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="相似内容过多"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/acd89b46-45fc-459f-8d17-3913d98dcbad',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13945597',
+            'https://i.gkd.li/import/14155272',
+            'https://i.gkd.li/import/14059882',
+          ],
+        },
+        {
+          preKeys: [0],
+          key: 5,
+          name: '点击[up主不感兴趣]',
+          quickFind: true,
+          matches: '@[clickable=true] > [text="up主不感兴趣"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/9c2f42d7-c262-4e06-b3c6-40f0908e7a94',
+          snapshotUrls: 'https://i.gkd.li/import/13625309',
         },
       ],
     },
     {
       key: 11,
-      name: '个性化内容推荐弹窗',
+      name: '局部广告-个性化内容推荐弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,

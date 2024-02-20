@@ -1,4 +1,21 @@
+/**
+ * 一个或者多个值类型
+ * @example
+ * const n1: IArray<number> = 1; // ✅
+ * const n2: IArray<number> = [1]; // ✅
+ * const s1: IArray<string> = 'hello'; // ✅
+ * const a2: IArray<string> = ['hello']; // ✅
+ */
 export type IArray<T> = T | T[];
+
+/**
+ * 此类型表示一个整数
+ *
+ * @example
+ * 114514 // ✅
+ * 2.5 // ❌
+ */
+export type Integer = number;
 
 type RawCommonProps = {
   /**
@@ -6,9 +23,9 @@ type RawCommonProps = {
    *
    * 当前规则的冷却时间, 或者执行 action 最小间隔
    *
-   * 默认值: 1000
+   * @default 1000
    */
-  actionCd?: number;
+  actionCd?: Integer;
 
   /**
    * 单位: 毫秒
@@ -16,7 +33,7 @@ type RawCommonProps = {
    * 延迟执行: 查询到节点->等待一段时间->再次查询到节点则执行对应 action
    *
    */
-  actionDelay?: number;
+  actionDelay?: Integer;
 
   /**
    *
@@ -58,7 +75,7 @@ type RawCommonProps = {
    * 规则准备匹配/或被唤醒时, 等待一段时间, 使此规则参与查询屏幕节点
    *
    */
-  matchDelay?: number;
+  matchDelay?: Integer;
 
   /**
    * 单位: 毫秒
@@ -68,7 +85,7 @@ type RawCommonProps = {
    * 例如某些应用的 开屏广告 的 activityId 容易误触/太广泛, 而开屏广告几乎只在应用切出来时出现, 设置一个有限匹配时间能避免后续的误触
    *
    */
-  matchTime?: number;
+  matchTime?: Integer;
 
   /**
    * 最大执行次数
@@ -80,12 +97,12 @@ type RawCommonProps = {
    * 当规则准备匹配/或被唤醒时, 将重新计算次数
    *
    */
-  actionMaximum?: number;
+  actionMaximum?: Integer;
 
   /**
-   * 默认值: `activity`
-   *
    * 当规则因为 matchTime/actionMaximum 而休眠时, 如何唤醒此规则
+   *
+   * @default 'activity'
    *
    * @example
    * 'activity'
@@ -106,7 +123,7 @@ type RawCommonProps = {
    *
    * 如果你对这个 key 的 rule 设置 actionCd=3000, 那么当这个 rule 和 本 rule 触发任意一个时, 在 3000毫秒 内两个 rule 都将进入 cd
    */
-  actionCdKey?: number;
+  actionCdKey?: Integer;
 
   /**
    * 与这个 key 的 rule 共享次数
@@ -115,7 +132,19 @@ type RawCommonProps = {
    *
    * 如果你对这个 key 的 rule 设置 actionMaximum=1, 那么当这个 rule 和 本 rule 触发任意一个时, 两个 rule 都将进入休眠
    */
-  actionMaximumKey?: number;
+  actionMaximumKey?: Integer;
+
+  /**
+   * 规则参与匹配的顺序, 数字越小越先匹配
+   *
+   * 如果两个规则 order 相同, 按照 groups 中的数组顺序匹配, app 类型规则顺序优先于 global 类型规则
+   *
+   * 属于不同订阅的规则按照订阅列表中顺序匹配, 长按订阅卡片可以拖动排序
+   *
+   * @default 0
+   *
+   */
+  order?: Integer;
 
   /**
    * 当前 规则/规则组 的快照链接, 增强订阅可维护性
@@ -138,8 +167,11 @@ type RawRuleProps = RawCommonProps & {
    *
    * 设置后不可更改, 否则造成点击记录错乱
    */
-  key?: number;
+  key?: Integer;
 
+  /**
+   * 规则组名称
+   */
   name?: string;
 
   /**
@@ -152,18 +184,19 @@ type RawRuleProps = RawCommonProps & {
    * 否则后面的规则不会触发, 也就是要求规则按顺序执行, 这是为了防止规则匹配范围太过广泛而误触
    *
    */
-  preKeys?: IArray<number>;
+  preKeys?: IArray<Integer>;
 
   /**
    * @example
    * `click`
    * // 为默认值, 如果目标节点是 clickable 的, 则使用 `clickNode`, 反之使用 `clickCenter`
+   * // 并且当 `clickNode` 事件没有被应用接收时, 则使用 `clickCenter`
    *
    * @example
    * `clickNode`
    * // 向系统发起一个点击无障碍节点事件. 即使节点在屏幕外部/或者被其它节点遮挡,也依然能够正确触发点击目标节点
    * // 但是如果目标节点不是 clickable 的, 目标 APP 通常不响应这个点击事件, 也就是点击无效果
-   * // 在极少数情况下, 即使节点是 clickable 的, APP 也不会响应节点点击事件, 此时需要手动设置 `clickCenter`
+   * // 在极少数情况下, 即使节点是 clickable 的, APP 显示接收但是不响应节点点击事件, 此时需要手动设置 `clickCenter`
    *
    * @example
    * `clickCenter`
@@ -178,6 +211,7 @@ type RawRuleProps = RawCommonProps & {
    * @example
    * `longClick`
    * // 如果目标节点是 longClickable 的, 则使用 `longClickNode`, 反之使用 `longClickCenter`
+   * // 并且当 `longClickNode` 事件没有被应用接收时, 则使用 `longClickCenter`
    *
    * @example
    * `longClickNode`
@@ -195,6 +229,17 @@ type RawRuleProps = RawCommonProps & {
     | 'longClick'
     | 'longClickNode'
     | 'longClickCenter';
+
+  /**
+   * 在使用 clickCenter/longClickCenter 时的自定义点击位置
+   *
+   * 默认坐标为节点中心
+   *
+   * 如果计算出的坐标不在屏幕内部, 当作未匹配
+   *
+   * @version 1.7.0
+   */
+  position?: Position;
 
   /**
    * 一个或者多个合法的 GKD 选择器, 如果每个选择器都能匹配上节点, 那么点击最后一个选择器的目标节点
@@ -217,9 +262,16 @@ type RawGroupProps = RawCommonProps & {
    *
    * key 没有顺序大小之分, 可以是任意数字
    */
-  key: number;
+  key: Integer;
 
+  /**
+   * 规则组名称
+   */
   name: string;
+
+  /**
+   * 规则组描述
+   */
   desc?: string;
 
   /**
@@ -228,6 +280,18 @@ type RawGroupProps = RawCommonProps & {
    * 仅对于本仓库的规则而言, 除开屏广告外, 其它规则默认禁用
    */
   enable?: boolean;
+
+  /**
+   * 其它 group 的 key, 允许将目标组的所有 rule 添加到当前组的作用域
+   *
+   * 假设 group1{key=1} 有一个 rule1{key=11}, group2{key=2} 有 rule2{key=22}, rule3{key=23}
+   *
+   * 如果 group1 的 scopeKeys=[2] 并且 group2 没有被禁用, 那么 rule1 的 preKeys/actionCdKey/actionMaximumKey 可以是 11/22/23
+   *
+   * 如果存在相同 key 的 rule, 优先使用本组的 rule, 其次按 scopeKeys 的顺序查找其它组的 rule
+   *
+   */
+  scopeKeys?: IArray<Integer>;
 
   // rules: RawRuleProps[];
 };
@@ -246,6 +310,118 @@ type RawAppRuleProps = {
    * 优先级高于 activityIds
    */
   excludeActivityIds?: IArray<string>;
+
+  /**
+   * 如果应用版本名称包含在此列表中, 则匹配
+   *
+   * @version 1.7.0
+   */
+  versionNames?: IArray<string>;
+
+  /**
+   * 如果应用版本名称包含在此列表中, 则排除匹配, 优先级高于 versionNames
+   *
+   * @version 1.7.0
+   */
+  excludeVersionNames?: IArray<string>;
+
+  /**
+   * 如果应用版本代码包含在此列表中, 则匹配
+   *
+   * @version 1.7.0
+   */
+  versionCodes?: IArray<Integer>;
+
+  /**
+   * 如果应用版本代码包含在此列表中, 则排除匹配, 优先级高于 versionCodes
+   *
+   * @version 1.7.0
+   */
+  excludeVersionCodes?: IArray<Integer>;
+};
+
+/**
+ * 位置类型, 用以描述自定义点击位置
+ *
+ * 使用 left/top/right/bottom 实现定位, 此对象只能有两个属性
+ *
+ * 合法的定位组合为: left-top, left-bottom, right-top, right-bottom
+ *
+ * 示例1-点击目标节点的中心
+ * ```json5
+ * {
+ *  left: 'width/2',
+ *  top: 'height/2',
+ * }
+ * ```
+ *
+ * 示例2-点击目标节点的左上顶点
+ * ```json5
+ * {
+ *  left: 0,
+ *  top: 0,
+ * }
+ * ```
+ *
+ * 示例2-点击目标节点的右上区域
+ * - https://i.gkd.li/import/14112390
+ * - https://i.gkd.li/import/14319672
+ * - https://github.com/gkd-kit/gkd/assets/38517192/2cac0614-5eba-48a1-9149-4e564cb79945
+ * ```json5
+ * {
+ *  right: 'width*0.1352',
+ *  top: 'width*0.0852',
+ * }
+ * ```
+ * 
+ * 相对坐标计算公式，以width属性为例（选择目标节点某一个不变的属性即可）
+ * K为系数，需要计算出具体数值或使用字符串类型填写数学表达式
+ * W为鼠标悬停在快照截图上时左边的数值，H为鼠标悬停在快照截图上时右边的数值
+
+ * right : 'width * K',
+ * K = ( |需要点击的节点W-目标节点right| ) / 目标节点width
+
+ * left : 'width * K',
+ * K = ( |需要点击的节点W-目标节点left| ) / 目标节点width
+
+ * top : 'width * K',
+ * K = ( |需要点击的节点H-目标节点top| ) / 目标节点width
+
+ * bottom : 'width * K',
+ * K = ( |需要点击的节点H-目标节点bottom| ) / 目标节点width
+ */
+export type Position = {
+  /**
+   * 距离目标节点左边的距离
+   *
+   * 方向: 边 -> 节点中心, 负数表示反方向(也可点击节点外部区域)
+   *
+   * 支持两种值类型, 字符串和数字, 数字等价于相同内容的字符串, 如 2.5 等价于 '2.5'
+   *
+   * 字符串类型支持来自快照属性面板上的 left/top/right/bottom/width/height 的数学计算表达式
+   *
+   * @example
+   * 2.5 // ✅
+   * '2.5' // ✅
+   * '2.5 + 1 - 2 * 3 / 4 ^ 5 % 6' // ✅
+   * '(right + left) / 2' // ✅
+   */
+  left?: string | number;
+
+  /**
+   * 距离目标节点上边的距离
+   */
+  top?: string | number;
+
+  /**
+   * 距离目标节点右边的距离
+   */
+  right?: string | number;
+
+  /**
+   * 距离目标节点下边的距离
+   */
+  bottom?: string | number;
 };
 
 // <--全局规则相关--
@@ -279,6 +455,13 @@ type RawGlobalRuleProps = {
    */
   matchLauncher?: boolean;
 
+  /**
+   * 默认值: `false`
+   *
+   * 是否匹配系统应用, 仅全局规则可用
+   */
+  matchSystemApp?: boolean;
+
   apps?: RawGlobalApp[];
 };
 
@@ -286,7 +469,7 @@ type RawGlobalRule = RawRuleProps & RawGlobalRuleProps;
 
 export type RawGlobalGroup = RawGroupProps &
   RawGlobalRuleProps & {
-    apps: RawGlobalApp[];
+    apps?: RawGlobalApp[];
     rules: RawGlobalRule[];
   };
 // --全局规则相关-->
@@ -298,7 +481,7 @@ export type RawCategory = {
    *
    * 也是客户端禁用/启用此分类组的依据
    */
-  key: number;
+  key: Integer;
 
   /**
    * 分类名称
@@ -331,6 +514,9 @@ export type RawAppGroup = RawGroupProps &
   };
 
 export type RawApp = {
+  /**
+   * 应用包名
+   */
   id: string;
 
   /**
@@ -338,6 +524,9 @@ export type RawApp = {
    */
   name?: string;
 
+  /**
+   * 此应用的规则组列表
+   */
   groups: RawAppGroup[];
 
   /**
@@ -357,7 +546,7 @@ export type RawSubscription = {
    *
    * 负数订阅由 APP 内部使用, 如本地订阅是 -2, 内存订阅是 -1
    */
-  id: number;
+  id: Integer;
 
   /**
    * 订阅的名称
@@ -369,8 +558,11 @@ export type RawSubscription = {
    *
    * 只有当新订阅的 version 大于本地旧订阅的 version 才执行更新替换本地
    */
-  version: number;
+  version: Integer;
 
+  /**
+   * 作者名称
+   */
   author?: string;
 
   /**
@@ -394,8 +586,19 @@ export type RawSubscription = {
    */
   checkUpdateUrl?: string;
 
+  /**
+   * 此订阅的全局规则组列表
+   */
   globalGroups?: RawGlobalGroup[];
+
+  /**
+   * 此订阅的应用规则分类列表
+   */
   categories?: RawCategory[];
+
+  /**
+   * 此订阅的应用列表
+   */
   apps?: RawApp[];
 };
 

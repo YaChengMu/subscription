@@ -5,15 +5,27 @@ export default defineAppConfig({
   name: '小组件盒子',
   groups: [
     {
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules:
+        'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
+      snapshotUrls: 'https://i.gkd.li/import/14204126',
+    },
+    {
       key: 1,
-      name: '更新弹窗',
-      activityIds: 'io.iftech.android.box.main.HomeActivity',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[text*="新版本"] +(2) [text="取消"]',
       snapshotUrls: 'https://i.gkd.li/import/12706195',
     },
     {
       key: 2,
-      name: '第三方 SDK 广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           name: '穿山甲',
@@ -55,7 +67,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '会员限时优惠弹窗',
+      name: '全屏广告-会员限时优惠弹窗',
       activityIds: 'io.iftech.android.box.main.HomeActivity',
       rules:
         '@[id="io.iftech.android.box:id/ivClose"] + [text^="限时"][text$="特惠"]',

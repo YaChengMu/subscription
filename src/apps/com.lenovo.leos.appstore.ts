@@ -6,7 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -16,9 +17,10 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '请求通知权限弹窗',
-      activityIds:
-        'com.lenovo.leos.appstore.activities.NotificationGuideActivity',
+      name: '通知提示-请求通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules: '[text$="打开应用中心通知"] +n [text="知道了"]',
       snapshotUrls: 'https://i.gkd.li/import/13401991',

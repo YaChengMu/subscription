@@ -32,8 +32,8 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '消息页面-顶部广告',
-      desc: '规则误触,待修复,需要快照准确定位', // 当从聊天界面点击链接进入网页时会误触
+      name: '局部广告-消息页面顶部横幅广告',
+      desc: '点击关闭',
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: [
         {
@@ -60,6 +60,18 @@ export default defineAppConfig({
             'ImageView + RelativeLayout[childCount=2] > TextView[text!=null] + ImageView',
           snapshotUrls: 'https://i.gkd.li/import/13476400',
         },
+        {
+          key: 3,
+          name: '稀有龙鹅卡掉落/瓜分现金',
+          matches:
+            'RelativeLayout[childCount=2] > ImageView + RelativeLayout[childCount=2] > ImageView',
+          exampleUrls:
+            'https://m.gkd.li/57941037/3922e10b-ed7e-41c0-955c-88189876548d',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14155603',
+            'https://i.gkd.li/import/14217033',
+          ],
+        },
       ],
     },
     {
@@ -80,18 +92,10 @@ export default defineAppConfig({
           ],
         },
         {
-          preKeys: 0,
           key: 1,
-          activityIds: [
-            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
-            'com.tencent.mobileqq.activity.SplashActivity',
-          ],
-          quickFind: true,
-          matches: '@[clickable=true] > ImageView + [text="关闭此条广告"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12840889',
-            'https://i.gkd.li/import/13831867', //activityId: 'com.tencent.mobileqq.activity.SplashActivity'
-          ],
+          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+          matches: '[desc="广告 展开 按钮"] > [desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/import/14138572',
         },
         {
           preKeys: 0,
@@ -120,11 +124,26 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13627967',
           ],
         },
+        {
+          preKeys: [0, 1],
+          key: 4,
+          activityIds: [
+            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
+            'com.tencent.mobileqq.activity.SplashActivity',
+          ],
+          quickFind: true,
+          matches: '@[clickable=true] >(1,2) ImageView + [text="关闭此条广告"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12840889',
+            'https://i.gkd.li/import/13831867', //activityId: 'com.tencent.mobileqq.activity.SplashActivity'
+            'https://i.gkd.li/import/14138571',
+          ],
+        },
       ],
     },
     {
       key: 3,
-      name: '频道页面广告',
+      name: '全屏广告-频道页面广告',
       rules: [
         {
           name: '弹窗广告',
@@ -152,7 +171,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 4,
-      name: '顶部SVIP广告',
+      name: '局部广告-顶部SVIP广告',
       desc: '消息界面-搜索框和消息记录之间的广告卡片,点击关闭右侧x',
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules:
@@ -168,7 +187,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 5,
-      name: '好友热播',
+      name: '局部广告-动态页好友热播',
       desc: '好友动态中的好友热播，自动选择“减少好友热播” - 默认关闭',
       activityIds: [
         'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
@@ -197,7 +216,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '扫一扫-登录确认',
+      name: '功能类-扫一扫登录确认',
       desc: '自动点击登录。包括 PC 登录确认、QQ 互联登录确认。',
       quickFind: true,
       rules: [
@@ -230,7 +249,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '消息页面顶部-无法接收新消息通知',
+      name: '功能类-消息页面顶部"无法接收新消息通知"',
       desc: '消息界面-搜索框和消息记录之间的通知卡片,点击关闭右侧x',
       activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: 'RelativeLayout > [text^="当前无法接收"] + ImageView',
@@ -238,7 +257,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '我的等级-浮窗广告',
+      name: '局部广告-我的等级页面浮窗广告',
       activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
       rules:
         'TextView[text="QQ等级规则"] + View > TextView[id=null&&text.length=0]',
@@ -247,7 +266,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '自动勾选原图',
+      name: '功能类-自动勾选原图',
       desc: '发送图片时自动勾选原图',
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
@@ -265,7 +284,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '自动查看原图',
+      name: '功能类-自动查看原图',
       desc: '查看图片时自动点击原图',
       activityIds: 'com.tencent.richframework.gallery.QQGalleryActivity',
       rules: '[desc="查看原图"][checked=false]',
@@ -277,7 +296,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 12,
-      name: 'QQ小世界评论区广告',
+      name: '局部广告-QQ小世界评论区广告',
       desc: '点击广告-弹出原因框-关闭此条广告',
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
@@ -300,7 +319,7 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: 'QQ小程序开屏广告',
+      name: '开屏广告-QQ小程序开屏广告',
       desc: '点击右下角跳过',
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
@@ -319,7 +338,7 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '黄钻-弹窗广告',
+      name: '全屏广告-黄钻页面弹窗广告',
       activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
       rules:
         'TextView[text.length=0&&clickable=true&&visibleToUser=true] + View > Button[text.length=0&&focusable=true]',
@@ -331,9 +350,8 @@ export default defineAppConfig({
     {
       enable: false,
       key: 15,
-      name: '好友动态-为你推荐',
+      name: '局部广告-好友动态页面"为你推荐"',
       quickFind: true,
-
       activityIds: [
         'com.tencent.mobileqq.activity.SplashActivity',
         'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
@@ -361,7 +379,8 @@ export default defineAppConfig({
     },
     {
       key: 17,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '@[desc="关闭"] - ViewGroup > [text="立即体验"||text="立即升级"]',
@@ -375,33 +394,33 @@ export default defineAppConfig({
       enable: false,
       key: 18,
       name: '更新提示-消息页面-顶部',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           key: 0,
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
-          quickFind: true,
-          matches: '[id="com.tencent.mobileqq:id/iyx"]',
+          matches:
+            '[text*="版本更新" || text*="点击下载"] + ImageView[clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/import/13188722',
             'https://i.gkd.li/import/13255493', //desc值为null快照
             'https://i.gkd.li/import/13843140', //关系选择器为-2快照
+            'https://i.gkd.li/import/14138340',
+            'https://i.gkd.li/import/13931212',
           ],
-        },
-        {
-          key: 1,
-          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
-          matches:
-            '[text="发现QQ版本更新"] + [text="点击下载"] + ImageView[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13931212',
         },
       ],
     },
     {
       enable: false,
       key: 19,
-      name: '内测邀请弹窗',
+      name: '更新提示-内测邀请弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
       rules: [
         {
           key: 0,
@@ -411,37 +430,218 @@ export default defineAppConfig({
       ],
     },
     {
-      enable: false,
       key: 20,
-      name: '钱包-卡片广告',
-      quickFind: true,
-      activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+      name: '分段广告-钱包页卡片广告',
       rules: [
         {
           key: 0,
+          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+          quickFind: true,
           matches: 'ViewGroup[childCount=6] > [text="广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/13695087'],
+          snapshotUrls: 'https://i.gkd.li/import/13695087',
         },
         {
-          preKeys: 0,
           key: 1,
+          activityIds: 'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
+          matches: '@View[visibleToUser=true] > [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/14231489',
+        },
+        {
+          preKeys: [0, 1],
+          key: 2,
+          activityIds: 'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
+          quickFind: true,
           matches: '@LinearLayout > [text="关闭此条广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/13699701'],
+          snapshotUrls: 'https://i.gkd.li/import/13699701',
         },
       ],
     },
     {
       key: 21,
-      name: '首页广告弹窗',
+      name: '全屏广告-首页广告弹窗',
+      activityIds: 'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
       rules: [
         {
           key: 0,
           name: '元梦之星广告弹窗',
-          activityIds:
-            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
           matches:
             'ViewGroup[childCount=2] > ViewGroup[childCount=3][index=1] > ViewGroup[clickable=true][visibleToUser=true][index=1][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/import/13797876',
+        },
+        {
+          key: 1,
+          name: '现金瓜分弹窗',
+          matches:
+            'RelativeLayout >5 ViewGroup[childCount=6] > ViewGroup[index=2][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/a9fe74db-07b4-47e6-beed-80983f61d2e3',
+          snapshotUrls: 'https://i.gkd.li/import/14207286',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '分段广告-天气页卡片广告',
+      desc: '点击关闭-点击关闭此条广告',
+      quickFind: true,
+      activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[id="com.tencent.mobileqq:id/nca"]',
+          snapshotUrls: 'https://i.gkd.li/import/14019384',
+        },
+        {
+          preKeys: 0,
+          key: 1,
+          matches: '@LinearLayout[childCount=3] > [text="关闭此条广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/14019401',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '全屏广告-新春回馈礼弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          action: 'clickCenter',
+          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+          matches:
+            'RelativeLayout[childCount=4] > View + RelativeLayout[childCount=2] + ImageView + ImageView',
+          exampleUrls:
+            'https://m.gkd.li/57941037/b09d6db6-0e67-421a-aa7d-35453bf9a0bc',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14134934',
+            'https://i.gkd.li/import/14151820', // 误触快照
+          ],
+        },
+      ],
+    },
+    {
+      key: 24,
+      name: '局部广告-聊天页面广告',
+      rules: [
+        {
+          key: 0,
+          name: '集福卡活动卡片',
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
+          matches: '@ImageView[clickable=true] -2 [text$="会员月卡"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/3bf709fc-eefc-4d66-9a00-475738934cd7',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14178667',
+            'https://i.gkd.li/import/14193973', // 误触界面
+            'https://i.gkd.li/import/14235146', // 误触界面
+          ],
+        },
+        {
+          key: 1,
+          name: '开福袋浮层广告',
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
+          matches:
+            'FrameLayout > FrameLayout > FrameLayout[childCount=2] > TextView[text="跳过"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/4cf5bc02-d2c3-4ca4-833e-522a194e3131',
+          snapshotUrls: 'https://i.gkd.li/import/14183188',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '全屏广告-个人主页广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          action: 'back',
+          activityIds:
+            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
+          matches: '[text="开启迷你窝"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/882ab889-a145-4951-9a44-1dc192490c79',
+          snapshotUrls: 'https://i.gkd.li/import/14188980',
+        },
+      ],
+    },
+    {
+      key: 26,
+      name: '全屏广告-腾讯文档页面-"使用App"弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds:
+            'com.tencent.mobileqq.activity.TeamWorkDocEditBrowserActivity',
+          matches:
+            '[id="com.tencent.mobileqq:id/webview"] >3 View[childCount=14] > View[index=8] > View > TextView[clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/6efc2dfd-79f3-43b5-bf20-f59a88295ddb',
+          snapshotUrls: 'https://i.gkd.li/import/14188983',
+        },
+      ],
+    },
+    {
+      key: 27,
+      name: '功能类-自动抢红包',
+      desc: '自己发的红包、专属红包、口令红包、私聊红包不抢',
+      activityIds: [
+        'com.tencent.mobileqq.activity.SplashActivity',
+        'cooperation.qwallet.plugin.QWalletToolFragmentActivity',
+      ],
+      rules: [
+        {
+          key: 0,
+          matches:
+            'ImageView <<2 FrameLayout +2 * >3 TextView[text*="红包"] - @ViewGroup[childCount=5] > TextView[text!="已领取"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/7a933a7f-dc5a-4eb7-8a6f-fe3cc4e8fb5e',
+          snapshotUrls: 'https://i.gkd.li/import/14221309',
+        },
+        {
+          preKeys: 0,
+          key: 1,
+          matches: '@[desc="拆红包"] - RelativeLayout > [text!=null]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/61006833-9806-45b2-b3a1-55b9b248958f',
+          snapshotUrls: 'https://i.gkd.li/import/14221242',
+        },
+        {
+          preKeys: 1,
+          key: 2,
+          quickFind: true,
+          matches: '@[desc="返回"] + [text="红包记录"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/b90e6a69-ac57-41a5-bd2c-c500b92a58ba',
+          snapshotUrls: 'https://i.gkd.li/import/14221279',
+        },
+      ],
+    },
+    {
+      key: 28,
+      name: '全屏广告-账号信息页面-新人SVIP领取弹窗',
+      activityIds: 'com.tencent.mobileqq.activity.QPublicFragmentActivity',
+      rules: '[childCount=3] > [desc*="活动"] + [desc^="关闭"][clickable=true]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/14217758',
+        'https://i.gkd.li/import/14217783',
+      ],
+    },
+    {
+      key: 29,
+      name: '功能类-申请入群后自动点击右上角关闭',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
+          matches: 'RelativeLayout[childCount=2] > [text="关闭"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030',
+          snapshotUrls: 'https://i.gkd.li/import/14235163',
         },
       ],
     },

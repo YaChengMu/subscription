@@ -1,8 +1,12 @@
 # 汽水音乐
 
-存在 2 规则组 - [com.luna.music](/src/apps/com.luna.music.ts)
+存在 5 规则组 - [com.luna.music](/src/apps/com.luna.music.ts)
 
-## VIP弹窗
+## 开屏广告
+
+- [快照-0](https://i.gkd.li/import/14232395)
+
+## 全屏广告-VIP弹窗
 
 默认禁用 - 直接关闭所有底部半屏弹窗
 
@@ -14,10 +18,23 @@
 - [快照-5](https://i.gkd.li/import/13660652)
 - [快照-6](https://i.gkd.li/import/13674376)
 
-## 看广告视频拿VIP
+## 功能类-看广告视频拿VIP
 
-默认禁用 - 30s广告后点击【跳过】
+默认禁用 - 30s广告后点击"跳过"
 
 - [快照-0](https://i.gkd.li/import/13611006)
 - [快照-1](https://i.gkd.li/import/13613085)
 - [快照-2](https://i.gkd.li/import/13613184)
+
+## 全屏广告-看广告获取听歌时长
+
+默认禁用 - 点击领取成功-点击坚持退出
+
+- [快照-0](https://i.gkd.li/import/13945430)
+- [快照-1](https://i.gkd.li/import/13945459)
+
+## 功能类-看视频免费听弹窗
+
+默认禁用 - 点击【立得全天畅听】
+
+- [快照-0](https://i.gkd.li/import/14237527)

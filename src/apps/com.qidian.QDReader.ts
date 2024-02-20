@@ -6,8 +6,9 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
@@ -24,7 +25,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '青少年模式弹窗',
+      name: '青少年模式',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -38,7 +39,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '活动弹窗',
+      name: '全屏广告-活动弹窗',
       activityIds: [
         'com.qidian.QDReader.ui.activity.MainGroupActivity',
         'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
@@ -56,16 +57,18 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '请求通知权限提示信息',
+      name: '通知提示-请求通知权限提示信息',
       desc: '点击顶部提醒左侧x按钮',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.afollestad.materialdialogs.MaterialDialog',
       rules: '@[id="com.qidian.QDReader:id/ivClose"] + [text^="开启推送"]',
       snapshotUrls: 'https://i.gkd.li/import/12640242',
     },
     {
       key: 5,
-      name: '悬浮广告',
+      name: '局部广告-悬浮广告',
       rules: [
         {
           key: 0,
@@ -89,8 +92,8 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '起点中文网登录自动确认',
-      desc: '自动点击【登录】',
+      name: '功能类-起点中文网登录自动确认',
+      desc: '自动点击"登录"',
       activityIds: 'com.qidian.QDReader.ui.activity.QDBrowserActivity',
       rules: '[id="scanLogin"]',
       snapshotUrls: 'https://i.gkd.li/import/12903081',
@@ -98,16 +101,16 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '信息流广告',
-      desc: '自动点击【x】',
+      name: '局部广告-信息流广告',
+      desc: '自动点击"x"',
       activityIds: 'com.qidian.QDReader.flutter.DailyReadingMainPageActivity',
       rules: 'View[desc="更多游戏"] - ImageView[clickable=true]',
       snapshotUrls: 'https://i.gkd.li/import/13406169',
     },
     {
       key: 12,
-      name: '福利中心-我知道了',
-      desc: '福利中心看视频后获得奖励，自动点击“我知道了”',
+      name: '功能类-福利中心看视频后获得奖励',
+      desc: '自动点击“我知道了”',
       activityIds: 'com.qidian.QDReader.ui.activity.QDBrowserActivity',
       actionMaximum: 1,
       resetMatch: 'activity',

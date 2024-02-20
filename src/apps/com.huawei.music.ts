@@ -7,7 +7,9 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
-      activityIds: ['com.android.mediacenter.PageActivity'],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: '[id="com.huawei.hms.ads.uiengine:id/hiad_skip_text"]',
@@ -37,7 +39,7 @@ export default defineAppConfig({
     // },
     {
       key: 2,
-      name: '广告反馈下拉窗',
+      name: '分段广告-广告反馈下拉窗',
       quickFind: true,
       activityIds: ['com.huawei.openalliance.ad.activity.FeedbackActivity'],
       rules: [
@@ -57,7 +59,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '播放界面直播浮窗',
+      name: '局部广告-播放界面直播浮窗',
       quickFind: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
@@ -70,7 +72,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '播放（音乐、视频）页面广告',
+      name: '局部广告-播放（音乐、视频）页面广告',
       quickFind: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
@@ -87,7 +89,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '评论区广告',
+      name: '局部广告-评论区广告',
       quickFind: true,
       activityIds: [
         'com.android.mediacenter.comment.ui.CommentListMainActivity',
@@ -101,7 +103,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '视频播放页广告反馈',
+      name: '分段广告-视频播放页广告反馈',
       quickFind: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
@@ -116,7 +118,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '播放器上滑广告',
+      name: '局部广告-播放器上滑广告',
       quickFind: true,
       activityIds: ['com.android.mediacenter.MainActivity'],
       rules: [
@@ -128,6 +130,37 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13194163', // 避免在此规则误触
             'https://i.gkd.li/import/13263590', // visibleToUser
           ],
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '全屏广告-弹窗广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.android.mediacenter.PageActivity',
+          matches: '[vid="campaign_dialog_close_image_view"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/00c83449-9809-4de8-9c7c-c6ce1b9fa2c3',
+          snapshotUrls: 'https://i.gkd.li/import/14193738',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '局部广告-"我的"页面卡片广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.android.mediacenter.MainActivity',
+          matches:
+            'RelativeLayout[childCount=2] + * [vid="close_radio_camp_button"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/b205c209-07c9-49e1-b72d-f9b31d9bc2d9',
+          snapshotUrls: 'https://i.gkd.li/import/14193767',
         },
       ],
     },

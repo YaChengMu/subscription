@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 3,
-      name: '兴趣领域推荐',
+      name: '全屏广告-兴趣领域推荐',
       desc: '出现在长久未登录的账户再次登录时',
       quickFind: true,
       activityIds: 'com.sina.weibo.account.interest.InterestActivity',
@@ -17,7 +17,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '精选博主推荐',
+      name: '全屏广告-精选博主推荐',
       desc: '出现在长久未登录的账户再次登录时',
       quickFind: true,
       activityIds: 'com.sina.weibo.account.recommend.RecommendActivity',
@@ -32,7 +32,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '博文内容区与评论区中间卡片式广告',
+      name: '局部广告-博文内容区与评论区中间卡片式广告',
       desc: '点击右上角x',
       quickFind: true,
       rules: [
@@ -51,13 +51,6 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13635551',
         },
         {
-          key: 2,
-          activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
-          matches:
-            '[id="com.sina.weibo:id/corner_marker_view"] >2 [id="com.sina.weibo:id/right_top_tag"]',
-          snapshotUrls: 'https://i.gkd.li/import/12673051',
-        },
-        {
           key: 3,
           activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
           matches:
@@ -69,7 +62,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 6,
-      name: '评论区博主内容推荐',
+      name: '局部广告-评论区博主内容推荐',
       desc: '评论区同一博主其他博文推荐',
       quickFind: true,
       rules: [
@@ -99,7 +92,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '首页顶部话题分享窗口',
+      name: '局部广告-首页顶部话题分享窗口',
       quickFind: true,
       activityIds: ['com.sina.weibo.MainTabActivity'],
       rules:
@@ -108,7 +101,7 @@ export default defineAppConfig({
     },
     {
       key: 8,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -138,10 +131,12 @@ export default defineAppConfig({
     {
       enable: false,
       key: 9,
-      name: '请求开启通知弹窗',
+      name: '通知提示-请求开启通知弹窗',
       desc: '自动点击暂不开启',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: ['com.sina.weibo.notifyguidev2.NotifyGuideV2Activity'],
       rules:
         '@[id="com.sina.weibo:id/bt_cancel"][text="暂不开启"] + [id="com.sina.weibo:id/bt_confirm"]',
       snapshotUrls: ['https://i.gkd.li/import/12705979'],
@@ -149,10 +144,12 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '请求开启通知提示信息',
+      name: '通知提示-请求开启通知提示信息',
       desc: '自动点击x按钮',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: ['com.sina.weibo.MainTabActivity'],
       rules:
         '[text^="打开通知"] < LinearLayout + ImageView[id="com.sina.weibo:id/right_icon"]',
       snapshotUrls: ['https://i.gkd.li/import/12705986'],
@@ -160,7 +157,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '首页顶部签到卡片',
+      name: '局部广告-首页顶部签到卡片',
       desc: '自动点击x按钮',
       quickFind: true,
       activityIds: ['com.sina.weibo.MainTabActivity'],
@@ -170,7 +167,7 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '悬浮广告',
+      name: '局部广告-悬浮广告',
       desc: '自动点击x按钮',
       quickFind: true,
       activityIds: 'com.sina.weibo.MainTabActivity',
@@ -197,15 +194,12 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '请求定位权限弹窗',
+      name: '定位提示-请求定位权限弹窗',
       quickFind: true,
       rules: [
         {
           key: 0,
-          activityIds: [
-            'com.sina.weibo.MainTabActivity',
-            'com.sina.weibo.utils.WeiboDialog$CustomDialog',
-          ],
+          actionMaximum: 1,
           matches: '@[text="以后再说"] + * + [text="去开启"]',
           snapshotUrls: [
             'https://i.gkd.li/import/13218093',
@@ -214,7 +208,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          activityIds: 'com.sina.weibo.MainTabActivity',
+          actionMaximumKey: 0,
           matches:
             '@[id="com.sina.weibo:id/btn_close"] +2 [text="使用您的位置信息"]',
           snapshotUrls: 'https://i.gkd.li/import/13255595',
@@ -223,8 +217,8 @@ export default defineAppConfig({
     },
     {
       key: 15,
-      name: '评论区底部-账号推荐关注悬浮窗',
-      desc: '点击【x】',
+      name: '局部广告-评论区底部账号推荐关注悬浮窗',
+      desc: '点击"x"',
       quickFind: true,
       activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
       rules:
@@ -233,8 +227,8 @@ export default defineAppConfig({
     },
     {
       key: 16,
-      name: '评论区底部-转发推荐悬浮窗',
-      desc: '点击【x】',
+      name: '局部广告-评论区底部转发推荐悬浮窗',
+      desc: '点击"x"',
       quickFind: true,
       activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
       rules:
@@ -244,32 +238,50 @@ export default defineAppConfig({
     {
       key: 17,
       quickFind: true,
-      name: '分段广告-评论区信息流广告',
-      desc: '点击X-点击不感兴趣',
+      name: '分段广告-信息流广告',
+      desc: '点击X-点击"不感兴趣"/"不想看到此类内容"',
+      activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
+          name: '点击关闭',
           matches: '[text="广告"] + [id="com.sina.weibo:id/iv_close_icon"]',
           snapshotUrls: 'https://i.gkd.li/import/13852321',
         },
         {
-          preKeys: 0,
           key: 1,
           activityIds: 'com.sina.weibo.feed.DetailWeiboActivity',
+          matches: '[vid="corner_marker_view"] >2 [vid="right_top_tag"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12673051',
+            'https://i.gkd.li/import/14210775',
+          ],
+        },
+        {
+          preKeys: 0,
+          key: 90,
+          name: '点击"不感兴趣"',
           matches: '[text="不感兴趣"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/13852322',
+        },
+        {
+          preKeys: [0, 1],
+          key: 91,
+          name: '点击"不想看到此类内容"',
+          matches:
+            '@LinearLayout[index=1][clickable=true] >2 [text="不想看到此类内容"]',
+          snapshotUrls: 'https://i.gkd.li/import/13958782',
         },
       ],
     },
     {
       key: 18,
-      name: 'APP评分弹窗',
-      desc: '点击【x】',
+      name: '评价提示-APP评分弹窗',
+      desc: '点击"x"',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: 'com.sina.weibo.MainTabActivity',
       rules: '@[text="不了，谢谢"] +4 [text="喜欢，给好评"]',
       snapshotUrls: 'https://i.gkd.li/import/13620220',
     },
@@ -282,6 +294,20 @@ export default defineAppConfig({
           activityIds: 'com.sina.weibo.photoalbum.imageviewer.ImageViewer',
           matches: '@LinearLayout >3 [vid="tv_dialog_item"][text^="原图"]',
           snapshotUrls: 'https://i.gkd.li/import/13929119',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '全屏广告-最热钻超弹窗',
+      desc: '点击X',
+      quickFind: true,
+      rules: [
+        {
+          activityIds: 'com.sina.weibo.feed.MPDialogActivity',
+          matches:
+            '@Image[text="close"] < View[childCount=4] <2 * <<n [id="com.sina.weibo:id/container"]',
+          snapshotUrls: 'https://i.gkd.li/import/14033735',
         },
       ],
     },

@@ -6,18 +6,16 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '青少年模式弹窗',
-      activityIds: [
-        'com.hunantv.imgo.activity.MainActivity',
-        'miuix.appcompat.app.m',
-      ],
+      name: '青少年模式',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
         '[id="com.hunantv.imgo.activity:id/llSetAgeMode"] + [id="com.hunantv.imgo.activity:id/btnIknow"]',
       snapshotUrls: 'https://i.gkd.li/import/12832447',
     },
     {
       key: 1,
-      name: '首页推荐流-卡片广告',
+      name: '分段广告-首页推荐广告',
       activityIds: 'com.hunantv.imgo.activity.MainActivity',
       rules: [
         {
@@ -36,7 +34,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -63,7 +61,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '右侧悬浮广告',
+      name: '局部广告-右侧悬浮广告',
       activityIds: 'com.hunantv.imgo.activity.MainActivity',
       rules: [
         {
@@ -77,6 +75,22 @@ export default defineAppConfig({
           matches:
             '@[id="com.hunantv.imgo.activity:id/iv_float_close"] + [id="com.hunantv.imgo.activity:id/iv_float_content"]',
           snapshotUrls: 'https://i.gkd.li/import/12818481',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '全屏广告-视频播放时的广告',
+      desc: '点击[关闭广告]',
+      rules: [
+        {
+          key: 0,
+          quickFind: true,
+          activityIds: 'com.mgtv.ui.videoplay.MGVideoPlayActivity',
+          matches: '[text="关闭广告"][clickable=true][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/386d0906-f81f-43d2-af7f-adc3ab0ea5a6',
+          snapshotUrls: 'https://i.gkd.li/import/14322017',
         },
       ],
     },

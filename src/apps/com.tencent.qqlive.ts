@@ -22,11 +22,16 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12910953',
           ],
         },
+        {
+          action: 'clickCenter',
+          matches: 'TextView[text*="跳过"][text.length<=10]',
+          snapshotUrls: 'https://i.gkd.li/import/14049316',
+        },
       ],
     },
     {
       key: 1,
-      name: '青少年模式弹窗',
+      name: '青少年模式',
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -35,7 +40,8 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules:
@@ -47,7 +53,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '卡片式广告',
+      name: '分段广告-卡片式广告',
       rules: [
         {
           key: 0,
@@ -111,12 +117,30 @@ export default defineAppConfig({
             'ImageView[childCount=0] <<2 RelativeLayout + FrameLayout + RelativeLayout > RelativeLayout > RelativeLayout > ImageView',
           snapshotUrls: 'https://i.gkd.li/import/13426421',
         },
+        {
+          key: 6,
+          quickFind: true,
+          matches: '[id="com.tencent.qqlive:id/feed_icon"][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/42013a93-fb12-4747-92e0-95f5028eb8e5',
+          snapshotUrls: 'https://i.gkd.li/import/14318802',
+        },
         // 以下是配合本规则组内其他key使用的规则，反馈界面的规则都是一样的
+        {
+          preKeys: 6,
+          key: 96,
+          quickFind: true,
+          matches:
+            '[id="com.tencent.qqlive:id/ad_feed_back_dislike"][clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/8746fdc8-828e-42bb-9160-8e67b7af2dc7',
+          snapshotUrls: 'https://i.gkd.li/import/14318811',
+        },
         {
           key: 97,
           name: '广告反馈卡片-点击不感兴趣',
           activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
-          matches: 'LinearLayout > [text="不感兴趣"]',
+          matches: '@FrameLayout[clickable=true] >3 [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13695084',
         },
         {
@@ -161,8 +185,8 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '视频播放时的广告',
-      desc: '自动点击 跳过广告',
+      name: '全屏广告-视频播放时的广告',
+      desc: '自动点击 跳过/关闭广告',
       activityIds: 'com.tencent.qqlive.ona.activity.VideoDetailActivity',
       rules: [
         {
@@ -194,8 +218,21 @@ export default defineAppConfig({
           key: 3,
           name: '居中广告',
           matches:
-            'FrameLayout[childCount=4] > ImageView + FrameLayout + FrameLayout + ImageView[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13695067',
+            'ViewGroup[childCount>10] > FrameLayout[index=10] >4 ImageView[clickable=true][visibleToUser=true][index=1 || index=3]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13695067',
+            'https://i.gkd.li/import/13946107',
+            'https://i.gkd.li/import/14001277',
+          ],
+        },
+        {
+          key: 4,
+          name: '居中广告',
+          quickFind: true,
+          matches: '[id="com.tencent.qqlive:id/pause_ad_close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/c8f55e94-30ad-440d-b4d8-06fb19f0c17e',
+          snapshotUrls: 'https://i.gkd.li/import/14318385',
         },
       ],
     },
@@ -213,7 +250,9 @@ export default defineAppConfig({
     {
       enable: false,
       key: 20,
-      name: '请求通知权限弹窗',
+      name: '通知提示-请求通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {

@@ -5,13 +5,15 @@ export default defineAppConfig({
   name: 'Reddit',
   groups: [
     {
-      key: 3,
-      name: '社区消息-更新提示',
-      quickFind: true,
       enable: false,
+      key: 3,
+      name: '更新提示-社区消息',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.reddit.launch.main.MainActivity',
           matches: '[id="com.reddit.frontpage:id/cancel_button"]',
           snapshotUrls: 'https://i.gkd.li/import/13649914',
         },
@@ -19,7 +21,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: 'NSFW 内容提示',
+      name: '功能类-NSFW 内容提示',
       desc: '自动点击 continue',
       quickFind: true,
       enable: false,

@@ -3,13 +3,13 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
+  deprecatedKeys: [12, 20],
   groups: [
     {
       enable: false,
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击广告卡片右上角广告,直接关闭/出现菜单,确认关闭',
-      quickFind: true,
+      desc: '点击广告卡片右上角,直接关闭/出现菜单,确认关闭',
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
@@ -22,98 +22,73 @@ export default defineAppConfig({
           key: 0,
           name: '点击广告卡片右上角',
           matches:
-            'ImageView - TextView[text="广告"][clickable=true][id!=null]',
+            '@LinearLayout[clickable=true] > [text="广告" || text="Sponsored" || text="廣告"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12642588',
-            'https://i.gkd.li/import/12888129', //ImageView - TextView[text="广告"][id!=null][index=0]这个规则无法匹配该广告，需要删除[index=0]
-            'https://i.gkd.li/import/12907641',
-            'https://i.gkd.li/import/13000395',
+            'https://i.gkd.li/import/13000395', // text="广告"
+            'https://i.gkd.li/import/12905837', // text="Sponsored"
+            'https://i.gkd.li/import/13791200', // text="廣告"
           ],
         },
-        // 以下是[确认关闭按钮]出现的情况
-        // 情况1 - 你觉得这条广告怎么样->直接关闭
+        // 以下是只出现二段的情况
         {
           preKeys: 0,
           key: 1,
-          name: '你觉得这条广告怎么样-点击[关闭该广告]',
-          matches:
-            '@LinearLayout[clickable=true][childCount=2] > [text="关闭该广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/12642584'],
+          name: '点击关闭',
+          quickFind: true,
+          matches: '[text^="关闭"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12907642', // text="关闭该广告"
+            'https://i.gkd.li/import/13926578', // text="关闭广告"
+          ],
         },
         {
-          preKeys: 1,
+          preKeys: 0,
           key: 2,
-          name: '关闭该广告的原因-点击[直接关闭]',
-          matches: '[text="关闭该广告的原因"] +(2) [text="直接关闭"]',
-          snapshotUrls: ['https://i.gkd.li/import/12663984'],
+          name: '点击"Close the ad"',
+          quickFind: true,
+          matches: '[text="Close the ad"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/14207480',
         },
-        // 情况2 - 关闭该广告
         {
           preKeys: 0,
           key: 3,
-          name: '广告反馈-点击[关闭该广告]',
-          matches: 'TextView[text^="关闭"][text$="广告"][clickable=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12907642',
-            'https://i.gkd.li/import/13926578',
-          ],
+          name: '点击"關閉此廣告"',
+          quickFind: true,
+          matches: '[text="關閉此廣告"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/13791202',
         },
-      ],
-    },
-    {
-      enable: false,
-      key: 12,
-      name: '分段广告-朋友圈广告[英文]',
-      desc: '点击广告卡片右上角[Sponsored],直接关闭/出现菜单点击[Close the ad],确认关闭',
-      activityIds: 'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          name: '点击广告卡片右上角[Sponsored]',
-          matches:
-            'ImageView - TextView[text="Sponsored"][clickable=true][id!=null]',
-          snapshotUrls: 'https://i.gkd.li/import/12905837',
-        },
-        // 以下是[确认关闭按钮]出现的情况
-        // 情况1 - 你觉得这条广告怎么样->直接关闭
+
+        // 预留key
+        // 以下是出现三段的情况
         {
           preKeys: 0,
-          key: 1,
-          name: 'Sponsored story-点击[Close the ad]',
-          matches:
-            '@LinearLayout[clickable=true][childCount=2] > TextView[text="Close the ad"]',
+          key: 50,
+          name: '点击"关闭该广告"',
+          matches: '@LinearLayout[clickable=true] > [text="关闭该广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/12642584',
+        },
+        {
+          // 第三段
+          preKeys: 50,
+          key: 51,
+          name: '点击"直接关闭"',
+          matches: '[text="直接关闭"]',
+          snapshotUrls: 'https://i.gkd.li/import/12663984',
+        },
+        {
+          preKeys: 0,
+          key: 52,
+          name: '点击"Close the ad"',
+          matches: '@LinearLayout[clickable=true] > [text="Close the ad"]',
           snapshotUrls: 'https://i.gkd.li/import/12905838',
         },
         {
-          preKeys: 1,
-          key: 2,
-          name: 'Reason for closing the ad - 点击[Close]',
-          matches: '[text="Reason for closing the ad"] +(2) [text="Close"]',
+          // 第三段
+          preKeys: 52,
+          key: 53,
+          name: '点击"Close"',
+          matches: '[text="Close"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/12905846',
-        },
-      ],
-    },
-    {
-      key: 20,
-      name: '分段广告-朋友圈广告[繁体]',
-      desc: '点击广告卡片右上角[廣告],出现菜单点击[關閉此廣告],确认关闭',
-      activityIds: 'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
-      quickFind: true,
-      rules: [
-        {
-          key: 0,
-          name: '点击广告卡片右上角[廣告]',
-          matches:
-            'ImageView - TextView[text="廣告"][clickable=true][id!=null]',
-          snapshotUrls: 'https://i.gkd.li/import/13791200',
-        },
-        {
-          preKeys: 0,
-          key: 1,
-          name: '点击[關閉此廣告]',
-          matches: 'RelativeLayout[childCount=6] > TextView[text="關閉此廣告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13791202',
         },
       ],
     },
@@ -232,9 +207,10 @@ export default defineAppConfig({
       enable: false,
       key: 6,
       name: '分段广告-订阅号文章广告',
-      desc: '⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则',
+      desc: '⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用"订阅号文章广告反馈"规则',
       activityIds: [
         'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
       ],
       rules: [
         {
@@ -249,6 +225,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12646837', // 事件完成后，反馈按钮仍然存在，使用 View[childCount=1] 进行限定，防止频繁触发规则
             'https://i.gkd.li/import/12678937', // 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
             'https://i.gkd.li/import/12714427', // 优化规则，使用 View[id="ad_container"] 作为特征节点
+            'https://i.gkd.li/import/14006180', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
           ],
         },
         {
@@ -290,9 +267,12 @@ export default defineAppConfig({
       enable: false,
       key: 8,
       name: '分段广告-订阅号文章广告反馈',
-      desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用',
-      activityIds:
+      desc: '⚠ 此规则有概率误触。自动点击反馈理由，配合"订阅号文章广告"规则使用',
+      activityIds: [
         'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
+        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
+      ],
+
       rules: [
         {
           key: 1,
@@ -304,6 +284,7 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12642234',
             'https://i.gkd.li/import/12722301',
             'https://i.gkd.li/import/12722331', // 使用 [id="feedbackTagContainer"][visibleToUser=true] 进行限定，防止反馈界面未出现就触发规则
+            'https://i.gkd.li/import/14006203', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
           ],
           action: 'clickCenter', // 使用 clickCenter 事件点击，期望在快照 https://i.gkd.li/import/12745280 中成功点击 [与我无关]
         },
@@ -312,7 +293,10 @@ export default defineAppConfig({
           // preKeys: [2], 取消 preKeys 提高点击成功率
           name: '点击与我无关',
           matches: 'View > [id^="menu"] > [id="isdismatch"][text="与我无关"]',
-          snapshotUrls: ['https://i.gkd.li/import/12642238'],
+          snapshotUrls: [
+            'https://i.gkd.li/import/12642238',
+            'https://i.gkd.li/import/14006206', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
+          ],
         },
         {
           key: 3,
@@ -407,7 +391,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '【广告】0',
+          name: '"广告"0',
           matches:
             'FrameLayout[childCount=3] >n FrameLayout > FrameLayout > [text="广告"][visibleToUser=true]',
           excludeMatches:
@@ -419,21 +403,21 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '【广告】1',
+          name: '"广告"1',
           matches: 'Image[text="feedback_icon"] - [text="广告"]',
           snapshotUrls: 'https://i.gkd.li/import/13378208',
         },
         {
           preKeys: [0, 1],
           key: 11,
-          name: '点击原因【不感兴趣】',
+          name: '点击原因"不感兴趣"',
           matches: '[text="不感兴趣"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/13200044',
         },
         {
           preKeys: 11,
           key: 12,
-          name: '点击原因【与我无关】',
+          name: '点击原因"与我无关"',
           matches: '[text="与我无关"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/13200048',
         },
@@ -448,9 +432,13 @@ export default defineAppConfig({
       actionMaximum: 1,
       activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
       rules: {
-        matches: '@Image -n * > View[text="可横向滚动"]',
+        matches:
+          'View[childCount=8] > View[index=6] > View[childCount=4] > Image[visibleToUser=true]',
         action: 'clickCenter',
-        snapshotUrls: ['https://i.gkd.li/import/13298294'],
+        snapshotUrls: [
+          'https://i.gkd.li/import/13298294',
+          'https://i.gkd.li/import/14156176', // 误触快照
+        ],
       },
     },
     {
@@ -459,10 +447,6 @@ export default defineAppConfig({
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.tencent.mm.plugin.finder.ui.FinderSelfUI',
-        'com.tencent.mm.plugin.finder.ui.FinderHomeAffinityUI',
-      ],
       rules:
         'TextView[text^="为呵护未成年人健康成长，微信推出青少年模式"] +2 Button[text="我知道了"]',
       snapshotUrls: [
@@ -511,6 +495,52 @@ export default defineAppConfig({
           name: '8.0.44',
           matches: '[desc="展开更早的消息"]',
           snapshotUrls: 'https://i.gkd.li/import/13790949',
+        },
+      ],
+    },
+    {
+      key: 21,
+      name: '全屏广告-小程序-同程旅行',
+      desc: '首页弹窗广告',
+      rules: [
+        {
+          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI00',
+          matches:
+            '@Image[visibleToUser=true] <2 View[childCount=2] -2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/13999900',
+        },
+      ],
+    },
+    {
+      key: 22,
+      name: '功能类-开启青少年模式后的每日验证',
+      desc: '点击"验证密码"',
+      rules: [
+        {
+          activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+          matches:
+            'WebView[childCount=6] View[index=4] > [text="验证密码"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/14050004',
+        },
+      ],
+    },
+    {
+      key: 23,
+      name: '全屏广告-小程序-粤省事-投资弹窗',
+      activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
+      rules: [
+        {
+          key: 0,
+          matches: [
+            '[text="粤省事码"]',
+            'WebView >n View[childCount=2] + View > View[childCount=2] > TextView + TextView[id=null][visibleToUser=true]',
+          ],
+          exampleUrls:
+            'https://m.gkd.li/101449500/4e808d65-d8f7-4140-a03f-e840bf1c374d',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14113750',
+            'https://i.gkd.li/import/14157089', //在此快照误触
+          ],
         },
       ],
     },

@@ -33,7 +33,7 @@ export default defineAppConfig({
     {
       key: 1,
       name: '全屏广告',
-      desc: '来自第三方SDK【穿山甲】',
+      desc: '来自第三方SDK"穿山甲"',
       activityIds:
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
       rules: [
@@ -63,7 +63,9 @@ export default defineAppConfig({
     {
       key: 2,
       name: '更新提示',
-      activityIds: 'com.firebear.androil.app.home.MainActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
         '@[id="com.firebear.androil:id/dismissNtfImgView"] < RelativeLayout - [id="com.firebear.androil:id/contentLay"] >3 TextView[text^="升级"]',
       snapshotUrls: 'https://i.gkd.li/import/12755032',

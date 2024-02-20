@@ -6,13 +6,11 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '版本更新',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: [
-        'com.tmall.wireless.splash.TMSplashActivity',
-        'com.tmall.wireless.maintab.module.TMMainTabActivity',
-        'com.tmall.wireless.webview.TMCommonWebViewActivity',
-      ],
       rules: '[id="com.tmall.wireless:id/update_button_cancel"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13162603', //com.tmall.wireless.splash.TMSplashActivity
@@ -23,7 +21,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 2,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       activityIds: [
         'com.tmall.wireless.maintab.module.TMMainTabActivity',
         'com.tmall.wireless.turboweb.container.TurboWebViewActivity',
@@ -39,11 +37,10 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '系统通知',
+      name: '通知提示-请求系统通知弹窗',
       matchTime: 10000,
       actionMaximum: 1,
-      activityIds:
-        'com.tmall.wireless.messagebox.activity.TMMsgboxMainActivity',
+      resetMatch: 'app',
       rules: 'View[text="开启系统通知"] - View[clickable=true]',
       snapshotUrls: 'https://i.gkd.li/import/13258215',
     },

@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '米家智惠广告',
+      name: '局部广告-卡片广告',
       activityIds: 'com.xiaomi.smarthome.SmartHomeMainActivity',
       rules: [
         {
@@ -19,8 +19,10 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '设备固件升级提示弹窗',
-      activityIds: 'com.xiaomi.smarthome.framework.plugin.rn.PluginRNActivity',
+      name: '更新提示-设备固件升级提示弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       snapshotUrls: 'https://i.gkd.li/import/12639671',
       rules:
         '[text*="检测到"&&text*="升级"] < ViewGroup + ViewGroup > Button > [text = "取消"]',

@@ -14,11 +14,10 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '版本升级弹窗',
-      activityIds: [
-        'com.taobao.ltao.maintab.MainFrameActivity',
-        'com.taobao.litetao.launcher.ALiFlutterActivityCompat',
-      ],
+      name: '更新提示-版本升级弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[id = "com.taobao.litetao:id/update_imageview_cancel_v2"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12843615',

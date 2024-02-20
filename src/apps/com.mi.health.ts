@@ -6,8 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '好评弹窗',
-      activityIds: 'com.xiaomi.fitness.baseui.common.CommonBaseActivity',
+      name: '评价提示-好评弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -16,7 +16,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '权限提醒',
+      name: '权限提示-权限提醒',
       activityIds: 'com.xiaomi.fitness.main.MainActivity',
       actionMaximum: 1,
       resetMatch: 'app',
@@ -26,7 +26,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '活动弹窗',
+      name: '全屏广告-活动弹窗',
       rules: [
         {
           key: 0,
@@ -40,18 +40,17 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '版本更新',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
       rules: [
         {
-          activityIds: 'com.xiaomi.fitness.main.MainActivity',
           matches: '[text^="发现新版本"] < * + * >n [text="放弃更新"]',
           snapshotUrls: 'https://i.gkd.li/import/13537840',
         },
         {
-          activityIds: 'com.mi.health.home.HomeActivity',
           matches:
             '[text="立即更新"] + [id="com.mi.health:id/tv_negative"][text="取消"]',
           snapshotUrls: 'https://i.gkd.li/import/13626328',

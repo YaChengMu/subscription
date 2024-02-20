@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '首页-弹窗广告',
+      name: '全屏广告-首页-弹窗广告',
       quickFind: true,
       activityIds: 'com.wm.dmall.MainActivity',
       rules: '[id="com.wm.dmall:id/advert_close"]',
@@ -14,7 +14,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '首页-浮窗广告',
+      name: '局部广告-首页-浮窗广告',
       quickFind: true,
       activityIds: 'com.wm.dmall.MainActivity',
       rules: [
@@ -29,8 +29,10 @@ export default defineAppConfig({
     {
       key: 3,
       name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.wm.dmall.MainActivity',
       rules: {
         matches: [
           '[id="com.wm.dmall:id/update_confirm_btn"]',
@@ -41,10 +43,9 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '优惠劵提示',
+      name: '全屏广告-优惠劵提示',
       enable: false,
       quickFind: true,
-
       rules: {
         matches: [
           '[id="com.wm.dmall:id/coupon_activity"][text="去使用"]',

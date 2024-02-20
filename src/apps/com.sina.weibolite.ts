@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       desc: '点击广告卡片右上角x图标,点击[不感兴趣]',
       activityIds: 'com.weico.international.activity.MainFragmentActivity',
       rules: [
@@ -30,11 +30,10 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: 'APP评分',
+      name: '评价提示-APP评分弹窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: 'com.weico.international.activity.MainFragmentActivity',
       rules: '[id="com.sina.weibolite:id/ed_btn_negative"]',
       snapshotUrls: 'https://i.gkd.li/import/13727728',
     },

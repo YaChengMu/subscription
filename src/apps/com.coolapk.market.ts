@@ -19,14 +19,15 @@ export default defineAppConfig({
       ],
       rules: [
         {
-          quickFind: true,
           key: 0,
           matches:
-            '[id$="tt_splash_skip_btn"] <<n [id="com.coolapk.market:id/ad_container"]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
           snapshotUrls: [
             'https://i.gkd.li/import/12503773',
             'https://i.gkd.li/import/13247610',
             'https://i.gkd.li/import/13264779',
+            'https://i.gkd.li/import/13826359',
+            'https://i.gkd.li/import/13827095',
           ],
         },
         {
@@ -42,21 +43,11 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13296816', // snapshot of excludeMatches
           ],
         },
-        {
-          key: 2,
-          quickFind: true,
-          matches:
-            '@View[clickable=true] <(2,3) FrameLayout <2 FrameLayout <<n FrameLayout[id="com.coolapk.market:id/ad_container"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/13826359',
-            'https://i.gkd.li/import/13827095',
-          ],
-        },
       ],
     },
     {
       key: 0,
-      name: '卡片广告',
+      name: '分段广告-卡片广告',
       desc: '点击卡片右上角按钮->免广告-点击不感兴趣->选择关闭原因-点击不感兴趣',
       quickFind: true,
       activityIds: [
@@ -109,17 +100,21 @@ export default defineAppConfig({
     },
     {
       key: 1,
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      name: '关闭升级弹窗',
-      activityIds: 'com.coolapk.market.view.main.MainActivity',
       snapshotUrls: 'https://i.gkd.li/import/12503762',
       rules: '[text=`立即更新`] - [text=`取消`]',
     },
     {
       key: 3,
+      name: '通知提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      name: '关闭推送通知',
-      activityIds: 'com.coolapk.market.view.main.MainActivity',
       rules: '[text="去开启"] - [text="以后再说"]',
       snapshotUrls: 'https://i.gkd.li/import/13296465',
     },

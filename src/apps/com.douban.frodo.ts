@@ -3,12 +3,12 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.douban.frodo',
   name: '豆瓣',
-  deprecatedKeys: [0, 7],
+  deprecatedKeys: [0, 7, 12],
   groups: [
     {
       enable: false,
       key: 1,
-      name: '不分享/同步作品短评',
+      name: '功能类-不分享/同步作品短评',
       desc: '书影音-作品-状态-不分享/同步短评(5s后可手动)',
       quickFind: true,
       matchTime: 5000,
@@ -33,7 +33,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '剧照广告',
+      name: '分段广告-剧照广告',
       activityIds: 'com.douban.frodo.baseproject.image.SociableImageActivity',
       rules: [
         {
@@ -51,7 +51,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 3,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       desc: '首页动态/推荐,小组讨论列表,帖子底部,点击广告关闭后出现关闭原因底部菜单-点击不感兴趣',
       quickFind: true,
       activityIds: [
@@ -106,7 +106,7 @@ export default defineAppConfig({
     {
       key: 4,
       actionCd: 10000,
-      name: '卡片广告',
+      name: '分段广告-卡片广告',
       desc: '书影音-卡片广告-点击卡片右下角"广告"文字',
       // 豆瓣在屏幕之外渲染了大量节点, 在节点肉眼不可见但是无障碍可见的情况下, 仍然会触发大量点击
       // 发现增加一个较高的 cd 值可以避免后续广告节点出现, 从而不会触发点击
@@ -116,14 +116,14 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击【广告】',
+          name: '点击"广告"',
           matches:
             '@View[clickable=true] > Image - TextView[text="广告"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/12548131',
         },
         {
           preKeys: 0,
-          name: '点击【不感兴趣】',
+          name: '点击"不感兴趣"',
           matches:
             '[text="广告"] < * + * > [text="不感兴趣"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/12548116',
@@ -132,9 +132,11 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '关闭评分反馈弹窗',
+      name: '评价提示-关闭评分反馈弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.douban.frodo.activity.SplashActivity',
       rules: {
         matches: '[text="下次再说"][id="com.douban.frodo:id/neutral"]',
         snapshotUrls: 'https://i.gkd.li/import/12548314',
@@ -142,14 +144,14 @@ export default defineAppConfig({
     },
     {
       key: 8,
-      name: '搜索页/帖子内容与评论区中间的卡片式广告',
+      name: '分段广告-搜索页/帖子内容与评论区中间的卡片式广告',
       desc: '部分有二次弹窗',
       actionMaximum: 1,
       resetMatch: 'activity',
       rules: [
         {
           key: 0,
-          name: '点击【x】关闭型',
+          name: '点击"x"关闭型',
           activityIds: ['com.douban.frodo.group.activity.GroupTopicActivity'],
           matches:
             'ImageView[id=null] +(n) LinearLayout[childCount<=2] + FrameLayout[childCount=1] > ImageView[id=null][visibleToUser=true][top>250]',
@@ -158,13 +160,13 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12674842',
             'https://i.gkd.li/import/12723462',
             'https://i.gkd.li/import/12723800',
-            'https://i.gkd.li/import/13402399', // 添加[top>250]，避免误触快照中【更多】按钮
+            'https://i.gkd.li/import/13402399', // 添加[top>250]，避免误触快照中"更多"按钮
             'https://i.gkd.li/import/12548476', // 原key6
           ],
         },
         {
           key: 1,
-          name: '点击【广告】选原因型',
+          name: '点击"广告"选原因型',
           matches: '[text="广告"][id$="ad_not_interest"]',
           activityIds: [
             'com.douban.frodo.subject.structure.activity.MovieActivity',
@@ -182,7 +184,7 @@ export default defineAppConfig({
           ],
         },
         {
-          name: '点击【不感兴趣】',
+          name: '点击"不感兴趣"',
           preKeys: 1,
           matches:
             '@LinearLayout[clickable=true] > [id="com.douban.frodo:id/mainText"][text="不感兴趣"]',
@@ -195,7 +197,7 @@ export default defineAppConfig({
     },
     {
       key: 9,
-      name: '个性化内容推荐弹窗',
+      name: '局部广告-个性化内容推荐弹窗',
       desc: '首页底部-个性化内容推荐弹窗-点击卡片右上角x直接关闭',
       rules: {
         activityIds: ['com.douban.frodo.activity.SplashActivity'],
@@ -206,9 +208,8 @@ export default defineAppConfig({
     },
     {
       key: 10, // 已包含key13内容
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       desc: '浏览详情时弹窗广告,点击右上角x',
-
       rules: [
         {
           key: 0,
@@ -233,7 +234,7 @@ export default defineAppConfig({
     },
     {
       key: 11, //与key12完全重复
-      name: '版本更新',
+      name: '更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -241,10 +242,6 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          activityIds: [
-            'com.douban.frodo.activity.BetaApkDialogActivity',
-            'com.douban.frodo.activity.SplashActivity',
-          ],
           matches: ['[text="新版试用邀请"]', '@[text="取消"] + [text="下载"]'],
           snapshotUrls: [
             'https://i.gkd.li/import/13228832',

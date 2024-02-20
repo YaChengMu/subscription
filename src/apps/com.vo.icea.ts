@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 5,
-      name: '播放界面卡片式广告',
+      name: '分段广告-播放界面卡片式广告',
       desc: '需点击二次弹窗关闭原因',
       quickFind: true,
       activityIds: [
@@ -16,13 +16,13 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击【反馈】',
+          name: '点击"反馈"',
           matches: 'WebView @[text="反馈"] - View > Image',
           snapshotUrls: 'https://i.gkd.li/import/13510973',
         },
         {
           preKeys: 0,
-          name: '原因选【不感兴趣】',
+          name: '原因选"不感兴趣"',
           matches: '@LinearLayout[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13510972',
         },
@@ -30,7 +30,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '首页广告弹窗',
+      name: '全屏广告-首页广告弹窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

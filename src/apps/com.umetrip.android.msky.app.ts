@@ -7,7 +7,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '酒店-弹窗广告',
+      name: '全屏广告-弹窗广告',
       quickFind: true,
       activityIds: 'com.ume.lib_weex.view.WeexActivity',
       rules:
@@ -17,12 +17,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 9,
-      name: '首页-升级提示',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: [
-        'com.miui.home.launcher.Launcher',
-        'com.umetrip.android.msky.homepage.activity.UmeHomeActivity',
-      ],
       rules:
         '@[id="com.umetrip.android.msky.app:id/iv_cancel"] - * > [id="com.umetrip.android.msky.app:id/btn_upgrade"]',
       snapshotUrls: [
@@ -33,7 +32,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '进入飞行模式-提示弹窗',
+      name: '未分类-进入飞行模式-提示弹窗',
       quickFind: true,
       activityIds: 'com.umetrip.android.msky.homepage.activity.UmeHomeActivity',
       rules:
@@ -42,7 +41,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '首页右侧悬浮广告',
+      name: '局部广告-首页右侧悬浮广告',
       quickFind: true,
       activityIds: 'com.umetrip.android.msky.homepage.activity.UmeHomeActivity',
       rules:

@@ -6,8 +6,10 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
-      activityIds: 'com.xiaomi.account.upgrade.AccountApkUpdateDialogActivity',
+      name: '更新提示',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '@[text="以后再说"] + [text="立即升级"]',
       snapshotUrls: 'https://i.gkd.li/import/12781280',
     },

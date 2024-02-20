@@ -7,9 +7,11 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
-      activityIds: 'com.alibaba.ailabs.tg.activity.HomeActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
         '[id="com.alibaba.ailabs.tg:id/ll_download"] + [id="com.alibaba.ailabs.tg:id/va_dialog_cancel"]',
       snapshotUrls: 'https://i.gkd.li/import/13296332',

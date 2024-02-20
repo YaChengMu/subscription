@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '活动弹窗',
+      name: '全屏广告-活动弹窗',
       desc: '关闭各种活动弹窗信息',
       quickFind: true,
       rules: [
@@ -31,7 +31,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '首页banner广告',
+      name: '局部广告-首页卡片广告',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
       rules: '[id="com.baidu.netdisk:id/banner_item_close"]',
@@ -39,7 +39,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '首页热门广告',
+      name: '局部广告-首页热门广告',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
       rules:
@@ -48,7 +48,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '我的页面-限时福利',
+      name: '局部广告-"我的"页面限时福利',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
       rules: '@TextView + [text="专属福利"]',
@@ -56,7 +56,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '相册页面-激活无限空间弹窗',
+      name: '全屏广告-相册页面激活无限空间弹窗',
       quickFind: true,
       activityIds:
         'com.baidu.netdisk.cloudimage.ui.album.AlbumGuideOneImageDialog',
@@ -66,8 +66,9 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="立即更新"] -n [text="下次再说"]', //使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
@@ -75,7 +76,7 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '续费横幅提示',
+      name: '局部广告-续费横幅提示',
       desc: '关闭续费横幅提示',
       quickFind: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
@@ -89,17 +90,27 @@ export default defineAppConfig({
     {
       enable: false,
       key: 8,
-      name: '开启消息通知弹窗',
+      name: '通知提示-开启消息通知弹窗',
       desc: '自动点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: 'ImageView[id="com.baidu.netdisk:id/dialog_cancel"]', //单独使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
       snapshotUrls: ['https://i.gkd.li/import/12923936'],
     },
     {
+      key: 9,
+      name: '评价提示',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: '[text="喜欢“百度网盘”吗？"] +n [text="以后再说"]',
+      snapshotUrls: 'https://i.gkd.li/import/14317054',
+    },
+    {
       enable: false,
       key: 10,
-      name: '看视频免费享极速下载弹窗',
+      name: '全屏广告-看视频免费享极速下载弹窗',
       desc: '自动点击x按钮',
       quickFind: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
@@ -110,7 +121,7 @@ export default defineAppConfig({
     {
       key: 11,
       quickFind: true,
-      name: '幸运券包弹窗',
+      name: '全屏广告-幸运券包弹窗',
       desc: '自动点击关闭',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
@@ -118,6 +129,21 @@ export default defineAppConfig({
           matches:
             '[id="com.baidu.netdisk:id/tv_title"][text^="恭喜获得"] -3 ImageView[clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/13806852',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '局部广告-右下角悬浮卡片',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.baidu.netdisk.ui.MainActivity',
+          matches:
+            '[vid="float_btn_close"][clickable=true][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/470eec82-ed99-4f50-beba-2587e525cfdf',
+          snapshotUrls: 'https://i.gkd.li/import/14278618',
         },
       ],
     },

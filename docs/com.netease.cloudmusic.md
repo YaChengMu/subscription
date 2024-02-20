@@ -1,57 +1,72 @@
 # 网易云音乐
 
-存在 11 规则组 - [com.netease.cloudmusic](/src/apps/com.netease.cloudmusic.ts)
+存在 12 规则组 - [com.netease.cloudmusic](/src/apps/com.netease.cloudmusic.ts)
 
-## 分段广告
+## 分段广告-卡片广告
 
-默认禁用 - 有二次确认弹窗
+默认禁用 - 点击[X]-点击[直接关闭]/[不感兴趣]
 
-- [快照-0](https://i.gkd.li/import/12829944)
-- [快照-1](https://i.gkd.li/import/12723229)
-- [快照-2](https://i.gkd.li/import/12829938)
-- [快照-3](https://i.gkd.li/import/12829964)
-- [快照-4](https://i.gkd.li/import/12829953)
-- [快照-5](https://i.gkd.li/import/13859634)
-- [快照-6](https://i.gkd.li/import/13927753)
-- [快照-7](https://i.gkd.li/import/13526986)
-- [快照-8](https://i.gkd.li/import/13526711)
-- [快照-9](https://i.gkd.li/import/12829967)
-- [快照-10](https://i.gkd.li/import/13627047)
-- [快照-11](https://i.gkd.li/import/13859635)
-- [快照-12](https://i.gkd.li/import/13526712)
+- [示例-0](https://m.gkd.li/57941037/a603ceca-7e89-4b1f-9e17-508c583b32d8)
+- [示例-1](https://m.gkd.li/57941037/b14cda2e-27e5-4a91-8037-3ccbf1f9d0da)
 
-## 我的页面-中间滚动广告
+- [快照-0](https://i.gkd.li/import/14277140)
+- [快照-1](https://i.gkd.li/import/13859634)
+- [快照-2](https://i.gkd.li/import/12829964)
+- [快照-3](https://i.gkd.li/import/12829953)
+- [快照-4](https://i.gkd.li/import/13927753)
+- [快照-5](https://i.gkd.li/import/13526986)
+- [快照-6](https://i.gkd.li/import/13526711)
+- [快照-7](https://i.gkd.li/import/12829967)
+- [快照-8](https://i.gkd.li/import/14277137)
+- [快照-9](https://i.gkd.li/import/13859635)
+- [快照-10](https://i.gkd.li/import/13526712)
 
-默认禁用
+## 局部广告-卡片广告
+
+默认禁用 - 点击关闭
+
+- [示例-0](https://m.gkd.li/57941037/827ebe8b-f3c6-4068-8d31-11d5b2578680)
+- [示例-1](https://m.gkd.li/57941037/3d0a500b-8f73-4da9-8e05-88f39c7cb58f)
+- [示例-2](https://m.gkd.li/57941037/ed4bb569-b3e1-4644-a586-f01d95c150e9)
+- [示例-3](https://m.gkd.li/57941037/2933d8b0-7731-46bb-a644-836da1886958)
 
 - [快照-0](https://i.gkd.li/import/12745666)
+- [快照-1](https://i.gkd.li/import/14275571)
+- [快照-2](https://i.gkd.li/import/14275955)
+- [快照-3](https://i.gkd.li/import/14070500)
+- [快照-4](https://i.gkd.li/import/14276854)
+- [快照-5](https://i.gkd.li/import/14318169)
 
-## 主页-免费听歌
+## 全屏广告-看广告免费听歌弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/12843383)
 
-## 弹窗广告
+## 全屏广告-弹窗广告
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13188737)
 - [快照-1](https://i.gkd.li/import/13229016)
 - [快照-2](https://i.gkd.li/import/13684724)
+- [快照-3](https://i.gkd.li/import/13962214)
 
-## VIP 弹窗
+## 全屏广告-VIP弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13189055)
 - [快照-1](https://i.gkd.li/import/13260416)
-- [快照-2](https://i.gkd.li/import/13228955)
-- [快照-3](https://i.gkd.li/import/13230603)
-- [快照-4](https://i.gkd.li/import/13230605)
-- [快照-5](https://i.gkd.li/import/13391498)
+- [快照-2](https://i.gkd.li/import/13996787)
+- [快照-3](https://i.gkd.li/import/13228955)
+- [快照-4](https://i.gkd.li/import/13230603)
+- [快照-5](https://i.gkd.li/import/13230605)
+- [快照-6](https://i.gkd.li/import/14268181)
+- [快照-7](https://i.gkd.li/import/13391498)
+- [快照-8](https://i.gkd.li/import/14045917)
 
-## 更新弹窗
+## 更新提示
 
 默认禁用
 
@@ -59,7 +74,7 @@
 - [快照-1](https://i.gkd.li/import/13197457)
 - [快照-2](https://i.gkd.li/import/13228878)
 
-## 播放界面广告
+## 局部广告-播放界面广告
 
 默认禁用 - 右上角VIP小悬浮、巨幅卡片式广告
 
@@ -67,20 +82,21 @@
 - [快照-1](https://i.gkd.li/import/13402635)
 - [快照-2](https://i.gkd.li/import/13402636)
 - [快照-3](https://i.gkd.li/import/13527105)
+- [快照-4](https://i.gkd.li/import/14045424)
 
-## 发现-顶部视频广告
+## 局部广告-发现页顶部视频广告
 
 默认禁用 - 自动点击跳过。
 
 - [快照-0](https://i.gkd.li/import/13768367)
 
-## 免费听弹窗
+## 全屏广告-免费听弹窗
 
 默认禁用
 
 - [快照-0](https://i.gkd.li/import/13804534)
 
-## 功能升级弹窗
+## 功能类-功能升级弹窗
 
 默认禁用
 
@@ -92,3 +108,9 @@
 默认禁用 - 点击X
 
 - [快照-0](https://i.gkd.li/import/13848913)
+
+## 全屏广告-音乐回忆弹窗
+
+默认禁用 - 点击X
+
+- [快照-0](https://i.gkd.li/import/14036940)

@@ -19,9 +19,10 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '青少年弹窗',
+      name: '青少年模式',
       quickFind: true,
-      activityIds: 'org.qiyi.android.video.MainActivity',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: '[id="com.qiyi.video:id/confirm_btn"][text="我知道了"]',
@@ -33,7 +34,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '我的-顶部广告',
+      name: '局部广告-我的页面顶部广告',
       quickFind: true,
       activityIds: 'org.qiyi.android.video.MainActivity',
       snapshotUrls: 'https://i.gkd.li/import/12495050',
@@ -43,23 +44,21 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '开启推送通知弹窗',
+      name: '通知提示-开启推送通知弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'org.qiyi.android.video.MainActivity',
       snapshotUrls: 'https://i.gkd.li/import/12838152',
       rules: ['[id="com.qiyi.video:id/cancel_btn"][text="暂时不要"]'],
     },
     {
       key: 4,
-      name: '版本更新',
+      name: '更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'org.qiyi.android.video.MainActivity',
-        'org.qiyi.android.search.view.PhoneSearchActivity',
-      ],
       rules: '[id="com.qiyi.video:id/cancel_btn"][text="暂不升级"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12838158',
@@ -69,7 +68,7 @@ export default defineAppConfig({
     {
       key: 5,
       enable: false,
-      name: '播放页-插入广告',
+      name: '全屏广告-播放页-插入广告',
       desc: '视频播放前或播放中途插入的广告。默认关闭。',
       activityIds: 'org.iqiyi.video.activity.PlayerActivity',
       rules: [

@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '通知弹窗',
+      name: '通知提示',
       desc: '点击稍后再说',
       quickFind: true,
       matchTime: 10000,
@@ -14,7 +14,6 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.wenhua.bamboo.screen.activity.MarketOptionActivity',
           matches: '@Button[text="稍后再说"] +2 Button[text="马上开启"]',
           snapshotUrls: 'https://i.gkd.li/import/13407555',
         },

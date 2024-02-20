@@ -6,9 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '广告弹窗',
+      name: '全屏广告-弹窗广告',
       quickFind: true,
-
       activityIds: [
         'com.hihonor.android.launcher.unihome.UniHomeLauncher',
         'com.hihonor.appmarket.module.main.MainActivity',
@@ -21,7 +20,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '悬浮窗小广告',
+      name: '局部广告-悬浮窗小广告',
       quickFind: true,
       activityIds: 'com.hihonor.appmarket.module.main.MainActivity',
       rules: '[id="com.hihonor.appmarket:id/iv_floating_close"]',
@@ -29,9 +28,11 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '推送通知',
+      name: '通知提示-请求推送通知弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.hihonor.appmarket.module.main.MainActivity',
       rules:
         'TextView[text="接收通知"] < LinearLayout < LinearLayout +n [id="android:id/buttonPanel"] Button[text="否"]',
       snapshotUrls: 'https://i.gkd.li/import/13073319',

@@ -23,23 +23,19 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          matches: '[id = "com.byted.pangle:id/tt_splash_skip_btn"]',
-          snapshotUrls: 'https://i.gkd.li/import/12854728',
-        },
-        {
-          key: 3,
           matches:
-            '[id="com.realtech.xiaocan:id/splash_ad_container"] >n FrameLayout[childCount<=4] > FrameLayout +n @View[clickable=true] + TextView',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
           snapshotUrls: [
             'https://i.gkd.li/import/13694858',
             'https://i.gkd.li/import/13794403',
+            'https://i.gkd.li/import/12854728',
           ],
         },
       ],
     },
     {
       key: 1,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -49,6 +45,15 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/13694864',
         },
       ],
+    },
+    {
+      key: 2,
+      name: '功能类-签到成功弹窗',
+      desc: '自动点击[关闭]按钮',
+      activityIds: 'com.realtech.xiaocan.MainActivity',
+      rules:
+        '[id="android:id/content"] >5 View[childCount=6] > ImageView[index=5][clickable=true]',
+      snapshotUrls: 'https://i.gkd.li/import/14290847',
     },
   ],
 });

@@ -13,7 +13,6 @@ export default defineAppConfig({
       quickFind: true,
       rules: [
         {
-          activityIds: 'com.coloros.gallery3d.app.MainActivity',
           matches: '[text="更新"] -2 [text="取消"]',
           exampleUrls:
             'https://m.gkd.li/47232102/0dae9f4b-8432-4cf4-b648-07ae17cdece2',
@@ -23,7 +22,8 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '开启相册同步弹窗',
+      name: '功能类-开启相册同步弹窗',
+      desc: '点击忽略',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

@@ -8,13 +8,9 @@ export default defineAppConfig({
       enable: false,
       key: 0,
       name: '更新提示-关闭花呗升级弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
-        'com.alipay.android.msp.ui.views', //views.MspContainerActivity & views.MspUniRenderActivity
-        'com.alipay.android.msp.ui.views.MspContainerActivity',
-      ],
       rules: [
         {
           key: 0,
@@ -41,8 +37,11 @@ export default defineAppConfig({
         },
         {
           matches:
-            '[id="com.alipay.android.app:id/flybird_userinfo"] + * >8 FrameLayout[clickable=true][index=1]',
-          snapshotUrls: 'https://i.gkd.li/import/13857535',
+            '[text="同意协议并确认交易"] < * <2 FrameLayout[childCount=2] + FrameLayout [text="暂不升级，继续付款"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13857535',
+            'https://i.gkd.li/import/14001273', // 误触快照
+          ],
         },
       ],
     },
@@ -59,6 +58,7 @@ export default defineAppConfig({
     {
       key: 2,
       name: '通知提示-请求通知弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -66,7 +66,6 @@ export default defineAppConfig({
         {
           key: 0,
           name: '首页底部提示',
-          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
           matches:
             '@[desc="关闭"] - * >n [id="com.alipay.mobile.antui:id/tipTextView"][text^="开启通知权限"]',
           snapshotUrls: 'https://i.gkd.li/import/13194955',
@@ -74,8 +73,6 @@ export default defineAppConfig({
         {
           key: 1,
           name: '消息页弹窗提示',
-          activityIds:
-            'com.alipay.mobile.rome.pushservice.integration.PushOpenGuideActivity',
           matches:
             '[text="选择通知接收范围"] <2 RelativeLayout [text="暂时不用"]',
           snapshotUrls: 'https://i.gkd.li/import/13669620',
@@ -86,23 +83,19 @@ export default defineAppConfig({
       enable: false,
       key: 3,
       name: '更新提示-版本更新弹窗',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
-      activityIds: [
-        'com.alipay.mobile.alipassapp.alkb.kb.ALPMainPage63',
-        'com.eg.android.AlipayGphone.AlipayLogin',
-        'com.alipay.mobile.about.ui.AboutAlipayActivity',
-      ],
       rules: [
         {
-          name: '弹窗-【稍后再说】',
+          name: '弹窗-"稍后再说"',
           matches:
             'TextView[id="com.alipay.mobile.accountauthbiz:id/update_cancel_tv"]',
           snapshotUrls: 'https://i.gkd.li/import/13327095',
         },
         {
-          name: '弹窗-【x】',
+          name: '弹窗-"x"',
           matches:
             '[text="版本更新"||text^="Version"] - [id="com.alipay.mobile.antui:id/btn_close"]',
           snapshotUrls: [
@@ -111,7 +104,7 @@ export default defineAppConfig({
           ],
         },
         {
-          name: '卡片-【x】',
+          name: '卡片-"x"',
           matches:
             '[text="立即升级最新版支付宝客户端"] < LinearLayout + [id="com.alipay.mobile.advertisement:id/announcementview_righticon"]',
           snapshotUrls: 'https://i.gkd.li/import/13490797',
@@ -121,7 +114,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 4,
-      name: '设置支付宝小组件',
+      name: '功能类-设置支付宝小组件',
       desc: '点击关闭',
       quickFind: true,
       activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
@@ -136,7 +129,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '小程序-12306',
+      name: '分段广告-小程序-12306',
       activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
       rules: [
         {
@@ -167,6 +160,66 @@ export default defineAppConfig({
           matches:
             '[text="同意协议并刷脸验证"] < * -4 * >2 Image[visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/import/13915022',
+        },
+      ],
+    },
+    {
+      key: 12,
+      name: '功能类-支付后自动点击完成',
+      quickFind: true,
+      rules: [
+        {
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '[id="com.alipay.android.app:id/rl_nav_bar"] > [id="com.alipay.android.app:id/nav_right_textview"]',
+          snapshotUrls: 'https://i.gkd.li/import/14008852',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '全屏广告-领新年红包弹窗',
+      desc: '点击X',
+      rules: [
+        {
+          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
+          matches:
+            'RelativeLayout[childCount=2][desc="全屏广告"] ImageView[desc="关闭"]',
+          snapshotUrls: 'https://i.gkd.li/import/14034152',
+        },
+      ],
+    },
+    {
+      key: 14,
+      name: '全屏广告-"下次支付用花呗"弹窗',
+      desc: '点击"30天不再提醒"',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches:
+            '@[text$="不再提醒"] <<2 * <3 * - FrameLayout[childCount=3] [text="下次支付用花呗"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/8daecaeb-35f0-4f3a-8d5a-a19098a992d5',
+          snapshotUrls: 'https://i.gkd.li/import/14060628',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '全屏广告-小程序-哈啰-专属额度到账弹窗',
+      desc: '点击关闭',
+      activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+      rules: [
+        {
+          matches:
+            '[id="com.alipay.mobile.nebula:id/h5_pc_container"] View[childCount=1] > View[childCount=2] > View + Image[text=""]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/bfc87673-cba3-4a5b-ba77-210de8244604',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14112224',
+            'https://i.gkd.li/import/14176001', //不加text=""误触
+          ],
         },
       ],
     },

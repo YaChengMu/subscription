@@ -6,7 +6,8 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="升级版本"] +n [desc="关闭"][clickable=true]',
@@ -18,7 +19,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '浮窗广告',
+      name: '局部广告-浮窗广告',
       rules: [
         {
           key: 0,
@@ -41,8 +42,10 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '请求通知权限弹窗',
-      activityIds: ['com.ss.android.article.news.activity.MainActivity'],
+      name: '通知提示-请求通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: '[text^="开启通知"] + LinearLayout > [text="暂不开启"]',
@@ -58,13 +61,13 @@ export default defineAppConfig({
     {
       enable: false,
       key: 11,
-      name: '竖屏视频广告',
-      desc: '检测到广告时,点击右上角[更多]图标按钮,出现菜单,点击不感兴趣',
+      name: '全屏广告-竖屏视频广告',
+      desc: '点击右上角[更多]图标按钮,点击不感兴趣',
       activityIds: 'com.ss.android.ugc.detail.activity.TikTokActivity',
       rules: [
         {
           key: -1,
-          preKeys: [0, 1, 2, 3],
+          preKeys: 0,
           actionCd: 35000, //APP更新后点击不感兴趣不会跳过当前视频了，所以需要冷却一下等下一次重新跳过广告视频
           name: '点击不感兴趣',
           matches:
@@ -74,42 +77,24 @@ export default defineAppConfig({
         {
           key: 0,
           name: '点击右上角[更多]图标按钮',
-          matches:
-            '@ImageView[clickable=true][desc="更多"] <n RelativeLayout -2 RelativeLayout >4 LynxFlattenUI[text="头条优惠券无门槛全平台通用"]',
+          matches: 'ImageView[clickable=true][desc="更多"]',
           snapshotUrls: [
             'https://i.gkd.li/import/12679280',
             'https://i.gkd.li/import/12733282',
             'https://i.gkd.li/import/12763251',
             'https://i.gkd.li/import/12763252',
+            'https://i.gkd.li/import/12733281',
+            'https://i.gkd.li/import/13185633',
+            'https://i.gkd.li/import/13186082',
+            'https://i.gkd.li/import/13930050',
           ],
-        },
-        {
-          key: 1,
-          name: '点击右上角[更多]图标按钮-抖音直播',
-          matches:
-            '@ImageView[clickable=true][desc="更多"] <4 RelativeLayout -2 RelativeLayout >4 LinearLayout[childCount=3] > ScrollView[childCount=1] > TextView[text$="广告"][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/import/12733281'],
-        },
-        {
-          key: 2,
-          name: '第二种广告界面；点击右上角[更多]图标按钮',
-          matches:
-            '@ImageView[clickable=true][desc="更多"] <n RelativeLayout -2 RelativeLayout >n TextView[text$="广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/13185633'],
-        },
-        {
-          key: 3,
-          name: '第三种广告界面；点击右上角[更多]图标按钮',
-          matches:
-            '@ImageView[clickable=true][desc="更多"] <n RelativeLayout +2 LinearLayout > TextView[text$="广告"]',
-          snapshotUrls: ['https://i.gkd.li/import/13186082'],
         },
       ],
     },
     {
       enable: false,
       key: 12,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       desc: '点击右上角x按钮,点击不感兴趣',
       rules: [
         {
@@ -154,7 +139,7 @@ export default defineAppConfig({
     {
       enable: false,
       key: 13,
-      name: '底部话题推荐弹窗',
+      name: '局部广告-底部话题推荐弹窗',
       activityIds: ['com.ss.android.article.news.activity.MainActivity'],
       rules: [
         {
@@ -168,20 +153,20 @@ export default defineAppConfig({
     {
       enable: false,
       key: 14,
-      name: '自动观看广告视频',
+      name: '功能类-自动观看广告视频',
       desc: '自动观看广告并等待30s后关闭',
       quickFind: true,
       rules: [
         {
           key: 0,
-          name: '点击【看视频】',
+          name: '点击"看视频"',
           activityIds: 'com.ss.android.article.news.activity.MainActivity',
           matches:
             '[id="com.bytedance.novel.api:id/component_ad_dialog_button_video"]',
           snapshotUrls: 'https://i.gkd.li/import/13402468',
         },
         {
-          name: '等待30s点击【关闭】',
+          name: '等待30s点击"关闭"',
           actionDelay: 30000,
           activityIds: 'com.ss.android.excitingvideo.ExcitingVideoActivity',
           matches: 'UIText[text="广告"] +n UIText[text="关闭"]',
@@ -197,8 +182,7 @@ export default defineAppConfig({
       rules: [
         {
           activityIds: 'com.ss.android.article.news.activity.MainActivity',
-          matches:
-            '@FlattenUIImage[clickable=true] <n FrameLayout <<2 FrameLayout - LinearLayout [text="首页"]',
+          matches: 'FrameLayout[childCount=8] > FlattenUIImage[index=7]',
           snapshotUrls: 'https://i.gkd.li/import/13828331',
         },
       ],

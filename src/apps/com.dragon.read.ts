@@ -7,17 +7,13 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '卡片式广告',
+      name: '局部广告-阅读页面底部广告',
       activityIds: [
         'com.dragon.read.ad.banner.ui',
         'com.dragon.read.reader.ReaderActivity',
         'com.dragon.read.reader.ui.ReaderActivity',
       ],
       rules: [
-        {
-          key: 0,
-          matches: '@[clickable=true] TextView[text="关闭此条广告"]',
-        },
         {
           key: 1,
           matches: '@ImageView - LinearLayout TextView[text="广告"]',
@@ -26,24 +22,21 @@ export default defineAppConfig({
         {
           key: 2,
           matches:
-            'FrameLayout > FrameLayout > ViewGroup[childCount=4] > @FrameLayout[clickable=true][visibleToUser=true] > ImageView',
+            'HorizontalAndVerticalScrollView > FrameLayout[childCount=14] > [index=9] >5 ImageView[clickable=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/d2f7c62c-be88-4668-b276-68bb53edfaad',
           snapshotUrls: [
-            'https://i.gkd.li/import/12716444',
-            'https://i.gkd.li/import/13062909', // 误触
+            'https://i.gkd.li/import/14193836',
+            'https://i.gkd.li/import/13520314',
+            'https://i.gkd.li/import/12908734',
           ],
-        },
-        {
-          key: 3,
-          quickFind: true,
-          matches:
-            '[id="com.dragon.read:id/layout_banner_ad_bg"] > [id="com.dragon.read:id/close_button"]',
-          snapshotUrls: 'https://i.gkd.li/import/13520314',
         },
       ],
     },
     {
       key: 1,
-      name: '更新弹窗',
+      name: '更新提示',
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       quickFind: true,
@@ -52,7 +45,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '首页右侧悬浮广告',
+      name: '局部广告-首页右侧悬浮广告',
       activityIds: [
         'com.dragon.read.pages.main.MainFragmentActivity',
         'com.dragon.read.ad.openingscreenad.OpeningScreenADActivity',
@@ -70,7 +63,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '优惠券弹窗',
+      name: '全屏广告-优惠券弹窗',
       rules: [
         {
           key: 0,
@@ -94,7 +87,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '阅读页面_关注作者',
+      name: '功能类-阅读页面关注作者弹窗',
       quickFind: true,
       rules: [
         {
@@ -152,7 +145,7 @@ export default defineAppConfig({
           key: 4,
           name: '阅读页面广告弹窗-点击不感兴趣',
           activityIds: 'com.dragon.read.reader.ui.ReaderActivity',
-          matches: '[text="举报"] <2 ViewGroup - ViewGroup[clickable=true]',
+          matches: 'ViewGroup[childCount=2] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/import/13816454',
         },
       ],
@@ -160,20 +153,29 @@ export default defineAppConfig({
     {
       enable: false,
       key: 10,
-      name: '请求通知权限弹窗',
-      desc: '自动点击【取消】',
-      activityIds: 'com.dragon.read.widget.ConfirmDialogBuilder',
+      name: '通知提示-请求通知权限弹窗',
+      desc: '自动点击"取消"',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '@[text="取消"] < * -2 * > [text="开启推送提醒"]',
       snapshotUrls: 'https://i.gkd.li/import/12716592',
     },
     {
       key: 12,
-      name: '关闭阅读-全屏广告',
-      desc: '点击右上角【关闭】',
+      name: '全屏广告',
+      desc: '点击右上角"关闭"',
       quickFind: true,
       activityIds: 'com.dragon.read.reader.ui.ReaderActivity',
       rules: 'TextView[text="广告"] +2 Button[id="com.dragon.read:id/close"]',
       snapshotUrls: 'https://i.gkd.li/import/13191156',
+    },
+    {
+      key: 13,
+      name: '全屏广告-福利页面弹窗',
+      activityIds: 'com.dragon.read.pages.main.MainFragmentActivity',
+      rules: '@LynxFlattenUI[clickable=true] - [text="前往抽奖"]',
+      snapshotUrls: 'https://i.gkd.li/import/14292475',
     },
   ],
 });

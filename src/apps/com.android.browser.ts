@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 0,
-      name: '关闭[个性推荐开启提示]',
+      name: '局部广告-关闭[个性推荐开启提示]',
       activityIds: ['com.android.browser.BrowserActivity'],
       rules: [
         {
@@ -18,7 +18,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '主页信息流广告',
+      name: '分段广告-主页信息流广告',
       quickFind: true,
       activityIds: [
         'com.android.browser.BrowserActivity',
@@ -41,6 +41,23 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/import/12894234',
             'https://i.gkd.li/import/13196059',
+          ],
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '局部广告-搜索结果页底部必应推荐卡片',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.android.browser.BrowserActivity',
+          matches: '[id="bnp_close_icon"][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/b0d601cf-6cd1-411c-8555-bd4a8ee3335c',
+          snapshotUrls: [
+            'https://i.gkd.li/import/14256707',
+            'https://i.gkd.li/import/14256761', // visibleToUser=true防止误触此界面
           ],
         },
       ],

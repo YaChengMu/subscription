@@ -1,36 +1,24 @@
 # 微信
 
-存在 20 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
+存在 21 规则组 - [com.tencent.mm](/src/apps/com.tencent.mm.ts)
 
 ## 分段广告-朋友圈广告
 
-默认禁用 - 点击广告卡片右上角广告,直接关闭/出现菜单,确认关闭
+默认禁用 - 点击广告卡片右上角,直接关闭/出现菜单,确认关闭
 
 - [示例-0](https://github.com/gkd-kit/subscription/assets/38517192/c9ae4bba-a748-4755-b5e4-c7ad3d489a79)
 
-- [快照-0](https://i.gkd.li/import/12642588)
-- [快照-1](https://i.gkd.li/import/12888129)
-- [快照-2](https://i.gkd.li/import/12907641)
-- [快照-3](https://i.gkd.li/import/13000395)
-- [快照-4](https://i.gkd.li/import/12642584)
-- [快照-5](https://i.gkd.li/import/12663984)
-- [快照-6](https://i.gkd.li/import/12907642)
-- [快照-7](https://i.gkd.li/import/13926578)
-
-## 分段广告-朋友圈广告[英文]
-
-默认禁用 - 点击广告卡片右上角[Sponsored],直接关闭/出现菜单点击[Close the ad],确认关闭
-
-- [快照-0](https://i.gkd.li/import/12905837)
-- [快照-1](https://i.gkd.li/import/12905838)
-- [快照-2](https://i.gkd.li/import/12905846)
-
-## 分段广告-朋友圈广告[繁体]
-
-默认禁用 - 点击广告卡片右上角[廣告],出现菜单点击[關閉此廣告],确认关闭
-
-- [快照-0](https://i.gkd.li/import/13791200)
-- [快照-1](https://i.gkd.li/import/13791202)
+- [快照-0](https://i.gkd.li/import/13000395)
+- [快照-1](https://i.gkd.li/import/12905837)
+- [快照-2](https://i.gkd.li/import/13791200)
+- [快照-3](https://i.gkd.li/import/12907642)
+- [快照-4](https://i.gkd.li/import/13926578)
+- [快照-5](https://i.gkd.li/import/14207480)
+- [快照-6](https://i.gkd.li/import/13791202)
+- [快照-7](https://i.gkd.li/import/12642584)
+- [快照-8](https://i.gkd.li/import/12663984)
+- [快照-9](https://i.gkd.li/import/12905838)
+- [快照-10](https://i.gkd.li/import/12905846)
 
 ## 功能类-电脑微信快捷自动登录
 
@@ -71,16 +59,17 @@
 
 ## 分段广告-订阅号文章广告
 
-默认禁用 - ⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用【订阅号文章广告反馈】规则
+默认禁用 - ⚠ 此规则有概率误触。自动点击关闭按钮，必须同时启用"订阅号文章广告反馈"规则
 
 - [快照-0](https://i.gkd.li/import/12642232)
 - [快照-1](https://i.gkd.li/import/13199281)
 - [快照-2](https://i.gkd.li/import/12646837)
 - [快照-3](https://i.gkd.li/import/12678937)
 - [快照-4](https://i.gkd.li/import/12714427)
-- [快照-5](https://i.gkd.li/import/12700183)
-- [快照-6](https://i.gkd.li/import/12701503)
-- [快照-7](https://i.gkd.li/import/12714424)
+- [快照-5](https://i.gkd.li/import/14006180)
+- [快照-6](https://i.gkd.li/import/12700183)
+- [快照-7](https://i.gkd.li/import/12701503)
+- [快照-8](https://i.gkd.li/import/12714424)
 
 ## 功能类-自动选中发送原图
 
@@ -92,13 +81,15 @@
 
 ## 分段广告-订阅号文章广告反馈
 
-默认禁用 - ⚠ 此规则有概率误触。自动点击反馈理由，配合【订阅号文章广告】规则使用
+默认禁用 - ⚠ 此规则有概率误触。自动点击反馈理由，配合"订阅号文章广告"规则使用
 
 - [快照-0](https://i.gkd.li/import/12642234)
 - [快照-1](https://i.gkd.li/import/12722301)
 - [快照-2](https://i.gkd.li/import/12722331)
-- [快照-3](https://i.gkd.li/import/12642238)
-- [快照-4](https://i.gkd.li/import/12700191)
+- [快照-3](https://i.gkd.li/import/14006203)
+- [快照-4](https://i.gkd.li/import/12642238)
+- [快照-5](https://i.gkd.li/import/14006206)
+- [快照-6](https://i.gkd.li/import/12700191)
 
 ## 功能类-自动查看原图
 
@@ -146,6 +137,7 @@
 默认禁用 - 低价包邮广告
 
 - [快照-0](https://i.gkd.li/import/13298294)
+- [快照-1](https://i.gkd.li/import/14156176)
 
 ## 青少年模式
 
@@ -167,3 +159,24 @@
 
 - [快照-0](https://i.gkd.li/import/13790550)
 - [快照-1](https://i.gkd.li/import/13790949)
+
+## 全屏广告-小程序-同程旅行
+
+默认禁用 - 首页弹窗广告
+
+- [快照-0](https://i.gkd.li/import/13999900)
+
+## 功能类-开启青少年模式后的每日验证
+
+默认禁用 - 点击"验证密码"
+
+- [快照-0](https://i.gkd.li/import/14050004)
+
+## 全屏广告-小程序-粤省事-投资弹窗
+
+默认禁用
+
+- [示例-0](https://m.gkd.li/101449500/4e808d65-d8f7-4140-a03f-e840bf1c374d)
+
+- [快照-0](https://i.gkd.li/import/14113750)
+- [快照-1](https://i.gkd.li/import/14157089)

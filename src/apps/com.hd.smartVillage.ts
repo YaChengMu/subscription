@@ -6,13 +6,11 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '关闭开启通知弹窗',
+      name: '通知提示-关闭开启通知弹窗',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
-      activityIds: [
-        'com.hd.smartVillage.modules.main.MainActivity',
-        'com.hd.smartVillage.modules.h5service.H5WebActivity',
-      ],
+      resetMatch: 'app',
       rules: 'View[id="com.hd.smartVillage:id/notificationSettingCloseBtn"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13223669', //com.hd.smartVillage.modules.main.MainActivity
@@ -22,10 +20,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 2,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
-      activityIds: 'com.hd.smartVillage.modules.main.MainActivity',
+      resetMatch: 'app',
       rules:
         'TextView[id="com.hd.smartVillage:id/tv_upgrade_cancel"][text="取消"]',
       snapshotUrls: 'https://i.gkd.li/import/13223642',

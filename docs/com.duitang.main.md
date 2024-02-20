@@ -1,6 +1,6 @@
 # 堆糖
 
-存在 3 规则组 - [com.duitang.main](/src/apps/com.duitang.main.ts)
+存在 5 规则组 - [com.duitang.main](/src/apps/com.duitang.main.ts)
 
 ## 青少年模式
 
@@ -8,14 +8,32 @@
 
 - [快照-0](https://i.gkd.li/import/13202230)
 
-## 首页-推荐浏览广告
+## 局部广告-信息流广告
 
-默认禁用 - 关闭推荐浏览页面广告
+默认禁用
 
-- [快照-0](https://i.gkd.li/import/13202725)
+- [快照-0](https://i.gkd.li/import/14232228)
+- [快照-1](https://i.gkd.li/import/14232332)
+- [快照-2](https://i.gkd.li/import/14232347)
+- [快照-3](https://i.gkd.li/import/14232348)
+- [快照-4](https://i.gkd.li/import/14232368)
+- [快照-5](https://i.gkd.li/import/14232218)
+- [快照-6](https://i.gkd.li/import/14232352)
 
-## 去商店评分
+## 评价提示
 
 默认禁用 - 点击[下次再说]
 
-- [快照-0](https://i.gkd.li/import/13203217)
+- [快照-0](https://i.gkd.li/import/14273094)
+
+## 全屏广告-图片页广告弹窗
+
+默认禁用 - 点击X
+
+- [快照-0](https://i.gkd.li/import/13997011)
+
+## 通知提示-请求开启通知弹窗
+
+默认禁用 - 点击[x]
+
+- [快照-0](https://i.gkd.li/import/14273121)

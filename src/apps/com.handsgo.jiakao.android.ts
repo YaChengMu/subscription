@@ -15,7 +15,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '悬浮广告',
+      name: '局部广告-悬浮广告',
       rules: [
         {
           key: 0,
@@ -28,7 +28,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '弹窗广告',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -54,8 +54,10 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '请求开启通知权限弹窗',
-      activityIds: [],
+      name: '通知提示-请求开启通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules:
         '[text="开启专属学习资料推送"] + [id="com.handsgo.jiakao.android:id/closeIv"]',

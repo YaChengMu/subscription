@@ -24,7 +24,7 @@ export default defineAppConfig({
     },
     {
       key: 1,
-      name: '青少年模式弹窗',
+      name: '青少年模式',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -37,7 +37,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '广场页卡片广告',
+      name: '局部广告-广场页卡片广告',
       quickFind: true,
       activityIds: ['cn.soulapp.android.component.startup.main.MainActivity'],
       rules: [
@@ -50,9 +50,11 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: 'app评分',
+      name: '评价提示-app评分',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: ['cn.soulapp.android.component.chat.ConversationActivity'],
       rules: [
         {
           matches:
@@ -63,12 +65,11 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '版本更新',
+      name: '更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: ['cn.soulapp.android.component.startup.main.MainActivity'],
       rules: [
         {
           matches:

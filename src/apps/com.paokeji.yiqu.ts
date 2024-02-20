@@ -5,6 +5,19 @@ export default defineAppConfig({
   name: '喵趣漫画',
   groups: [
     {
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      resetMatch: 'app',
+      actionMaximum: 1,
+      rules:
+        'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView',
+      snapshotUrls: [
+        'https://i.gkd.li/import/14031922',
+        'https://i.gkd.li/import/14322264',
+      ],
+    },
+    {
       key: 1,
       name: '局部广告',
       activityIds: [
@@ -67,6 +80,23 @@ export default defineAppConfig({
             'https://i.gkd.li/import/13829312', //规则3
             'https://i.gkd.li/import/13837855', //规则2
           ],
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '更新提示',
+      desc: '点击"暂不"',
+      matchTime: 10000,
+      quickFind: true,
+      resetMatch: 'app',
+      actionMaximum: 1,
+      rules: [
+        {
+          matches: '[id="com.paokeji.yiqu:id/btnCancel"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/2ce54292-bfc6-41c6-b2e5-e7d8302fc522',
+          snapshotUrls: 'https://i.gkd.li/import/14140265',
         },
       ],
     },

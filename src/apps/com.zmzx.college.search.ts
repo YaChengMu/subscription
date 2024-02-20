@@ -8,13 +8,11 @@ export default defineAppConfig({
     {
       enable: false,
       key: 1,
-      name: '首页-推送通知',
+      name: '通知提示-请求推送通知弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds:
-        'com.zmzx.college.search.activity.main.activity.MainActivity',
       rules: 'ImageView[id="com.zmzx.college.search:id/siv_dialog_close"]',
       snapshotUrls: 'https://i.gkd.li/import/12867853',
     },
@@ -108,17 +106,13 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 5,
-      name: '升级弹窗',
       enable: false,
+      key: 5,
+      name: '更新提示',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      activityIds: [
-        'com.zmzx.college.search.activity.main.activity.MainActivity',
-        'com.zmzx.college.search.activity.init.InitActivity',
-      ],
       rules: '[id="com.zmzx.college.search:id/update_close"]',
       snapshotUrls: [
         'https://i.gkd.li/import/13063373',
@@ -126,12 +120,13 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 6,
-      name: '申请开启推送通知弹窗',
       enable: false,
+      key: 6,
+      name: '通知提示-申请开启推送通知弹窗',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches:
@@ -142,9 +137,10 @@ export default defineAppConfig({
     },
     {
       key: 7,
-      name: '请求好评弹窗',
-      activityIds:
-        'com.zmzx.college.search.activity.camerasdk.ZybCameraSDKActivity',
+      name: '评价提示-请求好评弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
       rules:
         '[id="com.zmzx.college.search:id/iv_logo"] + [id="com.zmzx.college.search:id/siv_close"]',

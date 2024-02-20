@@ -7,7 +7,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '卡片式广告',
+      name: '局部广告-卡片式广告',
       rules: [
         {
           key: 0,
@@ -28,6 +28,12 @@ export default defineAppConfig({
             'https://i.gkd.li/import/12668583',
             'https://i.gkd.li/import/13800056',
           ],
+        },
+        {
+          key: 2,
+          activityIds: 'com.youdao.dict.activity.MainActivity',
+          matches: '[id="com.youdao.dict:id/home_ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/import/14009705',
         },
       ],
     },
@@ -63,16 +69,30 @@ export default defineAppConfig({
         {
           key: 2,
           name: '抽奖机会-弹窗广告',
-          activityIds: 'com.youdao.dict.activity.DictSplashActivity',
+          activityIds: [
+            'com.youdao.dict.activity.DictSplashActivity',
+            'com.youdao.dict.activity.DictHotBootSplashActivity',
+          ],
           quickFind: true,
           matches: '[vid="skip_bottom_view"]',
-          snapshotUrls: 'https://i.gkd.li/import/13931202',
+          snapshotUrls: [
+            'https://i.gkd.li/import/13931202',
+            'https://i.gkd.li/import/14064647',
+          ],
+        },
+        {
+          key: 3,
+          name: '首页-礼包弹窗',
+          activityIds: 'com.youdao.dict.activity.MainActivity',
+          quickFind: true,
+          matches: '[vid="image"] + [vid="close"]',
+          snapshotUrls: 'https://i.gkd.li/import/14296482',
         },
       ],
     },
     {
       key: 4,
-      name: 'VIP-弹窗',
+      name: '全屏广告-VIP弹窗',
       activityIds: 'com.youdao.dict.vip.activity.RecallSevenDayVipActivity',
       rules: '@ImageView[id="com.youdao.dict:id/iv_close"]',
       quickFind: true,
@@ -80,24 +100,38 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '评价弹窗',
-      activityIds: 'com.youdao.dict.activity.MainActivity',
+      name: '评价提示',
       quickFind: true,
-      resetMatch: 'app',
+      matchTime: 10000,
       actionMaximum: 1,
-      matchDelay: 10000,
+      resetMatch: 'app',
       rules: '[id="com.youdao.dict:id/btn_never"][text*="不再提醒"]',
-      snapshotUrls: 'https://i.gkd.li/import/13540941',
+      snapshotUrls: [
+        'https://i.gkd.li/import/13540941',
+        'https://i.gkd.li/import/14256301',
+      ],
     },
     {
       key: 6,
-      name: '更新弹窗',
+      name: '更新提示',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules:
         '[id="com.youdao.dict:id/tv_version"] + [id="com.youdao.dict:id/iv_close"]',
       snapshotUrls: 'https://i.gkd.li/import/13627912',
+    },
+    {
+      key: 7,
+      name: '功能类-点击显示释义',
+      activityIds:
+        'com.youdao.dict_flutter_android_bridge.WordBookFlutterActivity',
+      rules: '[desc="点击显示释义"] > View[index=3][visibleToUser=true]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/14292588', // 点击显示释义前
+        'https://i.gkd.li/import/14292587', // 点击显示释义后
+      ],
     },
   ],
 });

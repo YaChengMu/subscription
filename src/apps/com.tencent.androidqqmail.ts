@@ -10,12 +10,13 @@ export default defineAppConfig({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      rules: 'RelativeLayout > ImageView[id!=null] + ImageView[id!=null]',
+      rules:
+        'RelativeLayout[childCount=3] > ImageView + @ImageView[clickable=true][visibleToUser=true] + FrameLayout[childCount>0]',
       snapshotUrls: 'https://i.gkd.li/import/12775855',
     },
     {
       key: 0,
-      name: '列表卡片广告',
+      name: '分段广告-列表卡片广告',
       quickFind: true,
       activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
@@ -49,11 +50,13 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 1,
-      name: '开启通知提醒',
       enable: false,
+      key: 1,
+      name: '通知提示-开启通知提醒',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       quickFind: true,
-      activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
         {
           matches: '[text="立刻开启"] - [text="以后再说"]',

@@ -25,7 +25,7 @@ export default defineAppConfig({
     },
     {
       key: 0,
-      name: '信息流广告',
+      name: '分段广告-信息流广告',
       activityIds: 'com.uc.browser.InnerUCMobile',
       rules: [
         {
@@ -50,9 +50,10 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '请求通知权限弹窗',
-      activityIds: 'com.uc.browser.InnerUCMobile',
-
+      name: '通知提示-请求通知权限弹窗',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '@ImageView - LinearLayout >n [text="开启消息通知"]',
       snapshotUrls: [
         'https://i.gkd.li/import/12880812',
@@ -61,7 +62,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '请求添加桌面快捷方式权限弹窗',
+      name: '功能类-请求添加桌面快捷方式权限弹窗',
       activityIds: 'com.uc.browser.InnerUCMobile',
       rules: '@ImageView + [text^="添加"][text$="到桌面"]',
       snapshotUrls: 'https://i.gkd.li/import/12880983',
