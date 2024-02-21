@@ -483,7 +483,7 @@
 | vivo应用商店           | [com.bbk.appstore](/docs/com.bbk.appstore.md)                                                                                                                     | 1      |
 | 挖财记账               | [com.wacai365](/docs/com.wacai365.md)                                                                                                                             | 3      |
 | 歪麦霸王餐             | [com.waimaiii.waimaiii](/docs/com.waimaiii.waimaiii.md)                                                                                                           | 2      |
-| 网上国网               | [com.sgcc.wsgw.cn](/docs/com.sgcc.wsgw.cn.md)                                                                                                                     | 2      |
+| 网上国网               | [com.sgcc.wsgw.cn](/docs/com.sgcc.wsgw.cn.md)                                                                                                                     | 3      |
 | 网速管家               | [cn.lezhi.speedtest](/docs/cn.lezhi.speedtest.md)                                                                                                                 | 2      |
 | 网速管家极速版         | [cn.speedtest.lite](/docs/cn.speedtest.lite.md)                                                                                                                   | 2      |
 | 网心云                 | [com.onethingcloud.android](/docs/com.onethingcloud.android.md)                                                                                                   | 1      |
