@@ -1,6 +1,6 @@
 # AppShare
 
-存在 5 规则组 - [info.muge.appshare](/src/apps/info.muge.appshare.ts)
+存在 6 规则组 - [info.muge.appshare](/src/apps/info.muge.appshare.ts)
 
 ## 开屏广告
 
@@ -50,3 +50,11 @@
 - [示例-0](https://m.gkd.li/57941037/6b1d7b37-edd7-499f-a8b0-ecba24ef2c44)
 
 - [快照-0](https://i.gkd.li/import/14181146)
+
+## 通知提示-公告弹窗
+
+默认禁用 - 点击[收到]
+
+- [示例-0](https://m.gkd.li/57941037/8b782da0-1501-4839-a19b-92209b4d2723)
+
+- [快照-0](https://i.gkd.li/import/14345476)
