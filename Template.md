@@ -30,8 +30,8 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-kit/subscription&_v=--VERSION--)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=--VERSION--)
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=AIsouler/GKD_subscription&type=Date)](https://star-history.com/#AIsouler/GKD_subscription&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=YaChengMu/subscription&type=Date)](https://star-history.com/#YaChengMu/subscription&Date)
