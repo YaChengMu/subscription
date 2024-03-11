@@ -33,8 +33,7 @@ export default defineAppConfig({
           name: '开红包',
           activityIds:
             'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeCollectorActivity',
-          matches:
-            'FrameLayout + RelativeLayout + ImageView',
+          matches: 'FrameLayout + RelativeLayout + ImageView',
           exampleUrls:
             'https://m.gkd.li/57941037/52525cdb-0746-483c-b1ba-2282f3a8b8ed',
           snapshotUrls: [
