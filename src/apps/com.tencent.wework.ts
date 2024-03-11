@@ -34,7 +34,7 @@ export default defineAppConfig({
           activityIds:
             'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeCollectorActivity',
           matches:
-            'RelativeLayout[childCount=3] > FrameLayout + RelativeLayout[childCount=3] + ImageView',
+            'FrameLayout + RelativeLayout + ImageView',
           exampleUrls:
             'https://m.gkd.li/57941037/52525cdb-0746-483c-b1ba-2282f3a8b8ed',
           snapshotUrls: [
@@ -48,7 +48,7 @@ export default defineAppConfig({
           name: '从金额页面返回到聊天页面',
           activityIds:
             'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeDetailActivity',
-          matches: 'LinearLayout[childCount=3] > LinearLayout TextView',
+          matches: 'LinearLayout[childCount=1] > RelativeLayout > TextView',
           exampleUrls:
             'https://m.gkd.li/57941037/2a69cf93-1d10-48c4-8456-663197c6feca',
           snapshotUrls: 'https://i.gkd.li/import/14151120',
