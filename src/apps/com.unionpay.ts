@@ -14,7 +14,7 @@ export default defineAppConfig({
       rules: [
         {
           matches: '@[text="稍候再说"] + [text="立即更新"]',
-          snapshotUrls: 'https://i.gkd.li/import/12727278',
+          snapshotUrls: 'https://i.gkd.li/i/12727278',
         },
       ],
     },
@@ -27,13 +27,13 @@ export default defineAppConfig({
         {
           key: 0,
           matches: '[id="bannerBox"] > @View[clickable=true] > [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13070564',
+          snapshotUrls: 'https://i.gkd.li/i/13070564',
         },
         {
           preKeys: 0,
           key: 1,
           matches: '[text="关闭广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13070974',
+          snapshotUrls: 'https://i.gkd.li/i/13070974',
         },
       ],
     },
@@ -49,7 +49,7 @@ export default defineAppConfig({
         {
           matches:
             '[id="com.unionpay:id/frog_float"] >2 [id="com.unionpay:id/close_view"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12695699',
+          snapshotUrls: 'https://i.gkd.li/i/12695699',
         },
       ],
     },
@@ -62,10 +62,9 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.unionpay.activity.UPActivityMain',
       rules: '[id="com.unionpay:id/view_locate_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/13634882',
+      snapshotUrls: 'https://i.gkd.li/i/13634882',
     },
     {
-      enable: false,
       key: 11,
       name: '定位提示-访问位置请求弹窗',
       desc: '自动点击"不允许"',
@@ -76,14 +75,13 @@ export default defineAppConfig({
         {
           matches: '[text*="访问您的位置信息"] < * +n * > [text="不允许"]',
           snapshotUrls: [
-            'https://i.gkd.li/import/12695773',
-            'https://i.gkd.li/import/14209001',
+            'https://i.gkd.li/i/12695773',
+            'https://i.gkd.li/i/14209001',
           ],
         },
       ],
     },
     {
-      enable: false,
       key: 12,
       name: '通知提示-请求开启消息通知弹窗',
       desc: '点击关闭',
@@ -95,7 +93,7 @@ export default defineAppConfig({
         {
           matches:
             '[text="开启消息通知"] < * + [id="com.unionpay:id/view_alert_cancel"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12695736',
+          snapshotUrls: 'https://i.gkd.li/i/12695736',
         },
       ],
     },
@@ -110,7 +108,7 @@ export default defineAppConfig({
           activityIds: 'com.unionpay.cordova.UPActivityCordovaWeb',
           matches:
             'WebView[text="天天签到"] TextView[text="炫耀一下"] + TextView[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13440341',
+          snapshotUrls: 'https://i.gkd.li/i/13440341',
         },
       ],
     },
@@ -122,7 +120,7 @@ export default defineAppConfig({
       activityIds: 'com.unionpay.activity.UPActivityMain',
       rules:
         '[id="com.unionpay:id/container"] + [id="com.unionpay:id/image"][clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/import/13440341',
+      snapshotUrls: 'https://i.gkd.li/i/13440341',
     },
     {
       key: 15,
@@ -134,7 +132,7 @@ export default defineAppConfig({
           activityIds: 'com.unionpay.cordova.UPActivityCordovaWeb',
           matches:
             '[id="com.unionpay:id/view_content_container"] View[text="关闭按钮"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/13848688',
+          snapshotUrls: 'https://i.gkd.li/i/13848688',
         },
       ],
     },

@@ -5,7 +5,6 @@ export default defineAppConfig({
   name: '黑阈',
   groups: [
     {
-      enable: false,
       key: 1,
       name: '权限提示-权限不足弹窗',
       desc: '点击取消',
@@ -18,7 +17,7 @@ export default defineAppConfig({
             '[id="android:id/message"][text^=`黑阈服务权限不足`]',
             '[text=`取消`][id^=`android:id/button`]',
           ],
-          snapshotUrls: 'https://i.gkd.li/import/13218439',
+          snapshotUrls: 'https://i.gkd.li/i/13218439',
         },
       ],
     },

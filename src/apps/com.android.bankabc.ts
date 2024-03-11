@@ -7,22 +7,21 @@ export default defineAppConfig({
     {
       key: 1,
       name: '开屏广告',
-      desc: '点击跳过',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
           matches: '[id="com.android.bankabc:id/close"]',
           exampleUrls:
             'https://m.gkd.li/57941037/67cfc2f8-a108-4382-976a-0da7d13764e9',
-          snapshotUrls: 'https://i.gkd.li/import/14179162',
+          snapshotUrls: 'https://i.gkd.li/i/14179162',
         },
         {
           key: 1,
-          actionCdKey: 0,
           matches:
             '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳过"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
         },
@@ -35,7 +34,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[vid="upgrade_bottom"] > [vid="negativeTextView"]',
-      snapshotUrls: 'https://i.gkd.li/import/14208545',
+      snapshotUrls: 'https://i.gkd.li/i/14208545',
     },
     {
       key: 3,
@@ -44,7 +43,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="允许获取位置信息"] +n * > [text="取消"]',
-      snapshotUrls: 'https://i.gkd.li/import/14208572',
+      snapshotUrls: 'https://i.gkd.li/i/14208572',
     },
     {
       key: 4,
@@ -53,7 +52,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[vid="iv_notification_reminder_dialog_close"]',
-      snapshotUrls: 'https://i.gkd.li/import/14208621',
+      snapshotUrls: 'https://i.gkd.li/i/14208621',
     },
   ],
 });

@@ -7,6 +7,7 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -38,9 +39,9 @@ export default defineAppConfig({
           matches:
             '[id="android:id/content"] >(-n+4) FrameLayout > FrameLayout[childCount=1] > ImageView',
           snapshotUrls: [
-            'https://i.gkd.li/import/13830354',
-            'https://i.gkd.li/import/13842716',
-            'https://i.gkd.li/import/13842966',
+            'https://i.gkd.li/i/13830354',
+            'https://i.gkd.li/i/13842716',
+            'https://i.gkd.li/i/13842966',
           ],
         },
         {
@@ -48,8 +49,8 @@ export default defineAppConfig({
           name: '字节SDK-1',
           matches: 'FrameLayout[desc*="close"] > View',
           snapshotUrls: [
-            'https://i.gkd.li/import/13839432',
-            'https://i.gkd.li/import/13839519',
+            'https://i.gkd.li/i/13839432',
+            'https://i.gkd.li/i/13839519',
           ],
         },
         {

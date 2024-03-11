@@ -6,17 +6,16 @@ export default defineAppConfig({
   deprecatedKeys: [3],
   groups: [
     {
-      name: '开屏广告',
       key: 1,
-      enable: true,
-      matchTime: 10000,
+      name: '开屏广告',
       quickFind: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
           matches: '[text="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/import/13725305',
+          snapshotUrls: 'https://i.gkd.li/i/13725305',
         },
       ],
     },
@@ -24,13 +23,12 @@ export default defineAppConfig({
       name: '全屏广告-今日要闻弹窗',
       key: 2,
       desc: '点击不再提示',
-      enable: false,
       quickFind: true,
       activityIds: 'com.ruipeng.zipu.ui.main.uniauto.UniautoHomeActivity',
       rules: [
         {
           matches: '[id$="/cancel_tv"]',
-          snapshotUrls: 'https://i.gkd.li/import/13725337',
+          snapshotUrls: 'https://i.gkd.li/i/13725337',
         },
       ],
     },

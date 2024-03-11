@@ -5,7 +5,6 @@ export default defineAppConfig({
   name: '书法字典大全',
   groups: [
     {
-      enable: false,
       key: 3,
       name: '分段广告-信息流广告',
       quickFind: true,
@@ -16,14 +15,14 @@ export default defineAppConfig({
           name: '点击"x"',
           matches:
             '@View[clickable=true] < FrameLayout  -2 FrameLayout [text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/import/13425305',
+          snapshotUrls: 'https://i.gkd.li/i/13425305',
         },
         {
           preKeys: 0,
           name: '点击"不感兴趣"',
           matches:
             '@LinearLayout > [id="com.byted.pangle.m:id/tt_item_tv"][text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/import/13425306',
+          snapshotUrls: 'https://i.gkd.li/i/13425306',
         },
       ],
     },

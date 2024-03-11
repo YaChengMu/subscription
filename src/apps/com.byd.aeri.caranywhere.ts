@@ -5,7 +5,6 @@ export default defineAppConfig({
   name: '比亚迪王朝',
   groups: [
     {
-      enable: false,
       key: 1,
       name: '更新提示',
       matchTime: 10000,
@@ -18,7 +17,7 @@ export default defineAppConfig({
             '[id="com.byd.aeri.caranywhere:id/tv_determine"][text="立即安装"]',
             '[id="com.byd.aeri.caranywhere:id/tv_cancel"]',
           ],
-          snapshotUrls: 'https://i.gkd.li/import/13348383',
+          snapshotUrls: 'https://i.gkd.li/i/13348383',
         },
       ],
     },

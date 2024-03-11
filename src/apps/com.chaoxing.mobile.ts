@@ -6,7 +6,6 @@ export default defineAppConfig({
   deprecatedKeys: [0],
   groups: [
     {
-      enable: false,
       key: 10,
       name: '通知提示-开启消息通知',
       desc: '自动点击关闭',
@@ -15,7 +14,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       quickFind: true,
       rules: '[id="com.chaoxing.mobile:id/vNotificationItemClose"]',
-      snapshotUrls: 'https://i.gkd.li/import/13197374',
+      snapshotUrls: 'https://i.gkd.li/i/13197374',
     },
   ],
 });

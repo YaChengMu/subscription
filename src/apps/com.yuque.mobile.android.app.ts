@@ -13,12 +13,11 @@ export default defineAppConfig({
       rules: [
         {
           matches: 'TextView[text="了解更多"] + ViewGroup[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/import/12911014',
+          snapshotUrls: 'https://i.gkd.li/i/12911014',
         },
       ],
     },
     {
-      enable: false,
       key: 1,
       name: '功能类-自动原图',
       desc: '如果没有勾选原图, 则勾选',
@@ -27,7 +26,7 @@ export default defineAppConfig({
       rules: [
         {
           matches: 'ViewGroup[desc="原图未勾选"][clickable=true][childCount=2]',
-          snapshotUrls: 'https://i.gkd.li/import/12911013',
+          snapshotUrls: 'https://i.gkd.li/i/12911013',
         },
       ],
     },

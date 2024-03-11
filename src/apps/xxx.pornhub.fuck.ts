@@ -5,14 +5,13 @@ export default defineAppConfig({
   name: 'JavDB',
   groups: [
     {
-      enable: false,
       key: 1,
       name: '通知提示-公告弹窗',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[desc="公告"] + * + [desc="知道了"]',
-      snapshotUrls: 'https://i.gkd.li/import/13334608',
+      snapshotUrls: 'https://i.gkd.li/i/13334608',
     },
   ],
 });

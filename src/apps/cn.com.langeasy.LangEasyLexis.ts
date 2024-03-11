@@ -5,7 +5,6 @@ export default defineAppConfig({
   name: '不背单词',
   groups: [
     {
-      enable: false,
       key: 1,
       name: '功能类-自动签到',
       quickFind: true,
@@ -15,13 +14,12 @@ export default defineAppConfig({
         {
           activityIds: 'cn.com.langeasy.LangEasyLexis.activity.MainActivity',
           matches: '[id="cn.com.langeasy.LangEasyLexis:id/bb_checkin"]',
-          snapshotUrls: 'https://i.gkd.li/import/13610321',
+          snapshotUrls: 'https://i.gkd.li/i/13610321',
         },
       ],
     },
     {
       key: 2,
-      enable: false,
       name: '功能类-右下角年度报告弹窗',
       desc: '点击关闭',
       quickFind: true,
@@ -30,7 +28,7 @@ export default defineAppConfig({
         {
           activityIds: 'cn.com.langeasy.LangEasyLexis.activity.MainActivity',
           matches: '[id="cn.com.langeasy.LangEasyLexis:id/close_float_button"]',
-          snapshotUrls: 'https://i.gkd.li/import/13759025',
+          snapshotUrls: 'https://i.gkd.li/i/13759025',
         },
       ],
     },

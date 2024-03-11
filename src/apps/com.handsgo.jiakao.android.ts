@@ -3,16 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.handsgo.jiakao.android',
   name: '驾考宝典',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[id=`com.handsgo.jiakao.android:id/closeLayout`]', // 缺少快照
-    },
     {
       key: 1,
       name: '局部广告-悬浮广告',
@@ -22,7 +14,7 @@ export default defineAppConfig({
           activityIds: 'com.handsgo.jiakao.android.main.activity.MainActivity',
           matches:
             '@[id="com.handsgo.jiakao.android:id/ivDelete"] + [id="com.handsgo.jiakao.android:id/ivRemote"]',
-          snapshotUrls: 'https://i.gkd.li/import/13475994',
+          snapshotUrls: 'https://i.gkd.li/i/13475994',
         },
       ],
     },
@@ -39,7 +31,7 @@ export default defineAppConfig({
             '[desc^="logoad"] > [text="广告"]',
             '[desc^="webview-close"] > View[clickable=true]',
           ],
-          snapshotUrls: 'https://i.gkd.li/import/13476039',
+          snapshotUrls: 'https://i.gkd.li/i/13476039',
         },
         {
           key: 1,
@@ -48,7 +40,7 @@ export default defineAppConfig({
           quickFind: true,
           matches:
             '[id="com.handsgo.jiakao.android:id/adsdk__ids_cta_layout"] - * > [id="com.handsgo.jiakao.android:id/close"]',
-          snapshotUrls: 'https://i.gkd.li/import/13523033',
+          snapshotUrls: 'https://i.gkd.li/i/13523033',
         },
       ],
     },
@@ -61,7 +53,7 @@ export default defineAppConfig({
       quickFind: true,
       rules:
         '[text="开启专属学习资料推送"] + [id="com.handsgo.jiakao.android:id/closeIv"]',
-      snapshotUrls: 'https://i.gkd.li/import/13520296',
+      snapshotUrls: 'https://i.gkd.li/i/13520296',
     },
   ],
 });

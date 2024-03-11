@@ -6,22 +6,22 @@
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/12708609)
+- [快照-0](https://i.gkd.li/i/12708609)
 
 ## 全屏广告-首页红包弹窗
 
 默认禁用 - 自动点击x按钮
 
-- [快照-0](https://i.gkd.li/import/12708649)
-- [快照-1](https://i.gkd.li/import/12708660)
-- [快照-2](https://i.gkd.li/import/12708681)
+- [快照-0](https://i.gkd.li/i/12708649)
+- [快照-1](https://i.gkd.li/i/12708660)
+- [快照-2](https://i.gkd.li/i/12708681)
 
 ## 局部广告-首页左侧红包悬浮控件
 
 默认禁用 - 自动点击x按钮
 
-- [快照-0](https://i.gkd.li/import/12708671)
-- [快照-1](https://i.gkd.li/import/12708676)
+- [快照-0](https://i.gkd.li/i/12708671)
+- [快照-1](https://i.gkd.li/i/12708676)
 
 ## 功能类-推荐关注
 

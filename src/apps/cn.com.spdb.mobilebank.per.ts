@@ -6,7 +6,6 @@ export default defineAppConfig({
   deprecatedKeys: [0],
   groups: [
     {
-      enable: false,
       key: 1,
       name: '通知提示-系统通知请求',
       desc: '自动点击关闭。',
@@ -14,7 +13,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       rules: '[text="去开启"] + View > Image[text.length=0]',
-      snapshotUrls: 'https://i.gkd.li/import/13458535',
+      snapshotUrls: 'https://i.gkd.li/i/13458535',
     },
   ],
 });
