@@ -31,8 +31,10 @@ export default defineAppConfig({
           preKeys: 0,
           key: 1,
           name: '开红包',
-          activityIds:
+          activityIds: [
             'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeCollectorActivity',
+            'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeCollectorWithCoverActivity',
+          ],
           matches: 'FrameLayout + RelativeLayout + ImageView',
           exampleUrls:
             'https://m.gkd.li/57941037/52525cdb-0746-483c-b1ba-2282f3a8b8ed',
@@ -45,8 +47,10 @@ export default defineAppConfig({
           preKeys: [0, 1],
           key: 2,
           name: '从金额页面返回到聊天页面',
-          activityIds:
+          activityIds: [
             'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeDetailActivity',
+            'com.tencent.wework.enterprise.redenvelopes.controller.RedEnvelopeDetailWithCoverActivity',
+          ],
           matches: 'LinearLayout[childCount=1] > RelativeLayout > TextView',
           exampleUrls:
             'https://m.gkd.li/57941037/2a69cf93-1d10-48c4-8456-663197c6feca',
