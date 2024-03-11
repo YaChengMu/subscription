@@ -12,7 +12,7 @@
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 ```
 
-当前版本: v30
+当前版本: v31
 
 当前订阅文件已适配 680 个 APP, 共有 1548 规则组
 
@@ -30,7 +30,7 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=30)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=31)
 
 ## Star History
 
