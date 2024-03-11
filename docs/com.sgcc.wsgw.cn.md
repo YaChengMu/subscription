@@ -16,11 +16,11 @@
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/13501638)
+- [快照-0](https://i.gkd.li/i/13501638)
 
 ## 功能类-自动签到
 
 默认禁用
 
-- [快照-0](https://i.gkd.li/import/14352901)
-- [快照-1](https://i.gkd.li/import/14352908)
+- [快照-0](https://i.gkd.li/i/14352901)
+- [快照-1](https://i.gkd.li/i/14352908)

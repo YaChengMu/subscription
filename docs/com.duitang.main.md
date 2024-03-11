@@ -30,8 +30,8 @@
 
 默认禁用 - 点击X
 
-- [快照-0](https://i.gkd.li/import/13997011)
-- [快照-1](https://i.gkd.li/import/14332109)
+- [快照-0](https://i.gkd.li/i/13997011)
+- [快照-1](https://i.gkd.li/i/14332109)
 
 ## 通知提示-请求开启通知弹窗
 

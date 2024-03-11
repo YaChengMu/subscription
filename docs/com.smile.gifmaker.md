@@ -27,9 +27,9 @@
 
 默认禁用 - 自动点击"关闭/隐藏"
 
-- [快照-0](https://i.gkd.li/import/12708707)
-- [快照-1](https://i.gkd.li/import/14001536)
-- [快照-2](https://i.gkd.li/import/14232217)
+- [快照-0](https://i.gkd.li/i/12708707)
+- [快照-1](https://i.gkd.li/i/14001536)
+- [快照-2](https://i.gkd.li/i/14232217)
 
 ## 评价提示
 
@@ -37,4 +37,4 @@
 
 - [示例-0](https://m.gkd.li/57941037/da412e0f-47db-4cc0-8821-184c6ba42882)
 
-- [快照-0](https://i.gkd.li/import/14343547)
+- [快照-0](https://i.gkd.li/i/14343547)
