@@ -1,6 +1,6 @@
 # 网易有道词典
 
-存在 8 规则组 - [com.youdao.dict](/src/apps/com.youdao.dict.ts)
+存在 9 规则组 - [com.youdao.dict](/src/apps/com.youdao.dict.ts)
 
 ## 分段广告-单词页面卡片式广告
 
@@ -54,10 +54,13 @@
 默认禁用 - 点击关闭
 
 - [示例-0](https://m.gkd.li/57941037/e365b983-15c7-4ac7-acd7-9d7be4c45160)
+- [示例-1](https://m.gkd.li/57941037/4045988d-93bb-4aad-80dd-f14da296a214)
 
 - [快照-0](https://i.gkd.li/i/14468564)
 - [快照-1](https://i.gkd.li/i/14468628)
-- [快照-2](https://i.gkd.li/i/14009705)
+- [快照-2](https://i.gkd.li/i/14567234)
+- [快照-3](https://i.gkd.li/i/14009705)
+- [快照-4](https://i.gkd.li/i/14559287)
 
 ## 功能类-关闭单词页面[去复习]提示
 
@@ -67,3 +70,13 @@
 
 - [快照-0](https://i.gkd.li/i/14524540)
 - [快照-1](https://i.gkd.li/i/14524817)
+
+## 全屏广告-开学福利弹窗
+
+默认禁用 - 点击[不要再提醒我]-点击关闭
+
+- [示例-0](https://m.gkd.li/57941037/f665b390-2ef6-47be-8246-99632b24c5de)
+- [示例-1](https://m.gkd.li/57941037/f665b390-2ef6-47be-8246-99632b24c5de)
+
+- [快照-0](https://i.gkd.li/i/14586448)
+- [快照-1](https://i.gkd.li/i/14586448)

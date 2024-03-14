@@ -6,6 +6,40 @@ export default defineAppConfig({
   deprecatedKeys: [4],
   groups: [
     {
+      key: 0,
+      name: '开屏广告',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
+      rules: [
+        {
+          key: 0,
+          matches:
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14560058',
+            'https://i.gkd.li/i/14560214',
+          ],
+        },
+        {
+          key: 1,
+          matches: '[text^="跳过"][text.length<=10]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12642486',
+            'https://i.gkd.li/i/12846496',
+            'https://i.gkd.li/i/12868232',
+          ],
+        },
+        {
+          key: 2,
+          matches: '[id="com.xyhui:id/ms_skipView"]',
+          snapshotUrls: 'https://i.gkd.li/i/13197417',
+        },
+      ],
+    },
+    {
       key: 1,
       name: '全屏广告-弹窗广告',
       rules: [
@@ -18,7 +52,7 @@ export default defineAppConfig({
             'com.huawei.permissioncontroller.hwcust.appjump.AppJumpActivity',
           ],
           matches:
-            '[id="android:id/content"] >(4,5) FrameLayout[index=1] > ImageView',
+            ' [id="android:id/content"] >(4,5) FrameLayout[index=1] > @ImageView',
           snapshotUrls: [
             'https://i.gkd.li/i/14472097',
             'https://i.gkd.li/i/14472098',
@@ -54,6 +88,13 @@ export default defineAppConfig({
           activityIds: 'com.meishu.sdk.activity.SdkInterstitialActivity',
           matches: '[id="com.xyhui:id/ms_activity_sdk_interstitial_cacel"]',
           snapshotUrls: 'https://i.gkd.li/i/13458692',
+        },
+        {
+          key: 5,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches: '[text="反馈"] + @View[visibleToUser=true] > Image',
+          snapshotUrls: 'https://i.gkd.li/i/14560546',
         },
       ],
     },

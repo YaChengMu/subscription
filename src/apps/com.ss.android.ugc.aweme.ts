@@ -8,12 +8,13 @@ export default defineAppConfig({
     {
       key: 0,
       name: '青少年模式',
+      quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          quickFind: true,
           matches: '[text="体验一下"] + [text="关闭"][clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/d2b6ee77-ae06-4873-a106-db4ce2324777',
@@ -21,11 +22,17 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          quickFind: true,
           matches: '[text="开启青少年模式"] + * > [text="关闭"]',
           exampleUrls:
             'https://m.gkd.li/57941037/29534293-f3c7-4187-a36f-47e37fef2f42',
           snapshotUrls: 'https://i.gkd.li/i/14473006',
+        },
+        {
+          key: 2,
+          matches: '@[desc="关闭"] +2 [text="开启青少年模式"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/adeb1ebc-8aec-4bb1-b279-d86e2e9b0b74',
+          snapshotUrls: 'https://i.gkd.li/i/14567078',
         },
       ],
     },
@@ -261,6 +268,25 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/385f4262-d744-4482-887c-be2e1f0c0943',
           snapshotUrls: 'https://i.gkd.li/i/14533732',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '全屏广告-低价秒杀券弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          position: {
+            left: 'width * 0.5051',
+            top: 'width * 2.0649',
+          },
+          activityIds: 'com.ss.android.ugc.aweme.live.LiveDummyActivity',
+          matches: '[text="恭喜获得低价秒杀券"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/ef703cd7-99af-4e10-8345-9860ed160b8b',
+          snapshotUrls: 'https://i.gkd.li/i/14585377',
         },
       ],
     },

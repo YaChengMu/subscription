@@ -106,12 +106,12 @@ export default defineAppConfig({
     {
       key: 3,
       name: '局部广告-首页、推荐列表顶部卡片式广告',
+      matchTime: 10000,
+      actionMaximum: 1,
       activityIds: [
         'com.baidu.tieba.tblauncher.MainTabActivity',
         'com.baidu.tieba.frs.FrsActivity',
       ],
-      matchTime: 10000,
-      actionMaximum: 1,
       rules: [
         {
           key: 1,
@@ -156,7 +156,6 @@ export default defineAppConfig({
       name: '全屏广告-广告弹窗',
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       rules: [
         {
           key: 0,
@@ -193,7 +192,6 @@ export default defineAppConfig({
       matchDelay: 500,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       rules: [
         {
           key: 0,
@@ -241,34 +239,52 @@ export default defineAppConfig({
       key: 11,
       name: '局部广告-帖子内"进吧逛逛"弹窗',
       actionMaximum: 1,
-      resetMatch: 'activity',
-      rules:
-        'TextView[text!=null] < LinearLayout + LinearLayout > View + ImageView[clickable=true]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13322337',
-        'https://i.gkd.li/i/13328738',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
+          matches: '[vid="tip_close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/e45542c9-cee7-4fa6-874d-0682c53f629b',
+          snapshotUrls: 'https://i.gkd.li/i/14571741',
+        },
       ],
     },
     {
       key: 12,
       name: '功能类-贴吧内签到并关闭弹窗',
-      resetMatch: 'activity',
       rules: [
         {
           key: 0,
           name: '贴吧页签到',
-          activityIds: ['com.baidu.tieba.forum.ForumActivity'],
+          activityIds: 'com.baidu.tieba.forum.ForumActivity',
           matches:
             'WebView[text="frs"] > View > View > View > View > TextView[text="签到"][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/13776801'],
+          snapshotUrls: 'https://i.gkd.li/i/13776801',
         },
         {
           key: 1,
           name: '签到成功-弹窗',
-          activityIds: ['com.baidu.tbadk.browser.TBWebContainerActivity'],
+          activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches:
             'WebView[text="签到弹窗"] > View > View > TextView[text=""][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/13776424'],
+          snapshotUrls: 'https://i.gkd.li/i/13776424',
+        },
+      ],
+    },
+    {
+      key: 13,
+      name: '局部广告-帖子底部话题卡片',
+      desc: '点击关闭',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.baidu.tieba.pb.pb.main.PbActivity',
+          matches: '@ImageView[clickable=true] -2 [text="进入话题查看更多"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/2fa193f8-5e0e-4f85-b828-eb3e22cb60a3',
+          snapshotUrls: 'https://i.gkd.li/i/14586847',
         },
       ],
     },

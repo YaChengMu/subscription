@@ -55,7 +55,6 @@ const diabledAppIds: string[] = [
   'app.eleven.com.fastfiletransfer', // 文件闪传
   'com.idaodan.clean.master', // 雪豹速清
   'com.samsung.agc.gcam84', // 相机
-  'xxx.pornhub.fuck', // JavDB
   'com.wsw.cospa', // 异次元
   'app.mihon', // Mihon
 
@@ -91,6 +90,7 @@ const uniqueAppIdsUP = new Set([
 ]);
 const uniqueAppIdsYM = new Set([
   ...diabledAppIds,
+  'xxx.pornhub.fuck', // JavDB
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -113,7 +113,7 @@ const globalGroups: RawGlobalGroup[] = [
       {
         key: 1,
         matches:
-          '[childCount=0][visibleToUser=true][(text.length<10 && (text*="跳过" || text*="跳過" || text*="skip" || text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || desc*="跳过" || desc*="skip" || (vid*="count" && vid*="down" && vid!*="countdown" && vid!*="load" && vid!*="add" && vid!*="ead")]',
+          '[childCount=0][visibleToUser=true][(text.length<10 && (text*="跳过" || text*="跳過" || text*="skip" || text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || desc*="跳过" || desc*="skip" || (vid*="count" && vid*="down" && vid!*="countdown" && vid!*="load" && vid!*="add" && vid!*="ead" && vid!*="time")]',
       },
     ],
     apps: [...uniqueAppIdsAD].map((id) => ({ id, enable: false })),

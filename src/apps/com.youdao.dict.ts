@@ -143,13 +143,17 @@ export default defineAppConfig({
           key: 0,
           name: '右下角悬浮卡片',
           quickFind: true,
-          activityIds: 'com.youdao.dict.activity.MainActivity',
+          activityIds: [
+            'com.youdao.dict.activity.MainActivity',
+            'com.youdao.dict.activity.DictQueryActivity',
+          ],
           matches: '[vid="aivClose"][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/e365b983-15c7-4ac7-acd7-9d7be4c45160',
           snapshotUrls: [
             'https://i.gkd.li/i/14468564',
             'https://i.gkd.li/i/14468628', // visibleToUser=true 防止在此页面选中屏幕外节点
+            'https://i.gkd.li/i/14567234',
           ],
         },
         {
@@ -159,6 +163,16 @@ export default defineAppConfig({
           activityIds: 'com.youdao.dict.activity.MainActivity',
           matches: '[vid="home_ad_close"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/14009705',
+        },
+        {
+          key: 2,
+          name: '单词页面下方广告',
+          quickFind: true,
+          activityIds: 'com.youdao.dict.activity.MainActivity',
+          matches: '[vid="course_four_course_close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/4045988d-93bb-4aad-80dd-f14da296a214',
+          snapshotUrls: 'https://i.gkd.li/i/14559287',
         },
       ],
     },
@@ -184,6 +198,32 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14524540',
             'https://i.gkd.li/i/14524817',
           ],
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '全屏广告-开学福利弹窗',
+      desc: '点击[不要再提醒我]-点击关闭',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      activityIds: 'com.youdao.dict.activity.MainActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[text="不要再提醒我"][checked=false]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/f665b390-2ef6-47be-8246-99632b24c5de',
+          snapshotUrls: 'https://i.gkd.li/i/14586448',
+        },
+        {
+          preKeys: 0,
+          key: 1,
+          matches: '[vid="dialog_close_btn"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/f665b390-2ef6-47be-8246-99632b24c5de',
+          snapshotUrls: 'https://i.gkd.li/i/14586448',
         },
       ],
     },
