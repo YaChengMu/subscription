@@ -1,6 +1,6 @@
 # 喵趣漫画
 
-存在 4 规则组 - [com.paokeji.yiqu](/src/apps/com.paokeji.yiqu.ts)
+存在 5 规则组 - [com.paokeji.yiqu](/src/apps/com.paokeji.yiqu.ts)
 
 ## 开屏广告
 
@@ -23,6 +23,7 @@
 - [快照-7](https://i.gkd.li/i/13809737)
 - [快照-8](https://i.gkd.li/i/13829312)
 - [快照-9](https://i.gkd.li/i/14584695)
+- [快照-10](https://i.gkd.li/i/14340200)
 
 ## 更新提示
 
@@ -38,3 +39,11 @@
 
 - [快照-0](https://i.gkd.li/i/14584512)
 - [快照-1](https://i.gkd.li/i/14584512)
+
+## 功能类-漫画页链接断开提示
+
+默认禁用 - 点击[点我重试]
+
+- [示例-0](https://m.gkd.li/57941037/d71c73bb-289f-4205-a253-fcd8bd32f196)
+
+- [快照-0](https://i.gkd.li/i/14572053)
