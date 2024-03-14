@@ -46,7 +46,7 @@
 
 - [示例-0](https://m.gkd.li/57941037/6b1d7b37-edd7-499f-a8b0-ecba24ef2c44)
 
-- [快照-0](https://i.gkd.li/import/14181146)
+- [快照-0](https://i.gkd.li/i/14181146)
 
 ## 通知提示-公告弹窗
 
@@ -54,4 +54,4 @@
 
 - [示例-0](https://m.gkd.li/57941037/8b782da0-1501-4839-a19b-92209b4d2723)
 
-- [快照-0](https://i.gkd.li/import/14345476)
+- [快照-0](https://i.gkd.li/i/14345476)

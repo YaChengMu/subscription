@@ -4,13 +4,13 @@
 
 ## 开屏广告
 
-- [快照-0](https://i.gkd.li/import/13062244)
-- [快照-1](https://i.gkd.li/import/13093155)
-- [快照-2](https://i.gkd.li/import/13207731)
-- [快照-3](https://i.gkd.li/import/13217807)
-- [快照-4](https://i.gkd.li/import/13856647)
-- [快照-5](https://i.gkd.li/import/13868177)
-- [快照-6](https://i.gkd.li/import/14341023)
+- [快照-0](https://i.gkd.li/i/13062244)
+- [快照-1](https://i.gkd.li/i/13093155)
+- [快照-2](https://i.gkd.li/i/13207731)
+- [快照-3](https://i.gkd.li/i/13217807)
+- [快照-4](https://i.gkd.li/i/13856647)
+- [快照-5](https://i.gkd.li/i/13868177)
+- [快照-6](https://i.gkd.li/i/14341023)
 
 ## 局部广告-消息页面顶部横幅广告
 
@@ -214,8 +214,8 @@
 - [示例-0](https://m.gkd.li/57941037/882ab889-a145-4951-9a44-1dc192490c79)
 - [示例-1](https://m.gkd.li/57941037/c56c0d50-48b7-4649-9460-d40b73d3594e)
 
-- [快照-0](https://i.gkd.li/import/14188980)
-- [快照-1](https://i.gkd.li/import/14345395)
+- [快照-0](https://i.gkd.li/i/14188980)
+- [快照-1](https://i.gkd.li/i/14345395)
 
 ## 全屏广告-腾讯文档页面-"使用App"弹窗
 

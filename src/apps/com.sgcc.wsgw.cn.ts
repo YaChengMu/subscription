@@ -67,13 +67,13 @@ export default defineAppConfig({
           activityIds: 'com.sgcc.wsgw.rnbundle.activity.HomeReactActivity',
           matches:
             'FrameLayout[id="com.sgcc.wsgw.cn:id/rn_frame"] >16 TextView[text="签到"]',
-          snapshotUrls: 'https://i.gkd.li/import/14352901',
+          snapshotUrls: 'https://i.gkd.li/i/14352901',
         },
         {
           preKeys: 0,
           activityIds: 'com.sgcc.wsgw.mainbundle.ElectricTitleActivity',
           matches: 'TextView[text="签到成功"] +3 View > @Image',
-          snapshotUrls: 'https://i.gkd.li/import/14352908',
+          snapshotUrls: 'https://i.gkd.li/i/14352908',
         },
       ],
     },

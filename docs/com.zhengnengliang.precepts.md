@@ -15,6 +15,6 @@
 
 - [示例-0](https://m.gkd.li/57941037/0b140d85-0556-46aa-a648-600ae349f88b)
 
-- [快照-0](https://i.gkd.li/import/14338307)
-- [快照-1](https://i.gkd.li/import/12739767)
-- [快照-2](https://i.gkd.li/import/12727705)
+- [快照-0](https://i.gkd.li/i/14338307)
+- [快照-1](https://i.gkd.li/i/12739767)
+- [快照-2](https://i.gkd.li/i/12727705)
