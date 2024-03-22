@@ -58,6 +58,8 @@ export default defineAppConfig({
       key: 11,
       name: '权限提示-请求获取剪贴板权限弹窗',
       desc: '请求获取剪贴板权限弹窗，点击不允许',
+      actionMaximum: 1,
+      resetMatch: 'app',
       activityIds: 'com.mc10086.cmcc.view.tabs.AppTabFragment',
       rules: [
         {
@@ -94,6 +96,7 @@ export default defineAppConfig({
     {
       key: 13,
       name: '评价提示-请求好评弹窗',
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',

@@ -30,6 +30,8 @@ export default defineAppConfig({
       name: '通知提示-通知/链接蓝牙附件设备',
       desc: '自动点击关闭',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
       activityIds: 'com.enflick.android.TextNow.activities.MainActivity',
       rules:
         '@ImageView[clickable=true] <2 [id="com.enflick.android.TextNow:id/calling_banner"]',

@@ -48,6 +48,8 @@ export default defineAppConfig({
       key: 1,
       name: '定位提示-请求定位权限弹窗',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
       activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
       rules:
         '@[id="com.alipay.mobile.antui:id/closeButton"] - [id="com.alipay.mobile.antui:id/textAndButtonLayout"] [id="com.alipay.mobile.antui:id/tipTextView"][text^="开启定位权限"]',
@@ -245,6 +247,24 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/7008e1da-738c-4790-9f12-6a5155d42c47',
           snapshotUrls: 'https://i.gkd.li/i/14546047',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '功能类-关闭免密支付开关',
+      actionMaximum: 1,
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
+          matches: '@[checked=true] < * - [text$="免密支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/1e3a5f01-c42b-4d41-9d7d-21ff96c0075f',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630824', // 关闭前
+            'https://i.gkd.li/i/14630825', // 关闭后
+          ],
         },
       ],
     },

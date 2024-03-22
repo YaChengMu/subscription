@@ -33,10 +33,11 @@ export default defineAppConfig({
         {
           key: 0,
           matches:
-            'ImageView < ViewGroup + @ViewGroup[childCount=1] > ImageView', //添加childCount=1避免"全屏播放-设置"误触
+            'ImageView < ViewGroup + @ViewGroup[childCount=1][clickable=true] > ImageView',
           snapshotUrls: [
             'https://i.gkd.li/i/12892825',
-            'https://i.gkd.li/i/13037239',
+            'https://i.gkd.li/i/13037239', //添加childCount=1避免"全屏播放-设置"误触
+            'https://i.gkd.li/i/14692807', //clickable=true防止在此页面误触
           ],
         },
         {
@@ -70,6 +71,22 @@ export default defineAppConfig({
             'https://i.gkd.li/i/13948990',
             'https://i.gkd.li/i/14310474', // 避免在此页面误触
           ],
+        },
+        {
+          key: 6,
+          matches:
+            '[id="android:id/content"] > RelativeLayout >4 FrameLayout + ImageView',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14668232',
+            'https://i.gkd.li/i/14668248',
+            'https://i.gkd.li/i/14667860',
+          ],
+        },
+        {
+          key: 7,
+          quickFind: true,
+          matches: '@ImageView[visibleToUser=true] -2 * >3 [text="推荐"]',
+          snapshotUrls: 'https://i.gkd.li/i/14668232',
         },
       ],
     },

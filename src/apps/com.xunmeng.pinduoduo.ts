@@ -83,6 +83,15 @@ export default defineAppConfig({
             '[text="多多免单"] >5 View[childCount=2] > Image[index=0][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/14310581',
         },
+        {
+          key: 3,
+          name: '抽免单活动4',
+          quickFind: true,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '@ImageView[visibleToUser=true] < * +2 * >3 [text="立即抽免单"]',
+          snapshotUrls: 'https://i.gkd.li/i/14614135',
+        },
       ],
     },
     {
@@ -375,12 +384,13 @@ export default defineAppConfig({
       rules: [
         {
           matches:
-            'FrameLayout > ViewGroup[vid="pdd"] > ViewGroup > ViewGroup > ViewGroup[childCount=3 || childCount=2] >(1,2) ImageView[clickable=true][visibleToUser=true]',
+            'FrameLayout > ViewGroup[vid="pdd"] > ViewGroup > ViewGroup[childCount<3] > ViewGroup[childCount=3 || childCount=2] >(1,2) ImageView[clickable=true][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/8f376a1e-750f-4677-af82-473f3522b67c',
           snapshotUrls: [
             'https://i.gkd.li/i/14109435',
             'https://i.gkd.li/i/14549423',
+            'https://i.gkd.li/i/14662202', // 避免在此页面误触
           ],
         },
       ],

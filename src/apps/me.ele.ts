@@ -143,16 +143,18 @@ export default defineAppConfig({
       name: '定位提示',
       desc: '自动点击X',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
+      activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
       rules: [
         {
           key: 0,
-          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matches: '[text="去开启"] + [id="me.ele:id/close"]',
           snapshotUrls: 'https://i.gkd.li/i/13710588',
         },
         {
           key: 1,
-          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matches: '[text="去开启"] + [id="me.ele:id/close_tips"]',
           snapshotUrls: 'https://i.gkd.li/i/13710585',
         },
@@ -171,6 +173,23 @@ export default defineAppConfig({
           matches:
             '@View[visibleToUser=true] < * <2 [id="me.ele:id/frame_bottom_bg"]',
           snapshotUrls: 'https://i.gkd.li/i/13931205',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '评价提示-底部调研邀请卡片',
+      desc: '点击关闭',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'me.ele.foodchannel.page.WMChannelNativeActivity',
+          matches: '[text*="小调研"] - [vid="iv_cancel"][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/350d8f4d-8ab0-4572-8ff0-450ab4729d53',
+          snapshotUrls: 'https://i.gkd.li/i/14630370',
         },
       ],
     },

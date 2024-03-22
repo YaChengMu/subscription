@@ -192,11 +192,13 @@ export default defineAppConfig({
       key: 14,
       name: '定位提示-请求定位权限弹窗',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          actionMaximum: 1,
-          matches: '@[text="以后再说"] + * + [text="去开启"]',
+          matches: '@[text="以后再说"] +2 [text="去开启"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13218093',
             'https://i.gkd.li/i/13003311',
@@ -204,7 +206,6 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          actionMaximumKey: 0,
           matches:
             '@[id="com.sina.weibo:id/btn_close"] +2 [text="使用您的位置信息"]',
           snapshotUrls: 'https://i.gkd.li/i/13255595',
@@ -273,7 +274,7 @@ export default defineAppConfig({
     {
       key: 18,
       name: '评价提示-APP评分弹窗',
-      desc: '点击"x"',
+      desc: '点击关闭',
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
