@@ -49,7 +49,7 @@ export default defineAppConfig({
           name: '腾讯SDK',
           actionDelay: 350, //防误触
           matches:
-            '[id="android:id/content"] >(-n+4) FrameLayout > FrameLayout[childCount=1] > ImageView[index=0 && id!=null]',
+            '[id="android:id/content"] >(-n+4) FrameLayout > FrameLayout[childCount=1] > ImageView[index=0&&id=null]',
           snapshotUrls: [
             'https://i.gkd.li/i/13830354',
             'https://i.gkd.li/i/13842716',
@@ -59,12 +59,13 @@ export default defineAppConfig({
         {
           key: 2,
           name: '穿山甲SDK',
-          matches: '@View[width>70&&width<82]',
+          matches: '@View[width>70&&width<89] > Image',
           snapshotUrls: [
             'https://i.gkd.li/i/13810150',
             'https://i.gkd.li/i/13830798',
             'https://i.gkd.li/i/13809578',
             'https://i.gkd.li/i/13809737',
+            'https://i.gkd.li/i/14717730',
           ],
         },
         {
