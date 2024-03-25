@@ -66,19 +66,17 @@ export default defineAppConfig({
         {
           key: 1,
           name: '快手广告-1',
+          quickFind: true,
           activityIds: [
-            'com.bbk.launcher2.Launcher',
             'com.zmzx.college.search.activity.main.activity.MainActivity',
             'com.zmzx.college.search.activity.questionsearch.camera.activity.PicSearchResultActivity',
           ],
-          matches: [
-            'ViewGroup[childCount=2] [text="广告"]',
-            'ViewGroup @ViewGroup[clickable=true][childCount=1] > ImageView',
-          ],
+          matches:
+            'ImageView < @ViewGroup[clickable=true] <<n ViewGroup +n ViewGroup[childCount=2] [text="广告"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13346628',
             'https://i.gkd.li/i/13451304',
             'https://i.gkd.li/i/14519779',
+            'https://i.gkd.li/i/14731371',
           ],
         },
         {
@@ -86,7 +84,7 @@ export default defineAppConfig({
           name: '字节广告-1',
           activityIds:
             'com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity',
-          matches: '@Image < View +3 View > View > TextView[text$="广告"]',
+          matches: 'Image < @View +3 View > View > TextView[text$="广告"]',
           snapshotUrls: 'https://i.gkd.li/i/13523288',
         },
         {

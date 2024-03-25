@@ -61,5 +61,45 @@ export default defineAppConfig({
         },
       ],
     },
+    {
+      key: 3,
+      name: '全屏广告-[看广告免费听歌]弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          activityIds: 'com.kugou.android.app.MediaActivity',
+          matches: '[desc="看广告，免费听会员歌"] +2 [desc="关闭"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/dfd70c7c-3200-493e-9afa-404de5fcd2ff',
+          snapshotUrls: 'https://i.gkd.li/i/14722104',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '全屏广告-[开启音乐DJ]弹窗',
+      desc: '勾选[今日不再提醒]-点击[关闭]',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: '@[checked=false] + [text="今日不再提醒"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/69f564e9-464a-488b-a181-f1085176b49f',
+          snapshotUrls: 'https://i.gkd.li/i/14722457',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '@ImageView - * > [text="今日不再提醒"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/69f564e9-464a-488b-a181-f1085176b49f',
+          snapshotUrls: 'https://i.gkd.li/i/14722457',
+        },
+      ],
+    },
   ],
 });

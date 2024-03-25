@@ -11,19 +11,18 @@
 - [快照-0](https://i.gkd.li/i/13000395)
 - [快照-1](https://i.gkd.li/i/12905837)
 - [快照-2](https://i.gkd.li/i/13791200)
-- [快照-3](https://i.gkd.li/i/14476135)
-- [快照-4](https://i.gkd.li/i/14647413)
-- [快照-5](https://i.gkd.li/i/12907642)
-- [快照-6](https://i.gkd.li/i/13926578)
-- [快照-7](https://i.gkd.li/i/14207480)
-- [快照-8](https://i.gkd.li/i/13791202)
-- [快照-9](https://i.gkd.li/i/12642584)
-- [快照-10](https://i.gkd.li/i/14647839)
-- [快照-11](https://i.gkd.li/i/12905838)
-- [快照-12](https://i.gkd.li/i/12663984)
-- [快照-13](https://i.gkd.li/i/14647940)
-- [快照-14](https://i.gkd.li/i/12905846)
-- [快照-15](https://i.gkd.li/i/14647940)
+- [快照-3](https://i.gkd.li/i/14647413)
+- [快照-4](https://i.gkd.li/i/12907642)
+- [快照-5](https://i.gkd.li/i/13926578)
+- [快照-6](https://i.gkd.li/i/14207480)
+- [快照-7](https://i.gkd.li/i/13791202)
+- [快照-8](https://i.gkd.li/i/12642584)
+- [快照-9](https://i.gkd.li/i/14647839)
+- [快照-10](https://i.gkd.li/i/12905838)
+- [快照-11](https://i.gkd.li/i/12663984)
+- [快照-12](https://i.gkd.li/i/14647940)
+- [快照-13](https://i.gkd.li/i/12905846)
+- [快照-14](https://i.gkd.li/i/14647940)
 
 ## 功能类-电脑微信快捷自动登录
 
@@ -155,6 +154,7 @@
 
 - [快照-0](https://i.gkd.li/i/13538145)
 - [快照-1](https://i.gkd.li/i/13575195)
+- [快照-2](https://i.gkd.li/i/14735456)
 
 ## 功能类-青少年模式自动点击验证密码
 

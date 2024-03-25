@@ -554,7 +554,10 @@ export const updateReadMeMd = async (
       // 更新应用程序的 Markdown 文件
       await updateAppMd(newApp);
       // 获取应用程序组的差异日志
-      const appDiffLog = getAppDiffLog(newApp.groups, oldApp?.groups || []);
+      const appDiffLog = getAppDiffLog(
+        oldApp ? oldApp.groups : [],
+        newApp.groups,
+      );
       // 如果有新增、修改或删除的组，则将其记录到应用程序差异中
       if (
         appDiffLog.addGroups.length +
