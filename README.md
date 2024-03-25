@@ -19,9 +19,9 @@
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 ```
 
-当前版本: v42
+当前版本: v43
 
-当前订阅文件已适配 710 个应用，共有 1645 应用规则组，3 全局规则组
+当前订阅文件已适配 714 个应用，共有 1665 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./AppList.md)
 
@@ -37,7 +37,7 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=42)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=43)
 
 ## Star History
 
