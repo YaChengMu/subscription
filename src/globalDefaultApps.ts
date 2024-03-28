@@ -61,6 +61,9 @@ export const blackListAppIDs: string[] = [
   'com.rosan.dhizuku', // Dhizuku
   'com.rosan.accounts', // Accounts
   'com.dv.adm', // ADM
+  'com.assistant.ongoingclear', // 固定通知隐藏
+  'org.koitharu.kotatsu', // Kotatsu
+  'me.ash.reader', // Read You
 
   // 系统自带非系统应用
   // 小米
@@ -131,6 +134,7 @@ export const openAdWhiteListAppIDs = new Set([
   'com.miui.systemAdSolution', // 小米智能服务
   'com.huawei.appmarket', // 华为应用市场
   'com.xiaomi.market', // 小米应用商店
+  'com.miui.player', // 小米音乐
 ]);
 export const updateWhiteListAppIDs = new Set([...whiteListAppIDs]);
 export const yongWhiteListAppIDs = new Set([...whiteListAppIDs]);
