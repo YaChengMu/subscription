@@ -135,7 +135,7 @@ export default defineAppConfig({
       name: '局部广告-首页底部浮窗广告',
       activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
       rules:
-        'LinearLayout >n FrameLayout >n ViewGroup[childCount=3] + ViewGroup[clickable=true]',
+        'LinearLayout >n FrameLayout[id="me.ele:id/id_magex_mist_view"] >n ViewGroup[childCount=3] + ViewGroup[clickable=true]',
       snapshotUrls: 'https://i.gkd.li/i/13710588',
     },
     {
