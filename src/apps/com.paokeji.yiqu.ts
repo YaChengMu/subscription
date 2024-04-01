@@ -59,7 +59,10 @@ export default defineAppConfig({
         {
           key: 2,
           name: '穿山甲SDK',
-          matches: '@View[width>70&&width<89] > Image',
+          matches: [
+            'Image[text=""] < @View +4 [text="反馈"] + * >2 [text="广告"]',
+            '@View[width>=75&&width<=81] > Image',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/13810150',
             'https://i.gkd.li/i/13830798',
