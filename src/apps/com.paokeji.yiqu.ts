@@ -81,6 +81,12 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14340200',
           ],
         },
+        {
+          key: 4,
+          quickFind: true,
+          matches: '@LinearLayout[clickable=true] - * > [text="反馈"]',
+          snapshotUrls: 'https://i.gkd.li/i/14847142',
+        },
       ],
     },
     {
