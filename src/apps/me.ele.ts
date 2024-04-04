@@ -133,6 +133,7 @@ export default defineAppConfig({
     {
       key: 7,
       name: '局部广告-首页底部浮窗广告',
+      quickFind: true,
       activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
       rules:
         '@ViewGroup[childCount=0][clickable=true] - ViewGroup[childCount=3] <<n [id="me.ele:id/id_magex_mist_view"]',
