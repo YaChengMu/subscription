@@ -13,15 +13,23 @@
 
 **仅启用 `开屏广告` 一类规则，其它所有规则均需手动打开，规则类别里可以批量开启某一类规则**
 
-订阅链接：
+**订阅链接：**
+
+- gitmirror源
 
 ```txt
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 ```
 
-当前版本: v49
+- jsDelivr源
 
-当前订阅文件已适配 718 个应用，共有 1683 应用规则组，3 全局规则组
+```txt
+https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5
+```
+
+当前版本: v50
+
+当前订阅文件已适配 722 个应用，共有 1695 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./AppList.md)
 
@@ -37,7 +45,7 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=49)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=50)
 
 ## Star History
 
