@@ -77,27 +77,36 @@ export default defineAppConfig({
       key: 10,
       name: '通知提示-推送通知弹窗',
       desc: '点击x按钮',
-      matchTime: 10000,
+      quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
+          key: 0,
           matches:
             '[id="com.zhihu.android:id/guide_title"] - [id="com.zhihu.android:id/guide_image_exit"][clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/25cfef06-fe50-4250-bf45-1f6210f95063',
           snapshotUrls: 'https://i.gkd.li/i/12647583',
         },
+        {
+          key: 1,
+          matches: '@[vid="btn_close"] +2 [text$="内容推送"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/1d1fee24-3ba0-4cf1-a0d5-696f4f62a5e0',
+          snapshotUrls: 'https://i.gkd.li/i/14917866',
+        },
       ],
     },
     {
       key: 12,
-      name: '全屏广告-广告弹窗',
+      name: '全屏广告-弹窗广告',
       desc: '点击关闭',
       rules: [
         {
           key: 0,
-          name: '会员页广告弹窗',
+          name: '会员页弹窗广告',
           activityIds: 'com.zhihu.android.app.ui.activity.MainActivity',
           matches: '[id="com.zhihu.android:id/dismiss"]',
           exampleUrls:
@@ -106,7 +115,7 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '首页广告弹窗',
+          name: '首页弹窗广告',
           quickFind: true,
           activityIds: 'com.zhihu.android.app.ui.activity.AdAlphaVideoActivity',
           matches: '[vid="tv_ad_close"]',

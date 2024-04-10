@@ -89,7 +89,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '全屏广告-广告弹窗',
+      name: '全屏广告-弹窗广告',
       activityIds: 'com.android.launcher.Launcher',
       quickFind: true,
       rules:
@@ -287,6 +287,25 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/8f70418d-92f0-4264-83fd-a680350c478e',
           snapshotUrls: 'https://i.gkd.li/i/14735280',
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '青少年模式',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: ['[text*="青少年模式"]', '[text="关闭" || desc="关闭"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14321107',
+            'https://i.gkd.li/i/14473006',
+            'https://i.gkd.li/i/14567078',
+            'https://i.gkd.li/i/14917848', // 避免误触
+          ],
         },
       ],
     },
