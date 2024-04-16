@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.netease.cloudmusic',
   name: '网易云音乐',
-  deprecatedKeys: [9, 11, 12],
+  deprecatedKeys: [3, 9, 11, 12],
   groups: [
     {
       key: 1,
@@ -18,7 +18,7 @@ export default defineAppConfig({
             'com.netease.cloudmusic.activity.MainActivity',
           ],
           excludeActivityIds:
-            'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity', // 排除评论区，避免节点被遮罩时误触，评论区广告规则见groups key2
+            'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity', // 排除评论区，避免节点被遮罩时误触，评论区广告规则见groups key 13
           matches: '[vid="adTagView"][clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/a603ceca-7e89-4b1f-9e17-508c583b32d8',
@@ -83,6 +83,7 @@ export default defineAppConfig({
       key: 2,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
+      quickFind: true,
       rules: [
         {
           key: 0,
@@ -94,34 +95,6 @@ export default defineAppConfig({
             'https://m.gkd.li/57941037/827ebe8b-f3c6-4068-8d31-11d5b2578680',
           snapshotUrls: 'https://i.gkd.li/i/12745666',
         },
-        {
-          key: 1,
-          name: '评论区广告',
-          quickFind: true,
-          activityIds:
-            'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity',
-          matches:
-            '@[vid="adTagView"] <n [vid="commentAdContainer"] + [vid="commentVHRootId"][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/3d0a500b-8f73-4da9-8e05-88f39c7cb58f',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14275571',
-            'https://i.gkd.li/i/14275955',
-            'https://i.gkd.li/i/14070500', // 通过广告下方评论visibleToUser=true防止在此页面误触
-          ],
-        },
-      ],
-    },
-    {
-      key: 3,
-      name: '全屏广告-看广告免费听歌弹窗',
-      quickFind: true,
-      activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-      rules:
-        '@ImageView[clickable=true] + * >(1,2) [text="VIP歌曲免费听30分钟"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12843383',
-        'https://i.gkd.li/i/13804534',
       ],
     },
     {
@@ -169,65 +142,62 @@ export default defineAppConfig({
       key: 5,
       name: '全屏广告-VIP弹窗',
       quickFind: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
       rules: [
         {
           key: 0,
-          activityIds:
+          action: 'back',
+          activityIds: [
             'com.netease.cloudmusic.music.biz.rn.activity.MainProcessLayerReactNativeActivity',
-          matches:
-            'ImageView <<n @ViewGroup[clickable=true] <2 ViewGroup < ViewGroup + ScrollView [text="会员套餐"]',
+            'com.netease.cloudmusic.activity.MainActivity',
+          ],
+          matches: ['[text="支付宝"]', '[text^="确认协议并"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/13189055',
             'https://i.gkd.li/i/13260416',
             'https://i.gkd.li/i/13996787',
+            'https://i.gkd.li/i/13230605',
+            'https://i.gkd.li/i/14268181',
+            'https://i.gkd.li/i/13391498',
+            'https://i.gkd.li/i/14045917',
+            'https://i.gkd.li/i/14926722',
           ],
         },
         {
           key: 1,
-          name: '专属优惠-VIP续费弹窗',
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches: '@ImageView - ViewGroup > [text="解锁千万级会员曲库"]',
-          snapshotUrls: 'https://i.gkd.li/i/13228955',
+          action: 'back',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.music.biz.rn.activity.LayerReactNativeActivity',
+          ],
+          matches: '[text$="千万级会员曲库"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13228955',
+            'https://i.gkd.li/i/14956768',
+          ],
         },
         {
           key: 2,
-          name: '解锁更高音质',
+          action: 'back',
           activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
-          matches: '@ImageView -2 ViewGroup [text="解锁更高音质"]',
+          matches: '[text="搭配沉浸环绕声，享受空间音感"]',
           snapshotUrls: 'https://i.gkd.li/i/13230603',
         },
         {
-          key: 3,
-          name: '黑胶过期-VIP续费弹窗',
-          activityIds:
-            'com.netease.cloudmusic.music.biz.rn.activity.MainProcessLayerReactNativeActivity',
-          matches:
-            '@ViewGroup[clickable=true][childCount=1] -(3,4) ViewGroup[childCount=19] > [text="黑胶VIP连续包季"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13230605',
-            'https://i.gkd.li/i/14268181',
-          ],
-        },
-        {
-          key: 4,
-          name: '搭配会员音效-VIP支付弹窗',
+          key: 6,
+          action: 'back',
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches:
-            '[text*="搭配会员音效"] + @ViewGroup[childCount=1] > ImageView',
-          snapshotUrls: 'https://i.gkd.li/i/13391498',
+          matches: '[text="VIP歌曲免费听30分钟"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13804534',
+            'https://i.gkd.li/i/12843383',
+          ],
         },
         {
-          key: 5,
-          name: '搭配高清臻音-VIP支付弹窗',
-          activityIds:
-            'com.netease.cloudmusic.music.biz.rn.activity.MainProcessLayerReactNativeActivity',
-          matches: '@ImageView[index=4] +5 ViewGroup [text*="确认协议并支付"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14045917',
-            'https://i.gkd.li/i/14926722',
-          ],
+          key: 7,
+          action: 'back',
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches: '[vid="view_button_main"][text*="立即续费"]',
+          snapshotUrls: 'https://i.gkd.li/i/14969806',
         },
       ],
     },
@@ -322,26 +292,47 @@ export default defineAppConfig({
       name: '分段广告-评论区广告',
       desc: '点击[关闭]-点击[不感兴趣]',
       quickFind: true,
-      activityIds:
+      activityIds: [
         'com.netease.cloudmusic.music.biz.comment.activity.CommentActivity',
+        'com.netease.cloudmusic.music.biz.comment.activity.ReplyCommentActivity2',
+      ],
       rules: [
         {
           key: 0,
-          name: '点击[关闭]',
+          name: '点击关闭',
           matches:
             // 通过广告下方评论visibleToUser=true防止误触
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentVHRootId"] [vid="closeAction"][clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/2f9d5dee-c9f3-4a64-8ccd-f154c1901a12',
           snapshotUrls: 'https://i.gkd.li/i/14549836',
         },
         {
+          key: 2,
+          name: '点击关闭',
+          matches:
+            '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentAdContainer"] >n [vid="adTagView"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14275571',
+            'https://i.gkd.li/i/14275955',
+            'https://i.gkd.li/i/14070500', // 通过广告下方评论visibleToUser=true防止在此页面误触
+            'https://i.gkd.li/i/14964827',
+            'https://i.gkd.li/i/14964828',
+          ],
+        },
+        {
+          preKeys: [2],
+          key: 98,
+          name: '点击[直接关闭]',
+          matches: '[text="直接关闭"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14932659',
+            'https://i.gkd.li/i/14964832',
+          ],
+        },
+        {
           preKeys: [0],
-          key: 1,
+          key: 99,
           name: '点击[不感兴趣]',
           matches: '@[clickable=true] > [text="不感兴趣"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/3750b512-4970-48ee-bc04-0c0e597702c2',
           snapshotUrls: 'https://i.gkd.li/i/14549856',
         },
       ],
