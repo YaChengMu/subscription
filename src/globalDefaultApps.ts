@@ -167,6 +167,8 @@ export const updateBlackListAppIDs = new Set([
 export const yongBlackListAppIDs = new Set([
   ...blackListAppIDs,
   'xxx.pornhub.fuck', // JavDB
+  'com.netease.cloudmusic', // 网易云音乐 全局规则在 https://i.gkd.li/i/14931708 误触
+  'com.zhihu.android', // 知乎 全局规则在 https://i.gkd.li/i/14964990 误触
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -180,9 +182,7 @@ export const openAdWhiteListAppIDs = new Set([
   ...whiteListAppIDs,
   'com.bbk.theme', // i 主题
   'com.bbk.appstore', // vivo应用商店
-  'com.miui.systemAdSolution', // 小米智能服务
   'com.huawei.appmarket', // 华为应用市场
-  'com.xiaomi.market', // 小米应用商店
   'com.miui.player', // 小米音乐
 ]);
 
