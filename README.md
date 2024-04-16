@@ -15,6 +15,12 @@
 
 **订阅链接：**
 
+- npmmirror源（推荐）
+
+```txt
+https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+```
+
 - gitmirror源
 
 ```txt
@@ -27,9 +33,9 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5
 ```
 
-当前版本: v50
+当前版本: v51
 
-当前订阅文件已适配 722 个应用，共有 1695 应用规则组，3 全局规则组
+当前订阅文件已适配 724 个应用，共有 1702 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./AppList.md)
 
@@ -45,7 +51,7 @@ https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.jso
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=50)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=51)
 
 ## Star History
 
