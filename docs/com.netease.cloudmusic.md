@@ -1,7 +1,6 @@
 # 网易云音乐
 
 存在 11 规则组 - [com.netease.cloudmusic](/src/apps/com.netease.cloudmusic.ts)
-存在 12 规则组 - [com.netease.cloudmusic](/src/apps/com.netease.cloudmusic.ts)
 
 ## 分段广告-卡片广告
 
