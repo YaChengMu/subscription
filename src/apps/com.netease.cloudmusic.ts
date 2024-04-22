@@ -1,9 +1,8 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.netease.cloudmusic',
   name: '网易云音乐',
-  deprecatedKeys: [3, 9, 11, 12],
   groups: [
     {
       key: 1,
@@ -95,6 +94,16 @@ export default defineAppConfig({
             'https://m.gkd.li/57941037/827ebe8b-f3c6-4068-8d31-11d5b2578680',
           snapshotUrls: 'https://i.gkd.li/i/12745666',
         },
+        {
+          key: 1,
+          name: '首页卡片广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches: '[vid="adTagView"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047096',
+        },
       ],
     },
     {
@@ -185,11 +194,15 @@ export default defineAppConfig({
         {
           key: 6,
           action: 'back',
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches: '[text="VIP歌曲免费听30分钟"]',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
+          matches: '[text*="免费听30分钟"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13804534',
             'https://i.gkd.li/i/12843383',
+            'https://i.gkd.li/i/13804534',
+            'https://i.gkd.li/i/15047126',
           ],
         },
         {
@@ -299,7 +312,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击关闭',
+          name: '点击关闭-1',
           matches:
             // 通过广告下方评论visibleToUser=true防止误触
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentVHRootId"] [vid="closeAction"][clickable=true]',
@@ -307,7 +320,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '点击关闭',
+          name: '点击关闭-2',
           matches:
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentAdContainer"] >n [vid="adTagView"]',
           snapshotUrls: [

@@ -1,14 +1,16 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.sfexpress.sfim',
   name: '丰声',
   groups: [
     {
       key: 10,
-      name: '功能类-登录确认',
-      desc: '自动点击"登录"按钮',
+      name: '功能类-自动确认登录',
+      desc: '自动点击[登录]按钮',
       quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           key: 0,

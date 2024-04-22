@@ -1,21 +1,31 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.alibaba.wireless',
   name: '阿里巴巴',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       name: '更新提示',
+      quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
-      rules:
-        '[id="com.alibaba.wireless:id/update_title"] +(2) LinearLayout >(2) [text="取消"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12684422',
-        'https://i.gkd.li/i/12684426',
+      actionMaximumKey: 0,
+      rules: [
+        {
+          key: 0,
+          matches: '[id="com.alibaba.wireless:id/update_button_cancel"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12684422',
+            'https://i.gkd.li/i/12684426',
+          ],
+        },
+        {
+          key: 1,
+          matches: '[vid="update_pop_cancel_btn"]',
+          snapshotUrls: 'https://i.gkd.li/i/15004486',
+        },
       ],
     },
     {

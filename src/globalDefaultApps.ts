@@ -1,4 +1,6 @@
-import apps from './rawApps';
+import { batchImportApps } from '@gkd-kit/tools';
+
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
 
 // 全局规则黑名单
 // 在一些非系统应用中禁用所有全局规则
@@ -90,6 +92,7 @@ export const blackListAppIDs: string[] = [
   'com.viewblocker.jrsen',
   'com.tsng.hidemyapplist',
   'com.pittvandewitt.wavelet',
+  'one.yufz.onebox',
 
   // 系统自带非系统应用
   // 小米

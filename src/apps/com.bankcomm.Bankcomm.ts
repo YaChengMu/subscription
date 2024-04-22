@@ -1,23 +1,27 @@
-import { defineAppConfig } from '../types';
+import { defineGkdApp } from '@gkd-kit/define';
 
-export default defineAppConfig({
+export default defineGkdApp({
   id: 'com.bankcomm.Bankcomm',
   name: '交通银行',
   groups: [
     {
       key: 0,
-      activityIds: [
-        'com.bankcomm.module.biz.home.MainActivity',
-        'com.hihonor.android.launcher.unihome.UniHomeLauncher',
-      ],
-      name: '全屏广告-首页弹窗广告',
-      desc: '点击右上角x',
-      rules:
-        '[id="com.bankcomm.Bankcomm:id/popup_ad_image"] - [id="com.bankcomm.Bankcomm:id/popup_close"]',
-      // 貌似快照里位置和截图不对应
-      snapshotUrls: [
-        'https://i.gkd.li/i/12671987',
-        'https://i.gkd.li/i/12745293', // activityId: 'com.hihonor.android.launcher.unihome.UniHomeLauncher'
+      name: '全屏广告-弹窗广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: [
+            'com.bankcomm.module.biz.home.MainActivity',
+            'com.hihonor.android.launcher.unihome.UniHomeLauncher',
+          ],
+          matches: '[vid="popup_ad_image"] <n * > [vid="popup_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12671987',
+            'https://i.gkd.li/i/12745293',
+            'https://i.gkd.li/i/15046998',
+          ],
+        },
       ],
     },
     {
