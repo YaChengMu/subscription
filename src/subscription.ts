@@ -19,12 +19,12 @@ apps.forEach((appConfig) => {
 });
 
 export default defineGkdSubscription({
-  id: 666,
-  name: 'AIsouler的GKD订阅',
+  id: 303,
+  name: 'YaChengMu的GKD订阅',
   version: 0,
-  author: 'AIsouler',
-  checkUpdateUrl: './AIsouler_gkd.version.json5',
-  supportUri: 'https://github.com/AIsouler/GKD_subscription',
+  author: 'YaChengMu',
+  checkUpdateUrl: './gkd.version.json5',
+  supportUri: 'https://github.com/YaChengMu/subscription',
   categories,
   globalGroups,
   apps: rawApps,

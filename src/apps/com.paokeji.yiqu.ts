@@ -121,7 +121,7 @@ export default defineGkdApp({
         {
           preKeys: [0],
           key: 1,
-          name: '看视频解锁任意读',
+          name: '看视频解锁任意读-广告',
           matches: '@ImageView[width>30&&width<40]',
           snapshotUrls: ['https://i.gkd.li/i/14584512'],
         },

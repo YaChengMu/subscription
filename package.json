@@ -2,10 +2,34 @@
   "name": "@aisouler/gkd_subscription",
   "version": "1.65.0",
   "type": "module",
-  "version": "1.52.0",
-  "main": "./dist/gkd.json5",
-  "unpkg": "./dist/gkd.json5",
-  "jsdelivr": "./dist/gkd.json5",
+  "gkd": {
+    "outDir": "dist",
+    "file": "gkd.json5",
+    "versionFile": "gkd.version.json5",
+    "changelog": "CHANGELOG.md",
+    "README.md": "README.md"
+  },
+  "scripts": {
+    "postinstall": "simple-git-hooks",
+    "format": "prettier --cache --write ./**/*.{js,cjs,mjs,ts,jsx,tsx,json}",
+    "lint": "eslint --cache --fix ./**/*.{js,cjs,mjs,ts,jsx,tsx}",
+    "check": "tsc --noEmit && tsx ./scripts/check.ts",
+    "build": "tsc --noEmit && tsx ./scripts/build.ts"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint --config commitlint.config.ts --edit ${1}",
+    "pre-push": "pnpm run check"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts,cts,mts,jsx,tsx}": [
+      "prettier --cache --write",
+      "eslint --cache --fix"
+    ],
+    "*.json": [
+      "prettier --cache --write"
+    ]
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
