@@ -33,15 +33,17 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5
 ```
 
-当前版本: v53
+当前版本: v54
 
-当前订阅文件已适配 724 个应用，共有 1698 应用规则组，3 全局规则组
+当前订阅文件已适配 725 个应用，共有 1704 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
 查看 [第三方订阅规则汇总](https://github.com/Adpro-Team/GKD_THS_List) By [@adproqwq](https://github.com/adproqwq)
 
 查看 [GKD基础使用、规则编写教程](https://github.com/Snoopy1866/blogs/tree/main/software/gkd) By [@Snoopy1866](https://github.com/Snoopy1866)
+
+您可以使用 [GKD订阅模板](https://github.com/gkd-kit/subscription-template) 快速构建自己的订阅
 
 如何编写订阅/贡献此项目 -> [CONTRIBUTING.md](./CONTRIBUTING.md)
 
@@ -51,7 +53,7 @@ https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.jso
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=53)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=54)
 
 ## Star History
 
