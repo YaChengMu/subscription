@@ -18,7 +18,7 @@
 - npmmirror源（推荐）
 
 ```txt
-https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+https://registry.npmmirror.com/@yachengmu/subscription/latest/files/dist/gkd.json5
 ```
 
 - gitmirror源
@@ -30,7 +30,7 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 - jsDelivr源
 
 ```txt
-https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5
+https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
 ```
 
 当前版本: v54

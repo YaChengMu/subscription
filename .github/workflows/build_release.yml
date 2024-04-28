@@ -83,5 +83,5 @@ jobs:
       - name: sync jsDelivr
         if: ${{ steps.commit.outcome == 'success' }}
         run: |
-          curl -X PUT 'https://purge.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5'
-          curl -X PUT 'https://purge.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.version.json5'
+          curl -X PUT 'https://purge.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5'
+          curl -X PUT 'https://purge.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.version.json5'
