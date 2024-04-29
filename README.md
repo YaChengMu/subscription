@@ -33,9 +33,9 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
 ```
 
-当前版本: v54
+当前版本: v55
 
-当前订阅文件已适配 725 个应用，共有 1704 应用规则组，3 全局规则组
+当前订阅文件已适配 730 个应用，共有 1711 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=54)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=55)
 
 ## Star History
 
