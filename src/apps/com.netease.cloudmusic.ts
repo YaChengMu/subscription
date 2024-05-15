@@ -124,6 +124,13 @@ export default defineGkdApp({
           matches: '[vid="adTagView"]',
           snapshotUrls: 'https://i.gkd.li/i/15047096',
         },
+        {
+          key: 2,
+          quickFind: true,
+          activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
+          matches: '[vid="iv_ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15282417',
+        },
       ],
     },
     {
@@ -149,12 +156,15 @@ export default defineGkdApp({
         {
           key: 2,
           quickFind: true,
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
           matches:
-            '@ImageView[index=1][clickable=true] <2 ViewGroup[childCount=2] <<n [vid="dsl_dialog_root"]',
+            'ViewGroup[childCount=2] > @ImageView[index=1][clickable=true][visibleToUser=true] <<n [vid="dsl_dialog_root"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13684724',
             'https://i.gkd.li/i/14036940',
+            'https://i.gkd.li/i/15244091',
           ],
         },
         {
@@ -290,13 +300,13 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          name: '巨幅卡片式广告1',
+          name: '巨幅卡片广告1',
           matches: '[text^="跳过广告"][text.length<=10]',
           snapshotUrls: 'https://i.gkd.li/i/13527105',
         },
         {
           key: 2,
-          name: '巨幅卡片式广告2',
+          name: '巨幅卡片广告2',
           matches:
             '@TextView[index=2] <3 ViewGroup[childCount=3] <<n [id="com.netease.cloudmusic:id/container"]',
           snapshotUrls: 'https://i.gkd.li/i/14045424',

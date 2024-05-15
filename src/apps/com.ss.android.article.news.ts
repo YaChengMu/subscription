@@ -41,19 +41,21 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '通知提示-请求通知权限弹窗',
+      name: '权限提示-通知权限',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
+          key: 0,
           matches: '[text^="开启通知"] + LinearLayout > [text="暂不开启"]',
-          snapshotUrls: ['https://i.gkd.li/i/12706699'],
+          snapshotUrls: 'https://i.gkd.li/i/12706699',
         },
         {
+          key: 1,
           matches:
             '[text^="开启通知"] < LinearLayout +2 ImageView[desc="关闭"]',
-          snapshotUrls: ['https://i.gkd.li/i/12840217'],
+          snapshotUrls: 'https://i.gkd.li/i/12840217',
         },
       ],
     },
@@ -213,6 +215,25 @@ export default defineGkdApp({
           exampleUrls:
             'https://m.gkd.li/57941037/6166519d-d38d-49c0-b54b-72c25670aa24',
           snapshotUrls: 'https://i.gkd.li/i/15102876',
+        },
+      ],
+    },
+    {
+      key: 18,
+      name: '全屏广告-弹窗广告',
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 0,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.ss.android.article.news.activity.MainActivity',
+          matches:
+            '[id="android:id/content"] > FrameLayout[childCount=3] > ImageView[clickable=true][visibleToUser=true][index=2]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/096c3d85-08b0-4566-865d-31eb0079ad6e',
+          snapshotUrls: 'https://i.gkd.li/i/15314921',
         },
       ],
     },

@@ -119,7 +119,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-卡片式广告',
+      name: '局部广告-卡片广告',
       rules: [
         {
           key: 0,
@@ -177,7 +177,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '通知提示-关闭系统提示弹窗',
+      name: '权限提示-通知权限',
       matchTime: 30000,
       actionMaximum: 1,
       resetMatch: 'app',

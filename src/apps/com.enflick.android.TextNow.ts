@@ -27,8 +27,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '通知提示-通知/链接蓝牙附件设备',
-      desc: '自动点击关闭',
+      name: '权限提示-通知/链接蓝牙附件设备',
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',

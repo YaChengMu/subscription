@@ -157,8 +157,9 @@ export default defineGkdApp({
           key: 4,
           name: '刮奖弹窗',
           quickFind: true,
+          action: 'back',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
-          matches: '@ImageView[clickable=true] + * >4 [text="去刮奖"]',
+          matches: '[text="去刮奖"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/14456101',
         },
       ],
@@ -291,14 +292,14 @@ export default defineGkdApp({
         {
           matches: [
             'TextView[text="正在直播"]',
-            '@ImageView[desc="返回"] <4 ViewGroup <<3 FrameLayout[id="android:id/content"]',
+            '@ImageView[desc="返回"] <4 ViewGroup <<n FrameLayout[id="android:id/content"]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/13446291',
         },
         {
           matches: [
             'TextView[text="查看更多低价商品"]',
-            '@ImageView[desc="返回"] <4 ViewGroup <<3 FrameLayout[id="android:id/content"]',
+            '@ImageView[desc="返回"] <4 ViewGroup <<n FrameLayout[id="android:id/content"]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/13791119',
         },
@@ -417,7 +418,7 @@ export default defineGkdApp({
     },
     {
       key: 17,
-      name: '通知提示-请求开启消息通知弹窗',
+      name: '权限提示-通知权限',
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [

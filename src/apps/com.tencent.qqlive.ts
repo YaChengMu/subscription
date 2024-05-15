@@ -44,7 +44,7 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '分段广告-卡片式广告',
+      name: '分段广告-卡片广告',
       rules: [
         {
           key: 0,
@@ -105,7 +105,7 @@ export default defineGkdApp({
           key: 5,
           name: '点击右下角关闭',
           matches:
-            'ImageView[childCount=0] <<2 RelativeLayout + FrameLayout + RelativeLayout > RelativeLayout > RelativeLayout > ImageView',
+            'ImageView[childCount=0] < * < RelativeLayout + FrameLayout + RelativeLayout > RelativeLayout > RelativeLayout > ImageView',
           snapshotUrls: 'https://i.gkd.li/i/13426421',
         },
         {
@@ -256,21 +256,20 @@ export default defineGkdApp({
     },
     {
       key: 20,
-      name: '通知提示-请求通知权限弹窗',
+      name: '权限提示-通知权限',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
           key: 0,
-          actionMaximum: 1,
           quickFind: true,
           matches: 'LinearLayout > @[text="以后再说"] + [text="好的"]',
           snapshotUrls: 'https://i.gkd.li/i/12700139',
         },
         {
           key: 1,
-          actionMaximumKey: 0,
           matches: '@ImageView + * > [text^="开启通知"]',
           snapshotUrls: 'https://i.gkd.li/i/13670465',
         },

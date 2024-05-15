@@ -14,7 +14,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '通知提示-消息页上方开启系统通知提醒',
+      name: '权限提示-通知权限',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
@@ -49,7 +49,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '分段广告-推荐页卡片式广告',
+      name: '分段广告-推荐页卡片广告',
       rules: [
         {
           key: 0,
