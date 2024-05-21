@@ -10,12 +10,17 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      actionMaximumKey: 0,
       rules: [
         {
+          key: 0,
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/15376423',
+        },
+        {
+          key: 1,
           matches:
             'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/1cddb43c-9ddc-4fb0-a781-66f167035d2b',
           snapshotUrls: 'https://i.gkd.li/i/14406395',
         },
       ],
@@ -32,10 +37,31 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '局部广告-皮肤页-底部VIP弹窗',
-      activityIds: 'com.baidu.input.ImeAppMainActivity',
-      rules: '[desc="开会员，全部皮肤免费用"] +5 View[clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/i/14179107',
+      name: '局部广告-底部会员悬浮卡片',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          position: {
+            left: 'width * 0.9269',
+            top: 'width * 0.113',
+          },
+          activityIds:
+            'com.baidu.input.layout.store.subshop.activity.SkinShopActivity',
+          matches:
+            '@[desc="开会员，全部皮肤免费用"] <<n [vid="shop_content_container"]',
+          snapshotUrls: 'https://i.gkd.li/i/15320905',
+        },
+        {
+          key: 1,
+          activityIds: 'com.baidu.input.ImeAppMainActivity',
+          matches: '[vid="close_btn"]',
+          snapshotUrls: 'https://i.gkd.li/i/15320990',
+        },
+      ],
     },
   ],
 });
