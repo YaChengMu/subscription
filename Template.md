@@ -2,7 +2,7 @@
 
 ---
 
-由YaChengMu维护的GKD规则（**精力有限，随缘更新**）
+## 声明
 
 - **本仓库仅供本人学习使用，其他人的任何行为均与本人无关**
 - **精力有限，随缘更新**
@@ -15,22 +15,16 @@
 
 **订阅链接：**
 
-- npmmirror源（推荐）
+- npmmirror源（国内）
 
 ```txt
 https://registry.npmmirror.com/@yachengmu/subscription/latest/files/dist/gkd.json5
 ```
 
-- gitmirror源
+- GitHub源
 
 ```txt
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
-```
-
-- jsDelivr源
-
-```txt
-https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
 ```
 
 当前版本: v--VERSION--

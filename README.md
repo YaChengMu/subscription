@@ -2,7 +2,7 @@
 
 ---
 
-由YaChengMu维护的GKD规则（**精力有限，随缘更新**）
+## 声明
 
 - **本仓库仅供本人学习使用，其他人的任何行为均与本人无关**
 - **精力有限，随缘更新**
@@ -15,27 +15,21 @@
 
 **订阅链接：**
 
-- npmmirror源（推荐）
+- npmmirror源（国内）
 
 ```txt
 https://registry.npmmirror.com/@yachengmu/subscription/latest/files/dist/gkd.json5
 ```
 
-- gitmirror源
+- GitHub源
 
 ```txt
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 ```
 
-- jsDelivr源
+当前版本: v60
 
-```txt
-https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
-```
-
-当前版本: v59
-
-当前订阅文件已适配 740 个应用，共有 1722 应用规则组，3 全局规则组
+当前订阅文件已适配 742 个应用，共有 1729 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
@@ -53,7 +47,7 @@ https://cdn.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=59)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=60)
 
 ## Star History
 

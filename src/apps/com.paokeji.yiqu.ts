@@ -37,20 +37,11 @@ export default defineGkdApp({
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T',
         'com.aster.comic.app.view.MainActivity',
         'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
-        'com.huawei.permissioncontroller.hwcust.appjump.AppJumpActivity',
       ],
       rules: [
         {
           key: 0,
-          name: '跳过',
-          matches: '[text*="跳过"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/6f12fd12-b956-474a-834c-8ebba00efbff',
-          snapshotUrls: ['https://i.gkd.li/i/14362119'],
-        },
-        {
-          key: 1,
-          name: '腾讯SDK',
+          name: '腾讯SDK-1',
           actionDelay: 350, //防误触
           matches:
             '[id="android:id/content"] >(-n+4) FrameLayout > FrameLayout[childCount=1] > ImageView[index=0&&id=null]',
@@ -61,42 +52,57 @@ export default defineGkdApp({
           ],
         },
         {
+          key: 1,
+          name: '字节SDK',
+          matches: 'FrameLayout[desc*="close"] > View',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13839432',
+            'https://i.gkd.li/i/13839519',
+          ],
+        },
+        {
           key: 2,
           name: '穿山甲SDK',
+          actionDelay: 350, //防误触
           matches: [
-            'Image[text=""] < @View +4 [text="反馈"] + * >2 [text="广告"]',
-            '@View[width>=75&&width<=81] > Image',
+            '[id="com.byted.pangle.m:id/tt_reward_full_count_down_after"]',
+            '[text="反馈"] <<n View + View[childCount=1]',
+            '[text*="跳过" && text.length<=6] <2 @View -(3-n) View < View',
+            '[text="反馈"] -n @View[index<=1] > Image[text.length=0]',
+            '[text="反馈"] <<n View - View[childCount=1]',
           ],
           snapshotUrls: [
-            'https://i.gkd.li/i/13810150',
-            'https://i.gkd.li/i/13830798',
-            'https://i.gkd.li/i/13809578',
-            'https://i.gkd.li/i/13809737',
-            'https://i.gkd.li/i/14717730',
+            'https://i.gkd.li/i/13810767', //规则1
+            'https://i.gkd.li/i/13830798', //规则2
+            'https://i.gkd.li/i/13829749', //规则3
+            'https://i.gkd.li/i/13809737', //规则4 index=0
+            'https://i.gkd.li/i/13809578', //规则4 index=1
+            'https://i.gkd.li/i/13810150', //规则5
           ],
         },
         {
           key: 3,
-          matches:
+          name: '快手SDK',
+          matches: [
+            '[text*="跳过"] <n *[clickable=true]',
+            '[vid="ksad_auto_close_btn"]',
+            '[vid="ksad_video_container"] < * >n ViewGroup[index=1] >n @ViewGroup[clickable=true] > ImageView',
             '[id*="/ksad_container"] < * >n ViewGroup[index=2] >n @ViewGroup[clickable=true] > ImageView',
+          ],
           snapshotUrls: [
-            'https://i.gkd.li/i/13829312',
-            'https://i.gkd.li/i/14584695',
-            'https://i.gkd.li/i/14340200',
+            'https://i.gkd.li/i/13809629', //规则1
+            'https://i.gkd.li/i/13837855', //规则2
+            'https://i.gkd.li/i/13829312', //规则3
+            'https://i.gkd.li/i/14584695', //规则4
           ],
         },
         {
           key: 4,
-          quickFind: true,
-          matches: '@LinearLayout[clickable=true] - * > [text="反馈"]',
-          snapshotUrls: 'https://i.gkd.li/i/14847142',
-        },
-        {
-          key: 5,
-          activityIds: 'com.aster.comic.app.view.MainActivity',
+          name: '腾讯SDK-2',
+          actionDelay: 350, //防误触
           matches:
-            '[id="android:id/content"] >2 FrameLayout[childCount=9] >3 FrameLayout[childCount=2] > @FrameLayout[childCount=1] > ImageView',
-          snapshotUrls: 'https://i.gkd.li/i/15374245',
+            '[id="android:id/content"] >3 FrameLayout[childCount=2] > FrameLayout[childCount=1] > ImageView',
+          snapshotUrls: 'https://i.gkd.li/i/15173845',
         },
       ],
     },
@@ -119,22 +125,37 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '全屏广告-看视频解锁任意读',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
-          name: '看视频解锁任意读',
-          activityIds: 'com.aster.comic.app.view.reader.ReaderActivity',
-          matches:
-            'TextView[text="看视频解锁任意读"] < LinearLayout +3 LinearLayout > @Button[id="com.paokeji.yiqu:id/btnLook"]',
-          snapshotUrls: ['https://i.gkd.li/i/14584512'],
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches: '[text="反馈"] + @View[childCount=2] > [text="跳过"]',
+          snapshotUrls: 'https://i.gkd.li/i/14362119',
         },
         {
-          preKeys: [0],
           key: 1,
-          name: '看视频解锁任意读-广告',
-          matches: '@ImageView[width>30&&width<40]',
-          snapshotUrls: ['https://i.gkd.li/i/14584512'],
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches:
+            'Image[text=""] < @View +4 [text="反馈"] + * >2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/14717730',
+        },
+        {
+          key: 2,
+          quickFind: true,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches: '@LinearLayout[clickable=true] - * > [text="反馈"]',
+          snapshotUrls: 'https://i.gkd.li/i/14847142',
+        },
+        {
+          key: 3,
+          activityIds: 'com.aster.comic.app.view.MainActivity',
+          matches:
+            '[id="android:id/content"] >2 FrameLayout[childCount=9] >3 FrameLayout[childCount=2] > @FrameLayout[childCount=1] > ImageView',
+          snapshotUrls: 'https://i.gkd.li/i/15374245',
         },
       ],
     },
@@ -151,6 +172,27 @@ export default defineGkdApp({
           exampleUrls:
             'https://m.gkd.li/57941037/d71c73bb-289f-4205-a253-fcd8bd32f196',
           snapshotUrls: 'https://i.gkd.li/i/14572053',
+        },
+      ],
+    },
+    {
+      key: 5,
+      name: '全屏广告-看视频解锁任意读',
+      rules: [
+        {
+          key: 0,
+          name: '看视频解锁任意读',
+          activityIds: 'com.aster.comic.app.view.reader.ReaderActivity',
+          matches:
+            'TextView[text="看视频解锁任意读"] < LinearLayout +3 LinearLayout > @Button[id="com.paokeji.yiqu:id/btnLook"]',
+          snapshotUrls: ['https://i.gkd.li/i/14584512'],
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          name: '看视频解锁任意读-广告',
+          matches: '@ImageView[width>30&&width<40]',
+          snapshotUrls: ['https://i.gkd.li/i/14584512'],
         },
       ],
     },
