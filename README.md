@@ -27,7 +27,7 @@ https://registry.npmmirror.com/@yachengmu/subscription/latest/files/dist/gkd.jso
 https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 ```
 
-当前版本: v61
+当前版本: v62
 
 当前订阅文件已适配 742 个应用，共有 1729 应用规则组，3 全局规则组
 
@@ -47,7 +47,7 @@ https://raw.gitmirror.com/YaChengMu/subscription/main/dist/gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=61)
+![img](https://contrib.rocks/image?repo=YaChengMu/subscription&_v=62)
 
 ## Star History
 
