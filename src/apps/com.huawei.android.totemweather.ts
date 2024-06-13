@@ -13,7 +13,7 @@ export default defineGkdApp({
       rules: [
         {
           action: 'clickCenter', // 根据 https://github.com/gkd-kit/subscription/pull/1180#issuecomment-1767735683 反馈，此处使用 clickCenter 事件。
-          matches: '[id="com.huawei.hms.ads.uiengine:id/hiad_skip_text"]',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12928975',
             'https://i.gkd.li/i/13226636',

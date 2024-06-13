@@ -4,32 +4,32 @@ export default defineGkdApp({
   id: 'com.paokeji.yiqu',
   name: '喵趣漫画',
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      matchTime: 10000,
-      resetMatch: 'app',
-      actionMaximum: 1,
-      actionMaximumKey: 0,
-      rules: [
-        {
-          key: 0,
-          matches:
-            '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳过"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
-          snapshotUrls: 'https://i.gkd.li/i/14753912',
-        },
-        {
-          key: 1,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14031922',
-            'https://i.gkd.li/i/14322264',
-          ],
-        },
-      ],
-    },
+    // {
+    //   key: 0,
+    //   name: '开屏广告',
+    //   quickFind: true,
+    //   matchTime: 10000,
+    //   resetMatch: 'app',
+    //   actionMaximum: 1,
+    //   actionMaximumKey: 0,
+    //   rules: [
+    //     {
+    //       key: 0,
+    //       matches:
+    //         '[childCount=0][visibleToUser=true][(text.length<10&&(text*="跳过"||text*="跳过"||text*="skip"||text*="Skip")) || id$="tt_splash_skip_btn" || vid*="skip" || vid*="Skip" || (vid*="count" && vid*="down" && vid!*="download") || desc*="跳过" || desc*="skip"]',
+    //       snapshotUrls: 'https://i.gkd.li/i/14753912',
+    //     },
+    //     {
+    //       key: 1,
+    //       matches:
+    //         'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true] + TextView <<n [id="android:id/content"]',
+    //       snapshotUrls: [
+    //         'https://i.gkd.li/i/14031922',
+    //         'https://i.gkd.li/i/14322264',
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       key: 1,
       name: '全屏广告',

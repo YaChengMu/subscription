@@ -12,8 +12,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          matches: '[id$="/hiad_skip_text"]',
+          quickFind: true,
           action: 'clickCenter',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12681995',
             'https://i.gkd.li/i/13403785',
