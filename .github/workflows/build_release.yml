@@ -67,8 +67,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/gkd.json5
-          asset_name: gkd_${{ steps.version.outputs.version }}.json5
+          asset_path: ./dist/AIsouler_gkd.json5
+          asset_name: AIsouler_gkd_${{ steps.version.outputs.version }}.json5
           asset_content_type: application/json
 
       - name: Publish package
@@ -79,9 +79,3 @@ jobs:
           pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           pnpm publish --no-git-checks
           node -e "import('@gkd-kit/tools').then((m) => m.syncNpmmirror());"
-
-      - name: sync jsDelivr
-        if: ${{ steps.commit.outcome == 'success' }}
-        run: |
-          curl -X PUT 'https://purge.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.json5'
-          curl -X PUT 'https://purge.jsdelivr.net/gh/YaChengMu/subscription@main/dist/gkd.version.json5'

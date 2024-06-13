@@ -1,6 +1,6 @@
 {
   "name": "@yachengmu/gkd_subscription",
-  "version": "0.0.65",
+  "version": "0.0.68",
   "type": "module",
   "gkd": {
     "outDir": "dist",
