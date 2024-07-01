@@ -141,7 +141,7 @@ export default defineGkdApp({
       actionMaximum: 1,
       resetMatch: 'activity',
       activityIds: [
-        '.plugin.webwx.ui.ExtDeviceWXLoginUI',
+        'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
         'com.tencent.mm.ui.LauncherUI',
       ],
       rules: 'TextView[text="取消登录"] - Button[text="登录"]',
@@ -292,6 +292,7 @@ export default defineGkdApp({
       name: '开屏广告-微信小程序',
       quickFind: true,
       matchTime: 10000,
+      forcedTime: 10000,
       // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
       // resetMatch: 'activity',
       activityIds: [
